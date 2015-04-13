@@ -5,7 +5,7 @@
  * @package Example-application
  */
 
-require '../libs/Smarty.class.php';
+require './assets/Smarty-3.1.21/libs/Smarty.class.php';
 
 $smarty = new Smarty;
 
