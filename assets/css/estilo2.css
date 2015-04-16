@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+a:link {text-decoration: none;}
+a:active {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: none;}
+
+@font-face {
+	font-family: "BebasNeue";
+	src: url("../fontes/BebasNeue.otf");
+	}
+
+body {
+	background: url("../imagens/fundo-home.png");
+	background-size: 100%;
+	overflow-x:hidden;
+	overflow-y:hidden;
+}
+
+#barra-superior {
+	width: 110%;
+	position: absolute;
+	top: -30px;
+	left: -10px;
+	z-index: -1;
+	box-shadow: 5px 5px 5px #888888;
+}
+
+#logo-una-ideas {
+	width: 300px;
+	position: absolute;
+	left: 100px;
+	top: 30px;
+}
+
+/*Formataçõa do menu*/
+
+nav#menu ul {
+	font-family: BebasNeue;
+	font-size: 45px;
+	color: white;
+	font-weight: 100;
+	list-style: none;
+	text-transform: uppercase;
+	display: block;
+	position: absolute;
+	top: 55px;
+	left: 600px;
+}
+
+nav#menu li {
+	display: inline-block;
+	margin-right: 20px;
+	padding: 5px 10px 0px 5px;
+	background-color: rgba(0, 0, 0, 0);
+	border-radius: 70px;
+	transition: 0.3s;
+}
+
+nav#menu li:hover {
+	color: rgba(54, 30, 67, 100);
+	display: inline-block;
+	margin-right: 20px;
+	padding: 5px 10px 0px 10px;
+	background-color: rgba(223, 223, 223, 100);
+}
+
+table {
+	position: absolute;
+	top: 250px;
+	vertical-align: baseline;
+}
+td {
+	width: 800px;
+	height: 300px;
+	padding: 0px 40px 0px 40px;
+}
+
+.quadros {
+	top: 200px;
+	width: 85%;
+	height: 300px;
+	text-align: center;
+	border: solid 6px rgba(54, 30, 67, 100);
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #888888;
+	overflow: hidden;
+	transition: 0.3s;
+}
+
+.quadros:hover {
+	height: 350px;
+}
+
+
+img#icone-aluno {
+	top: 100px;
+	width: 150px;
+}
+
+img#icone-professor {
+	top: 100px;
+	width: 160px;
+}
+
+img#icone-investidor {
+	top: 105px;
+	width: 140px;
+}
+
+p {
+	font-family: BebasNeue;
+	color: rgba(54, 30, 67, 100);
+	font-size: 30px;
+	top: 0px;
+}
+
+p.descricao {
+	padding: 5px;
+	font-size: 20px;
+	color: white;
+	background-color: rgba(54, 30, 67, 100);
+}
+
+p#descricao-idealizador {
+	margin-top: 5px;
+}
+
+p#descricao-professor {
+	margin-top: 12px;
+}
+
+p#descricao-investidor {
+	margin-top: 3px;
+}

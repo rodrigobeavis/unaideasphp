@@ -1,87 +1,67 @@
 {config_load file="test.conf" section="setup"}
 {include file="header.tpl" title=$title}
 
-<PRE>
+ <img src="imagens/barra-superior-home.png" id="barra-superior">
+  <img src="./assets/img/barra-superior-home.png" id="barra-superior">
 
-{* bold and title are read from the config file *}
-    {if #bold#}<b>{/if}
-        {* capitalize the first letters of each word of the title *}
-        Title: {#title#|capitalize}
-        {if #bold#}</b>{/if}
+        <img src="imagens/una-ideas-logo.png" id="logo-una-ideas">
 
-    The current date and time is {$smarty.now|date_format:"%Y-%m-%d %H:%M:%S"}
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="cadastro_user.html">Cadastrar</a></li>
+                <li>Sobre</li>
+                <li style="height: 30px; top:100px;"><span style="font-size:20pt; vertical-align:top">Fale conosco</span></li>
+            </ul>
+        </nav>
+        <table id="tabela">
+            <tr>
+                <td>
+                    <a href="login.html">
+                        <div onmouseover="mostraDescricao('descricao-idealizador', 'descricao-professor', 'descricao-investidor')" onmouseout="esconde('descricao-idealizador')" id="quadro1" class="quadros">
+                            <p>Idealizador</p>
+                            <img id="icone-aluno" src="imagens/icone-aluno.png">
+                            <p id="descricao-idealizador" class="descricao" style="display:none">Você é um aluno? Tem um projeto em mente? Escolha essa opção para cadastrar a sua ideia no nosso sistema!</p>			
+                        </div>
+                    </a>
+                </td>
 
-    The value of global assigned variable $SCRIPT_NAME is {$SCRIPT_NAME}
+                <td>
+                    <a href="login.html">
+                        <div onmouseover="mostraDescricao('descricao-professor', 'descricao-investidor', 'descricao-idealizador')" onmouseout="esconde('descricao-professor')" id="quadro2" class="quadros">
+                            <p>Professor</p>
+                            <img id="icone-professor" src="imagens/icone-professor.png">
+                            <p id="descricao-professor" class="descricao" style="display:none">Você é professor? Escolha essa opção para ter acesso ao andamento dos projetos e demais funcionalidades.</p>
+                        </div>
+                    </a>
+                </td>
 
-    Example of accessing server environment variable SERVER_NAME: {$smarty.server.SERVER_NAME}
+                <td>
+                    <a href="login.html">
+                        <div onmouseover="mostraDescricao('descricao-investidor', 'descricao-idealizador', 'descricao-professor')" onmouseout="esconde('descricao-investidor')" id="quadro3" class="quadros">
+                            <p>Investidor</p>
+                            <img id="icone-investidor" src="imagens/icone-investidor.png">
+                            <p id="descricao-investidor" class="descricao" style="display:none">É um investidor? Que tal dar uma olhada nos promissores projetos que a instituição tem preparado?</p>
+                        </div>
+                    </a>
+                </td>
+            </tr>
+        </table>
 
-    The value of {ldelim}$Name{rdelim} is <b>{$Name}</b>
 
-variable modifier example of {ldelim}$Name|upper{rdelim}
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="asstes/bootstrap/js/bootstrap.min.js"></script>
+        {literal}
+        <script>
+                            function mostraDescricao(exibe, esconde, esconde2) {
+                                document.getElementById(exibe).style.display = "block";
+                                document.getElementById(esconde).style.display = "none";
+                                document.getElementById(esconde2).style.display = "none";
+                            }
 
-<b>{$Name|upper}</b>
-
-
-An example of a section loop:
-
-    {section name=outer
-    loop=$FirstName}
-        {if $smarty.section.outer.index is odd by 2}
-            {$smarty.section.outer.rownum} . {$FirstName[outer]} {$LastName[outer]}
-        {else}
-            {$smarty.section.outer.rownum} * {$FirstName[outer]} {$LastName[outer]}
-        {/if}
-        {sectionelse}
-        none
-    {/section}
-
-    An example of section looped key values:
-
-    {section name=sec1 loop=$contacts}
-        phone: {$contacts[sec1].phone}
-        <br>
-
-            fax: {$contacts[sec1].fax}
-        <br>
-
-            cell: {$contacts[sec1].cell}
-        <br>
-    {/section}
-    <p>
-
-        testing strip tags
-        {strip}
-<table border=0>
-    <tr>
-        <td>
-            <A HREF="{$SCRIPT_NAME}">
-                <font color="red">This is a test </font>
-            </A>
-        </td>
-    </tr>
-</table>
-    {/strip}
-
-</PRE>
-
-This is an example of the html_select_date function:
-
-<form>
-    {html_select_date start_year=1998 end_year=2010}
-</form>
-
-This is an example of the html_select_time function:
-
-<form>
-    {html_select_time use_24_hours=false}
-</form>
-
-This is an example of the html_options function:
-
-<form>
-    <select name=states>
-        {html_options values=$option_values selected=$option_selected output=$option_output}
-    </select>
-</form>
-
+                            function esconde(esconder) {
+                                document.getElementById(esconder).style.display = "none";
+                            }
+        </script>
+        {/literal}
 {include file="footer.tpl"}

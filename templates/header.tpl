@@ -16,5 +16,4 @@ and open the template in the editor.
         <link type="text/css" href="./assets/js/DataTables-1.10.6/media/css/dataTables.bootstrap.css">
     </head>
     <body>
-        <div>TODO write content</div>
 

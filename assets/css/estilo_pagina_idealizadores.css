@@ -1,0 +1,207 @@
+@charset "UTF-8";
+
+a:link {text-decoration: none;}
+a:active {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: none;}
+
+@font-face {
+	font-family: "BebasNeue";
+	src: url("../fontes/BebasNeue.otf");
+	}
+
+body {
+	background: url("../imagens/fundo-home.png");
+	background-size: 100%;
+}
+
+div#div_idmenu{
+	top: 10px;
+	text-align: right;
+}
+
+table#table_menu {
+	width:80%;
+	margin: 0px 10% 0px 10%;
+}
+
+table#table_menu td{
+	width: 50%;	
+}
+
+#logo_topo {
+	width: 50%;
+	margin: 0px;
+	left: 10px;
+	top: 10px;
+}
+
+nav#menu ul {
+	font-family: BebasNeue;
+	float: right;
+	top: 3%;
+	font-size: 25px;
+	color: #361E43;
+	font-weight: 100;
+	list-style: none;
+	text-transform: uppercase;
+	display: block;	
+}
+
+nav#menu li {
+	display: inline-block;
+	padding: 5px 10px 0px 5px;
+	background-color: rgba(0, 0, 0, 0);
+	border-radius: 70px;
+	transition: 0.3s;
+}
+
+nav#menu li:hover {
+	color: rgba(54, 30, 67, 100);
+	display: inline-block;
+	padding: 5px 10px 0px 10px;
+	color: white;
+	background-color: #361E43;
+}
+
+
+#projeto {
+	width: 80%;
+	height: 20%;
+	background-color: #fff;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px #888888;
+	transition: 0.1s;
+}
+
+#projeto:hover {
+	border-left: 10px solid #361E43;
+}
+
+table#table_projeto {
+	padding: 5px 15px 5px 15px;
+	font-family: BebasNeue;
+}
+
+table#table_projeto h2 {
+	margin: 0px;
+	font-size: 28pt;
+	color: #361E43;
+}
+
+table#table_projeto p {
+	font-size: 25px;
+	text-decoration: none;
+	color: #888;
+	margin: 0px;
+}
+
+table#table_projeto td {
+	border-bottom: 1px solid #bbb;
+	margin: 0px 0px 10px 0px;
+}
+
+#modal form textarea, input{
+	font-family: BebasNeue;
+	font-size: 15pt;
+	margin-bottom: 10px;
+}
+
+#modal form span#estado_projeto {
+	color:#666;
+	font-size: 25px;
+	margin: 0px;
+	margin-right: 23%; 
+}
+
+#modal form span.grupo {
+	color:#666;
+	font-size: 25px;
+	margin: 0px 20px 0px 0px;
+}
+
+#modal form #botao {
+	color:white;
+	background-color: #361e43;
+	margin-bottom: 5px;
+	width: 100px;
+	height: 25px;
+	border: none;
+}
+
+.botaoremove {
+	color:white;
+	background-color: #361e43;
+	margin-bottom: 5px;
+	width: 25px;
+	height: 25px;
+	border: none;
+	margin: 0px 0px 0px 20px;
+}
+
+.modalDialog {
+position: fixed;
+font-family: BebasNeue;
+font-size: 25pt;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background: rgba(54,30,67,0.7);
+z-index: 99999;
+opacity:0;
+-webkit-transition: opacity 400ms ease-in;
+-moz-transition: opacity 400ms ease-in;
+transition: opacity 400ms ease-in;
+pointer-events: none;
+overflow:scroll; /* activa scroll da página se a modal for muito comprida */
+}
+
+.modalDialog h2 {
+	text-align: center;	
+	font-size: 20pt;
+	color: #361E43;
+
+}
+
+.modalDialog:target {
+opacity:1;
+pointer-events: auto;
+}
+
+.modalDialog > div {
+width: 800px;
+position: relative;
+margin: 5% auto;
+padding: 5px 100px 13px 100px;
+border-radius: 10px;
+background: #bbb;
+-moz-box-shadow: 1px 1px 30px #000;
+-webkit-box-shadow: 1px 1px 30px #000;
+box-shadow: 1px 1px 30px #000;
+}
+
+ .close {
+background: #606061;
+color: #FFFFFF;
+font-size: 15pt;
+line-height: 25px;
+position: absolute;
+right: -12px;
+text-align: center;
+top: -10px;
+width: 24px;
+text-decoration: none;
+font-weight: bold;
+-webkit-border-radius: 12px;
+-moz-border-radius: 12px;
+border-radius: 12px;
+-moz-box-shadow: 1px 1px 3px #000;
+-webkit-box-shadow: 1px 1px 3px #000;
+box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #361e43; }
