@@ -11,7 +11,7 @@ a:hover {text-decoration: none;}
 	}
 
 body {
-	//background: url("../imagens/fundo-home.png");
+	background: url("../imagens/fundo-home.png");
 	background-size: 100%;
 	overflow-x:hidden;
 	overflow-y:hidden;
