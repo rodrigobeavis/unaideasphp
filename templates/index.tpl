@@ -82,7 +82,6 @@
                 </div>
             </article>
             <footer>
-
             </footer>-->
             <table id="tabela">
                 <tr>

@@ -4,10 +4,10 @@
  *
  * @author RODRIGO
  */
-if (file_exists('./sistema/PDO/PDOConnectionFactory.php')) {
-    require_once('./sistema/PDO/PDOConnectionFactory.php');
+if (file_exists('./system/pdo/PDOConnectionFactory.php')) {
+    require_once('./system/pdo/PDOConnectionFactory.php');
 } else {
-    require_once('../PDO/PDOConnectionFactory.php');
+    require_once('../pdo/PDOConnectionFactory.php');
 }
 
 class DaoUser extends PDOConnectionFactory {

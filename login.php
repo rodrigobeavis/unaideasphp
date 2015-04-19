@@ -7,8 +7,6 @@
  */
 
 
-require_once './sistema/funcoes/Autenticar.class.php';
-require_once './sistema/funcoes/DadosUser.php';
 
 session_start();
 
