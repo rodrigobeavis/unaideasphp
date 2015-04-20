@@ -6,23 +6,23 @@
  * and open the template in the editor.
  */
 
-if (file_exists('./sistema/DAO/DaoAutenticacao.php')) {
-    require_once('./sistema/DAO/DaoAutenticacao.php');
+if (file_exists('./system/dao/DaoAutenticacao.php')) {
+    require_once('./system/dao/DaoAutenticacao.php');
 } else {
-    require_once('../DAO/DaoAutenticacao.php');
+    require_once('../dao/DaoAutenticacao.php');
 }
 
-class Autenticar {
+class AutenticarClass {
     
     private $DAO;
 
-    public function Autenticar() {
+    public function AutenticarClass() {
         $this->DAO = new DaoAutenticacao();
     }
 
     public function logar($dadosuser) {
-        
          $verificar = $this->DAO->localizarUser($dadosuser);
+         
          foreach ($verificar as $value) {
              $identifica = $value[0];
          }
@@ -30,8 +30,7 @@ class Autenticar {
          return $identifica;       
     }
     private function direcionar($identifica) {
-        
-        if($identifica){         
+        if($identifica >= 1){         
             echo '<script>window.alert("logado");</script>';
            header("refresh: 0; url=area_usuario.php");
         }  else {
@@ -39,4 +38,5 @@ class Autenticar {
            echo '<script> history.back();</script>';
         }
     }
+ 
 }

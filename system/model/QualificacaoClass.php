@@ -11,7 +11,7 @@
  *
  * @author RODRIGO
  */
-class Qualificacao {
+class QualificacaoClass {
     //put your code here
     
 private $obs_qualificacao;

@@ -11,7 +11,7 @@
  *
  * @author RODRIGO
  */
-class Investidor {
+class InvestidorClass {
 
     //put your code here
 

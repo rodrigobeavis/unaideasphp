@@ -11,7 +11,7 @@
  *
  * @author RODRIGO
  */
-class Projeto {
+class ProjetoClass {
 
     //put your code here
 

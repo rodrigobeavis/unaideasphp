@@ -1,22 +1,24 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
-
 session_start();
 
-if (filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)) {
-    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-    $keyU = md5(filter_input(INPUT_POST, 'senha'));
-    if ($email && $keyU) {
-        $dadosuser = array('email' => $email, 'keyU' => $keyU);
 
-        $verificar = new Autenticar();
+if (file_exists('./system/controller/AutenticarClass.php')) {
+    require_once('./system/controller/AutenticarClass.php');
+} else {
+    require_once('./system/controller/AutenticarClass.php');
+}
+
+
+if (filter_input(INPUT_POST, 'user_name')) {
+    $user_name = filter_input(INPUT_POST, 'user_name');
+    $keyU = md5(filter_input(INPUT_POST, 'keyu'));
+    
+   
+    if ($user_name && $keyU) {
+        $dadosuser = array('user_name' => $user_name, 'keyU' => $keyU);
+
+        $verificar = new AutenticarClass();
         $cod_user = $verificar->logar($dadosuser);
 
         if ($cod_user) {
@@ -25,13 +27,15 @@ if (filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)) {
 
             $_SESSION = $dados_user;
             
-            $_SESSION['ID'] = md5(rand(1, 99999999999).date("YmdHis"));
+            $_SESSION['ID'] = md5(rand(1, 99999999999999).date("YmdHis"));
             $_SESSION['ID2'] = session_id();
         }
     }
 } else {
     echo "O email Inválido";
-    header("refresh: 3; url=index.html");
+    unset($_SESSION); 
+    header("refresh: 1; url=index.php");
+    
 }
 
 

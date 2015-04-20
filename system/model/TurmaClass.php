@@ -11,7 +11,7 @@
  *
  * @author RODRIGO
  */
-class Turma {
+class TurmaClass {
 
     //put your code here
 

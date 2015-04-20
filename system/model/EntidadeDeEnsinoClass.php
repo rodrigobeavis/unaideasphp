@@ -11,7 +11,7 @@
  *
  * @author RODRIGO
  */
-class EntidadeDeEnsino {
+class EntidadeDeEnsinoClass {
 
     //put your code here
 

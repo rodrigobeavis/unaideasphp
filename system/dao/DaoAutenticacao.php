@@ -12,10 +12,10 @@
  * @author RODRIGO
  */
 
-if (file_exists('./sistema/PDO/PDOConnectionFactory.php')) {
-    require_once('./sistema/PDO/PDOConnectionFactory.php');
+if (file_exists('./system/pdo/PDOConnectionFactory.php')) {
+    require_once('./system/pdo/PDOConnectionFactory.php');
 } else {
-    require_once('../PDO/PDOConnectionFactory.php');
+    require_once('../pdo/PDOConnectionFactory.php');
 }
 
 class DaoAutenticacao extends PDOConnectionFactory {
@@ -28,25 +28,40 @@ class DaoAutenticacao extends PDOConnectionFactory {
     public function localizarUser($dadosuser) {
         try {
         $sql = "SELECT 
-            idAutenticacao
+             COUNT(id_autenticacao) AS autenticar
         FROM
-            tbl_autenticacao AS t1
+            autenticacao AS t1
         WHERE
-            t1.StatusAcesso = 0
-            AND t1.email = ?
-            AND t1.senha = ?";
+            t1.user_name = :user_name
+            AND t1.pw = :keyU";
         $stmt = $this->conex->prepare($sql);
-        $stmt->bindValue(1, $dadosuser['email']);
-        $stmt->bindValue(2, $dadosuser['keyU']);
-
+        $stmt->bindParam(':user_name', $dadosuser['user_name'],PDO::PARAM_STR);
+        $stmt->bindParam(':keyU', $dadosuser['keyU'],PDO::PARAM_STR);
         $stmt->execute();
-        return $stmt;
-       
+        return $stmt->fetchAll(PDO::FETCH_COLUMN);   
         } catch (PDOException $e) {
             echo $e->getMessage();
            }
         parent::Close();
     }
-  
+  public function localizarUserDados($dadosuser) {
+        try {
+        $sql = "SELECT 
+             id_autenticacao AS autenticar
+        FROM
+            autenticacao AS t1
+        WHERE
+            t1.user_name = :user_name
+            AND t1.pw = :keyU";
+        $stmt = $this->conex->prepare($sql);
+        $stmt->bindParam(':user_name', $dadosuser['user_name'],PDO::PARAM_STR);
+        $stmt->bindParam(':keyU', $dadosuser['keyU'],PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_COLUMN);   
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+           }
+        parent::Close();
+    }
 
 }
