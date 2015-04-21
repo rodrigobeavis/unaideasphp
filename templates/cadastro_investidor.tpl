@@ -28,7 +28,7 @@
             <div class="col-md-6">
                 <div class="row form-group">
                     <div class="col-md-8">
-                        <input id="name_user" name="name_user" placeholder="Login" class="form-control" required="" type="text">
+                        <input id="user_name" name="user_name" placeholder="Login" class="form-control" required="" type="text">
                     </div>
                 </div>
                  <div class="row form-group">
