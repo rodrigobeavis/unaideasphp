@@ -30,3 +30,7 @@ function testeKey() {
             });
         });
 
+$(document).ready(function () {
+   // $('#turma').data("placeholder","Selecione a turma").chosen();
+     $('#turma').chosen({no_results_text: "Oops, não encontrado!!"}); 
+});

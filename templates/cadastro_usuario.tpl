@@ -7,7 +7,7 @@
     </head>
     <body class="container">
     <legend class="well well-sm">Usuário</legend>
-    <form method='POST' action='cadastro_tipo_user.php' class="">
+    <form method='POST' action='cadastro_gravar_user.php' class="">
         <div class="row form-group">
             <div class="col-md-5">
                 <input id="nome_usuario" name="nome_usuario" placeholder="Nome" required="" class="form-control" type="text">
@@ -28,7 +28,10 @@
             </div>
             <div class="col-md-3">
                 <select id="turma" name="turma" class="form-control">
-                    <option>ADS</option>
+                    <option disabled selected>Turma...</option>
+                    {section name=turma loop=$lista_turmas}
+                        <option value="{$lista_turmas[turma].id_turma}">{$lista_turmas[turma].curso_turma}</option>
+                    {/section}
                 </select>
             </div>
         </div>
@@ -42,12 +45,16 @@
                 <div class="row form-group">
                     <div class="col-md-8">
                         <input id="keyu" name="keyu" placeholder="Senha" class="form-control" required type="password">
-                        <meter value="0" id="mtSenha" max="35"></meter>
+                    </div>
+                    <div class="col-md-4">
+                        <meter value="0" id="mtSenha" max="35">Força da senha</meter>
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-md-8">
-                        <input id="keyu2" name="keyu2" placeholder="Confirmação" class="form-control" required type="password">
+                        <input id="keyu2"  placeholder="Confirme a senha" class="form-control" required type="password">
+                    </div>
+                    <div class="col-md-4">
                         <h4><label id="erro_senha" class="label btn-warning">As senhas não conferem</label></h4>
                     </div>
                 </div>

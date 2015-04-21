@@ -7,7 +7,7 @@
     </head>
     <body class="container">
     <legend class="well well-sm">Professor</legend>
-    <form method='POST' action='cadastro_tipo_user.php' class="">
+    <form method='POST' action='cadastro_gravar_user.php' class="">
         <div class="row form-group">
             <div class="col-md-5">
                 <input id="nome_professor" name="nome_professor" placeholder="Nome" required="" class="form-control" type="text">
@@ -25,7 +25,10 @@
             </div>
             <div class="col-md-3">
                 <select id="tipo_professor" name="tipo_professor" class="form-control">
-                    <option>ADS</option>
+                    <option disabled selected>Tipo...</option>
+                    <option value="1">Orientador</option>
+                    <option value="2">Avaliador</option>
+                    <option value="3">Avaliador/Orientador</option>
                 </select>
             </div>
         </div>
@@ -38,14 +41,18 @@
                 </div>
                 <div class="row form-group">
                     <div class="col-md-8">
-                        <input id="keyu" name="keyu" placeholder="Senha" class="form-control" required="" type="password">
-                        <meter value="0" id="mtSenha" max="35"></meter>
+                        <input id="keyu" name="keyu" placeholder="Senha" class="form-control" required type="password">
+                    </div>
+                    <div class="col-md-4">
+                        <meter value="0" id="mtSenha" max="35">Força da senha</meter>
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-md-8">
-                        <input id="keyu2" name="keyu2" placeholder="Confirmação" class="form-control" required="" type="password">
-                         <h4><label id="erro_senha" class="label btn-warning">As senhas não conferem</label></h4>
+                        <input id="keyu2"  placeholder="Confirme a senha" class="form-control" required type="password">
+                    </div>
+                    <div class="col-md-4">
+                        <h4><label id="erro_senha" class="label btn-warning">As senhas não conferem</label></h4>
                     </div>
                 </div>
             </div>
