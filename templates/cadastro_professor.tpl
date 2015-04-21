@@ -6,87 +6,61 @@
         {include file="header.tpl" title=$title}
     </head>
     <body class="container">
-
-        <form class="form-horizontal">
-            <fieldset>
-
-                <!-- Form Name -->
-                <legend>Professor</legend>
-                <!-- Text input-->
-                <div class="control-group">
-                    <label class="control-label" for="nome_usuario"></label>
-                    <div class="controls">
-                        <input id="nome_usuario" name="nome_usuario" placeholder="Nome" required="" class="input-large" type="text">
-
+    <legend class="well well-sm">Professor</legend>
+    <form method='POST' action='cadastro_tipo_user.php' class="">
+        <div class="row form-group">
+            <div class="col-md-5">
+                <input id="nome_professor" name="nome_professor" placeholder="Nome" required="" class="form-control" type="text">
+            </div>
+            <div class="col-md-3">
+                <input id="mat_professor" name="mat_professor" placeholder="Matrícula" class="form-control" required="" type="text">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-5">
+                <input id="email_professor" name="email_professor" placeholder="Email" class="form-control" required="" type="text">
+            </div>
+            <div class="col-md-3">
+                <input id="telefone_professor" name="telefone_professor" placeholder="Telefone" class="form-control" required="" type="text">
+            </div>
+            <div class="col-md-3">
+                <select id="tipo_professor" name="tipo_professor" class="form-control">
+                    <option>ADS</option>
+                </select>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-6">
+                <div class="row form-group">
+                    <div class="col-md-8">
+                        <input id="name_user" name="name_user" placeholder="Login" class="form-control" required="" type="text">
                     </div>
                 </div>
-                <!-- Text input-->
-                <div class="control-group">
-                    <label class="control-label" for="rg"></label>
-                    <div class="controls">
-                        <input id="rg" name="rg" placeholder="RG" class="input-small" required="" type="text">
-
+                <div class="row form-group">
+                    <div class="col-md-8">
+                        <input id="keyu" name="keyu" placeholder="Senha" class="form-control" required="" type="password">
+                        <meter value="0" id="mtSenha" max="35"></meter>
                     </div>
                 </div>
-                <!-- Text input-->
-                <div class="control-group">
-                    <label class="control-label" for="ra"></label>
-                    <div class="controls">
-                        <input id="ra" name="ra" placeholder="RA" class="input-small" type="text">
-
+                <div class="row form-group">
+                    <div class="col-md-8">
+                        <input id="keyu2" name="keyu2" placeholder="Confirmação" class="form-control" required="" type="password">
+                         <h4><label id="erro_senha" class="label btn-warning">As senhas não conferem</label></h4>
                     </div>
                 </div>
-                <!-- Text input-->
-                <div class="control-group">
-                    <label class="control-label" for="tel"></label>
-                    <div class="controls">
-                        <input id="tel" name="tel" placeholder="Telefone" class="input-small" required="" type="text">
-
-                    </div>
-                </div>
-                <!-- Text input-->
-                <div class="control-group">
-                    <label class="control-label" for="email"></label>
-                    <div class="controls">
-                        <input id="email" name="email" placeholder="Email" class="input-large" required="" type="text">
-
-                    </div>
-                </div>
-                <!-- Select Basic -->
-                <div class="control-group">
-                    <label class="control-label" for="turma"></label>
-                    <div class="controls">
-                        <select id="turma" name="turma" class="input-medium">
-                            <option>ADS</option>
-                        </select>
-                    </div>
-                </div>
-                <!-- Text input-->
-                <div class="control-group">
-                    <label class="control-label" for="name_user"></label>
-                    <div class="controls">
-                        <input id="name_user" name="name_user" placeholder="Login" class="input-medium" required="" type="text">
-
-                    </div>
-                </div>
-                <!-- Password input-->
-                <div class="control-group">
-                    <label class="control-label" for="keyu"></label>
-                    <div class="controls">
-                        <input id="keyu" name="keyu" placeholder="Senha" class="input-medium" required="" type="password">
-
-                    </div>
-                </div>
-                <!-- Button (Double) -->
-                <div class="control-group">
-                    <label class="control-label" for="button1id"></label>
-                    <div class="controls">
-                        <button id="button1id" name="button1id" class="btn btn-success">cadastrar</button>
-                        <button id="cancelar" name="cancelar" class="btn btn-danger">Cancelar</button>
-                    </div>
-                </div>
-            </fieldset>
-        </form>
-        {include file="footer.tpl"}
-    </body>    
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="button1id"></label>
+            <div class="controls">
+                <input name="tipo" value="2" type="hidden">
+                <button id="button1id" class="btn btn-success">cadastrar</button>
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </form>
+    {include file="footer.tpl"}
+    <script src="./assets/js/complexifyjs/jquery.complexify.min.js"></script>
+    <script src="./system/funcoes/js/f_cadastros.js"></script>
+</body>    
 </html>

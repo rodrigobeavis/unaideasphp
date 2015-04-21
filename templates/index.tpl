@@ -38,7 +38,7 @@
         <nav id="menu">
             <ul>
                 <li><a href="index.php">Início</a></li>
-                <li><a href="" data-toggle="modal" data-target="#cadastro">Cadastrar</a></li>
+                <li><a href="" data-toggle="modal" data-target="#cadastro">Criar Conta</a></li>
                 <li>Sobre</li>
                 <li style="height: 30px; top:100px;"><span style="font-size:20pt; vertical-align:top"><a href="" data-toggle="modal" data-target="#fale_conosco">Fale conosco</a></span></li>
             </ul>
@@ -48,23 +48,22 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="gridSystemModalLabel">Acessar</h4>
+                        <h4 class="modal-title" id="gridSystemModalLabel">Cadastro de usuário</h4>
+                        <form id="identifica_tipo" method='POST' action=''>
+                            <label>Selecione o tipo de acesso</label>
+                            <input class="control-group" type="radio" name="tipo_user" id="tipo_user1" value="1" /> Aluno 
+                            <input class="control-group" type="radio" name="tipo_user" id="tipo_user2" value="2" /> Professor 
+                            <input class="control-group" type="radio" name="tipo_user" id="tipo_user3" value="3" /> Investidor 
+                        </form>
                     </div>
                     <div class="modal-body">
                         <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-                                <form method='POST' action='login.php'>
-                                    <input type="text" name='user_name' id="user_name" class="form-control" placeholder="Insira seu usuário"  required><br>
-                                    <input placeholder="Senha" name='keyu' id="keyu" class="form-control" type="password"  required><br>
-                                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Entrar" data-toggle="tooltip" data-placement="left" title="Click Aqui para entrar.">
-                                </form>
+                            <div class="col-md-12">
+                                <div id="formulario"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Cadastrar?</button>
-                    </div>
+                    <div class="modal-footer"> </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
@@ -73,29 +72,32 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="gridSystemModalLabel">Acessar</h4>
+                        <h4 class="modal-title" id="gridSystemModalLabel">Contato</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="row">
-                            <form method='POST' action='login.php'>
+                        <form method='POST' action='' class="">
+                            <div class="row">
                                 <div class="col-md-10 col-md-offset-1">
-
-                                    <div class="col-md-12"><input type="email" name='email_fale_conosco' id="email_fale_conosco" class="form-control" placeholder="Insira seu Email"  required></div>
-                                    <div class="col-md-12">
-                                        <!-- Textarea -->
-                                        <div class="control-group">
-                                            <label class="control-label" for="textarea">Texto Email:</label>
-                                            <div class="controls">                     
-                                                <textarea id="textarea_fale_conosco" name="textarea_fale_conosco"></textarea>
+                                    <div class="row">
+                                        <div class="col-md-12"><input type="email" name='email_fale_conosco' id="email_fale_conosco" class="form-control" placeholder="Insira seu Email"  required></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <!-- Textarea -->
+                                            <div class="control-group">
+                                                <label class="control-label" for="textarea"></label>
+                                                <div class="controls">                     
+                                                    <textarea id="textarea_fale_conosco" class="form-control" rows="5" name="textarea_fale_conosco" placeholder="Texto..." required></textarea>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                        </div>
+                            </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
                         <input class="btn btn-primary" type="submit" value="Enviar" data-toggle="tooltip" data-placement="left" title="Click Aqui para enviar">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
                     </div>
                     </form>
                 </div><!-- /.modal-content -->
@@ -176,24 +178,22 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="gridSystemModalLabel">Acesso</h4>
+                    <h4 class="modal-title" id="gridSystemModalLabel">Login</h4>
                 </div>
-                <div class="modal-body">
-                    <form method='POST' action='login.php'>
+                <form method='POST' action='login.php'>
+                    <div class="modal-body">
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
-
                                 <input type="text" name='user_name' id="user_name" class="form-control" placeholder="Insira seu usuário"  required><br>
                                 <input placeholder="Senha" name='keyu' id="keyu" class="form-control" type="password"  required><br>
-
                             </div>
                         </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
-                    <input class="btn btn-primary" type="submit" value="Entrar" data-toggle="tooltip" data-placement="left" title="Click Aqui para entrar.">
-
-                </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div id="validacao"></div>
+                        <input class="btn btn-primary" type="submit" value="Entrar" data-toggle="tooltip" data-placement="left" title="Click Aqui para entrar.">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+                    </div>
                 </form>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -211,5 +211,6 @@
         </script>
     {/literal}   
     {include file="footer.tpl"}
+    <script src="./system/funcoes/js/f_index.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@ if (file_exists('./system/dao/DaoAutenticacao.php')) {
 }
 
 class AutenticarClass {
-    
+
     private $DAO;
 
     public function AutenticarClass() {
@@ -21,22 +21,32 @@ class AutenticarClass {
     }
 
     public function logar($dadosuser) {
-         $verificar = $this->DAO->localizarUser($dadosuser);
-         
-         foreach ($verificar as $value) {
-             $identifica = $value[0];
-         }
-         $this->direcionar($identifica);
-         return $identifica;       
+        $verificar = $this->DAO->localizarUser($dadosuser);
+        return $verificar[0];
     }
-    private function direcionar($identifica) {
-        if($identifica >= 1){         
-            echo '<script>window.alert("logado");</script>';
-           header("refresh: 0; url=area_usuario.php");
-        }  else {
-           echo '<script>window.alert("Verifique seus dados e tente novamente");</script>';
-           echo '<script> history.back();</script>';
+    public function identificarUsuario($id) {
+        $inf_user = $this->DAO->localizarUserDados($id);
+        $inf_user = $inf_user[0];
+        if(isset($inf_user)){
+            $_SESSION['user_name'] = $inf_user['user_name'];
+            $_SESSION['area_user'] = $inf_user['area_user'];
+            $_SESSION['acesso_user'] = $inf_user['acesso_user'];
         }
+        switch ($inf_user['area_user']) {
+            case 0:
+                $url = "area_usuario.php";
+                break;
+            case 1:
+                $url = "area_usuario.php";
+                break;
+            case 2:
+                $url = "area_professor.php";
+                break;
+            case 3:
+                $url = "area_professor.php";
+                break;
+        }
+        return $url;
     }
- 
+
 }
