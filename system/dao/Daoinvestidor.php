@@ -60,7 +60,6 @@ class DaoInvestidor extends PDOConnectionFactory {
 //    }
     public function gravarInvestidor($cadastro) {
         //user name não deve ser igual a existentes no banco de dados.
-        var_dump($cadastro);
         try {
             $sql = "start transaction;
                         INSERT INTO autenticacao
@@ -73,10 +72,7 @@ class DaoInvestidor extends PDOConnectionFactory {
                         VALUES
                            (:rg_investidor,:telefone_investidor,:nome_investidor,:email_investidor,@id_autenticacao,1);
                     commit";
-            
-      
             $stmt = $this->conex->prepare($sql);
-
             //autenticação
             $stmt->bindParam(':user_name', $cadastro['user_name'], PDO::PARAM_STR);
             $stmt->bindParam(':area_user', $cadastro['tipo'], PDO::PARAM_STR);
