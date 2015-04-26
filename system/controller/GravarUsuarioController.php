@@ -47,8 +47,7 @@ class GravarUsuarioController {
                 $verificacao = $this->DAO_investidor->gravarInvestidor($cadastro);
                 break;
         }
-        var_dump($verificacao);
-        
+               
         return $cadastro;
      }
   

@@ -86,9 +86,7 @@
                         </table>
                         <input type="submit" value="Cadastrar">
                     </div>
-
                 </form>
-
             </div>
         </div>
         {literal}

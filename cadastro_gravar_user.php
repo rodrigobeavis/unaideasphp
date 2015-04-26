@@ -12,8 +12,13 @@ if (!isset($_SESSION)) {
 require_once './system/controller/GravarUsuarioController.php';
 
 
+
+
 $cadastro = $_REQUEST;
 $cadastro['keyu'] = md5($cadastro['keyu']);
+
+var_dump($cadastro);
+
 
 if (isset($cadastro['user_name'])) {
 $gravar_controller = new GravarUsuarioController();
@@ -21,4 +26,5 @@ $verificacao_cadastro = $gravar_controller->gravarUsuario($cadastro);
 
 }   
 
-//var_dump($verificacao_cadastro);
+var_dump($verificacao_cadastro);
+//header("refresh: 0; url=index.php");

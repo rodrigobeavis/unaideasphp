@@ -27,7 +27,7 @@
                 <input id="tel" name="tel" placeholder="Telefone" class="form-control" required="" type="text">
             </div>
             <div class="col-md-3">
-                <select id="turma" name="turma" class="form-control">
+                <select id="turma" name="turma" class="form-control" required>
                     <option disabled selected>Turma...</option>
                     {section name=turma loop=$lista_turmas}
                         <option value="{$lista_turmas[turma].id_turma}">{$lista_turmas[turma].curso_turma}</option>

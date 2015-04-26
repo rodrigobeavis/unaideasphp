@@ -19,4 +19,4 @@ $smarty = new Smarty;
 //$smarty->cache_lifetime = 120;
 
 $smarty->assign("title", "UNAIDEAS");
-$smarty->display('projetos.tpl');
+$smarty->display('projetos_1.tpl');
