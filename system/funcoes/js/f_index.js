@@ -7,7 +7,7 @@
 
 $(document).ready(function () {
     $("input[name='tipo_user']").click(function () {
-        $("#formulario").html("");
+       $("#formulario").html("");
         var self = $(this);
         var tipo = self.val();
         

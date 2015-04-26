@@ -20,7 +20,6 @@ class DaoUsuario extends PDOConnectionFactory {
     }
 
     public function gravarUsuario($cadastro) {
-        var_dump($cadastro);
          try {
             $sql = "start transaction;
                     INSERT INTO autenticacao

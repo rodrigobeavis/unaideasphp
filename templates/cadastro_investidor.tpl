@@ -7,7 +7,7 @@
     </head>
     <body class="container">
     <legend class="well well-sm">Investidor</legend>
-    <form method='POST' action='cadastro_gravar_user.php' class="">
+    <form id="cadastro_gravar_user" method='POST' action='' class="">
         <div class="row form-group">
             <div class="col-md-5">
                 <input id="nome_investidor" name="nome_investidor" placeholder="Nome" required="" class="form-control" type="text">
@@ -45,19 +45,19 @@
                     </div>
                     <div class="col-md-4">
                         <h4><label id="erro_senha" class="label btn-warning">As senhas não conferem</label></h4>
+                        <input id="tipo" name="tipo" value="3" type="hidden">
                     </div>
                 </div>
             </div>
-        </div>
+        </div> </form>
         <div class="control-group">
             <label class="control-label" for="button1id"></label>
-            <div class="controls">
-                <input name="tipo" value="3" type="hidden">
+            <div class="controls">        
                 <button id="button1id" class="btn btn-success">cadastrar</button>
                 <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
             </div>
         </div>
-    </form>
+   
     {include file="footer.tpl"}
     <script src="./assets/js/complexifyjs/jquery.complexify.min.js"></script>
     <script src="./system/funcoes/js/f_cadastros.js"></script>

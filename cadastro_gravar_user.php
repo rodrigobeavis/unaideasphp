@@ -26,5 +26,5 @@ $verificacao_cadastro = $gravar_controller->gravarUsuario($cadastro);
 
 }   
 
-var_dump($verificacao_cadastro);
+//var_dump($verificacao_cadastro);
 //header("refresh: 0; url=index.php");
