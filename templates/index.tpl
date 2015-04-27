@@ -37,10 +37,10 @@
 
         <nav id="menu">
             <ul>
-                <li><a href="index.php">Início</a></li>
-                <li><a href="" data-toggle="modal" data-target="#cadastro">Criar Conta</a></li>
-                <li>Sobre</li>
-                <li style="height: 30px; top:100px;"><span style="font-size:20pt; vertical-align:top"><a href="" data-toggle="modal" data-target="#fale_conosco">Fale conosco</a></span></li>
+                <li><a class="menu_index" href="index.php">Início</a></li>
+                <li><a class="menu_index" href="" data-toggle="modal" data-target="#cadastro">Criar Conta</a></li>
+                <li><a href="#" class="menu_index">Sobre</a></li>
+                <li style="height: 30px; top:100px;"><span style="font-size:20pt; vertical-align:top"><a class="menu_index" href="" data-toggle="modal" data-target="#fale_conosco">Fale conosco</a></span></li>
             </ul>
         </nav>
         <div class="modal fade" id="cadastro" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">

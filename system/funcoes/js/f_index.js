@@ -10,7 +10,7 @@ $(document).ready(function () {
        $("#formulario").html("");
         var self = $(this);
         var tipo = self.val();
-        
+       
         var page = "";
         switch (tipo) {
             case "1":
@@ -23,6 +23,8 @@ $(document).ready(function () {
                 page = "cadastro_investidor.php";
                 break;
         }
+        
+        
         $.ajax({
                 //pegando a url apartir da action do form
             url: page,

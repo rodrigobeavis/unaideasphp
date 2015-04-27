@@ -61,8 +61,6 @@ function ajaxforms(page) {
     var dados = $('#cadastro_gravar_user').serialize();
 
     alert(dados);
-    //var page = "cadastro_usuario.php";
-
     alert(page);
 
     $.ajax({
@@ -72,9 +70,6 @@ function ajaxforms(page) {
         success: limparForm()
 //        context: jQuery('#formulario'),
 //        success: 
-
-
-
     });
 
     function limparForm() {
