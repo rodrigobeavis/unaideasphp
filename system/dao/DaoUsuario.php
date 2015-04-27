@@ -11,6 +11,12 @@ if (file_exists('./system/pdo/PDOConnectionFactory.php')) {
     require_once('../pdo/PDOConnectionFactory.php');
 }
 
+if (file_exists('./system/model/UsuarioClass.php')) {
+    require_once('./system/model/UsuarioClass.php');
+} else {
+    require_once('../model/UsuarioClass.php');
+}
+
 class DaoUsuario extends PDOConnectionFactory {
 
     private $conex = null;

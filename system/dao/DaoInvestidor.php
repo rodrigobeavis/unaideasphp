@@ -16,7 +16,11 @@ if (file_exists('./system/pdo/PDOConnectionFactory.php')) {
 } else {
     require_once('../pdo/PDOConnectionFactory.php');
 }
-
+if (file_exists('./system/model/InvestidorClass.php')) {
+    require_once('./system/model/InvestidorClass.php');
+} else {
+    require_once('../model/InvestidorClass.php');
+}
 class DaoInvestidor extends PDOConnectionFactory {
 
     private $conex = null;
