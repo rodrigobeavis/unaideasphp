@@ -23,5 +23,5 @@ $smarty->force_compile = true;
 //$smarty->cache_lifetime = 120;
 
 
-$smarty->assign("title", "Área do usuário");
+$smarty->assign("title", "UNAIDEAS - Usu&aacute;rio");
 $smarty->display('area_usuario.tpl');

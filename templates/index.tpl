@@ -116,7 +116,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="gridSystemModalLabel">Login</h4>
                 </div>
-                <form method='POST' action='login.php'>
+                <form id="login_form" method='POST' action='login.php'>
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
@@ -134,8 +134,10 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+    {include file="footer.tpl"}
+    <script src="./system/funcoes/js/f_index.js"></script>
     {literal}
-        <script>
+        <script>           
             function mostraDescricao(exibe, esconde, esconde2) {
                 document.getElementById(exibe).style.display = "block";
                 document.getElementById(esconde).style.display = "none";
@@ -144,9 +146,7 @@
             function esconde(esconder) {
                 document.getElementById(esconder).style.display = "none";
             }
-        </script>
+           </script>
     {/literal}   
-    {include file="footer.tpl"}
-    <script src="./system/funcoes/js/f_index.js"></script>
 </body>
 </html>

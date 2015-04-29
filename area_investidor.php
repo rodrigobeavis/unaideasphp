@@ -21,5 +21,5 @@ $smarty = new Smarty;
 //$smarty->cache_lifetime = 120;
 
 
-$smarty->assign("title", "UNAIDEAS");
+$smarty->assign("title", "UNAIDEAS - Investidor");
 $smarty->display('investidor.tpl');

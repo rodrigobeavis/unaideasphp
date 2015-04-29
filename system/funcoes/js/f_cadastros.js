@@ -73,7 +73,7 @@ function ajaxforms(page) {
     });
 
     function limparForm() {
-        alert('cadastro realizado');
+                alertify.alert('cadastro realizado');
         $(':input', '#cadastro_gravar_user')
                 .removeAttr('checked')
                 .removeAttr('selected')

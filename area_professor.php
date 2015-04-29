@@ -21,5 +21,5 @@ $smarty = new Smarty;
 //$smarty->cache_lifetime = 120;
 
 
-$smarty->assign("title", "UNAIDEAS");
+$smarty->assign("title", "UNAIDEAS - Professor");
 $smarty->display('area_professor.tpl');
