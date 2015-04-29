@@ -12,7 +12,7 @@ if (!isset($_SESSION)) {
 }
 
 require './assets/Smarty/libs/Smarty.class.php';
-
+include_once('./system/funcoes/f_login.php');
 $smarty = new Smarty;
 
 //$smarty->force_compile = true;
