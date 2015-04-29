@@ -10,18 +10,18 @@
     <form id="cadastro_gravar_user" method='POST' action='' class="">
         <div class="row form-group">
             <div class="col-md-5">
-                <input id="nome_professor" name="nome_professor" placeholder="Nome" required="" class="form-control" type="text">
+                <input id="nome_professor" name="nome_professor" placeholder="Nome" maxlength="90" required="" class="form-control" type="text">
             </div>
             <div class="col-md-3">
-                <input id="mat_professor" name="mat_professor" placeholder="Matrícula" class="form-control" required="" type="text">
+                <input id="mat_professor" name="mat_professor" placeholder="Matrícula" maxlength="12" class="form-control" required="" type="text">
             </div>
         </div>
         <div class="row form-group">
             <div class="col-md-5">
-                <input id="email_professor" name="email_professor" placeholder="Email" class="form-control" required="" type="text">
+                <input id="email_professor" name="email_professor" placeholder="Email" maxlength="100" class="form-control" required="" type="text">
             </div>
             <div class="col-md-3">
-                <input id="telefone_professor" name="telefone_professor" placeholder="Telefone" class="form-control" required="" type="text">
+                <input id="telefone_professor" name="telefone_professor" placeholder="Telefone" maxlength="12"class="form-control" required="" type="text">
             </div>
             <div class="col-md-3">
                 <select id="tipo_professor" name="tipo_professor" class="form-control">
@@ -36,12 +36,12 @@
             <div class="col-md-6">
                 <div class="row form-group">
                     <div class="col-md-8">
-                        <input id="user_name" name="user_name" placeholder="Login" class="form-control" required="" type="text">
+                        <input id="user_name" name="user_name" maxlength="18" placeholder="Login" class="form-control" required="" type="text">
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-md-8">
-                        <input id="keyu" name="keyu" placeholder="Senha" class="form-control" required type="password">
+                        <input id="keyu" name="keyu" placeholder="Senha" maxlength="15" class="form-control" required type="password">
                     </div>
                     <div class="col-md-4">
                         <meter value="0" id="mtSenha" max="35">Força da senha</meter>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="row form-group">
                     <div class="col-md-8">
-                        <input id="keyu2"  placeholder="Confirme a senha" class="form-control" required type="password">
+                        <input id="keyu2"  placeholder="Confirme a senha" maxlength="15" class="form-control" required type="password">
                     </div>
                     <div class="col-md-4">
                         <h4><label id="erro_senha" class="label btn-warning">As senhas não conferem</label></h4>

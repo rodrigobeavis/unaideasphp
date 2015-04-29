@@ -27,11 +27,8 @@ class AutenticarClass {
     public function identificarUsuario($id) {
         $inf_user = $this->DAO->localizarUserDados($id);
         $inf_user = $inf_user[0];
-        if(isset($inf_user)){
-            $_SESSION['user_name'] = $inf_user['user_name'];
-            $_SESSION['area_user'] = $inf_user['area_user'];
-            $_SESSION['acesso_user'] = $inf_user['acesso_user'];
-        }
+        if(isset($inf_user['user_name'])){
+    
         switch ($inf_user['area_user']) {
             case 0:
                 $url = "area_usuario.php";
@@ -46,7 +43,15 @@ class AutenticarClass {
                 $url = "area_professor.php";
                 break;
         }
-        return $url;
+        
+        }
+        $dados = array('url'=> $url,
+                       'user_name' => $inf_user['user_name'],
+                        'area_user' => $inf_user['area_user'],
+                        'acesso_user' => $inf_user['acesso_user'],
+                );
+    
+        return $dados;
     }
 
     

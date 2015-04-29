@@ -1,8 +1,6 @@
 <?php
 
-if (!isset($_SESSION)) {
     session_start();
-}
 
 
 if (file_exists('./system/controller/AutenticarClass.php')) {
@@ -22,10 +20,14 @@ if (filter_input(INPUT_POST, 'user_name')) {
         $verificar = new AutenticarClass();
         $cod_user = $verificar->logar($dadosuser);
         if ($cod_user['autenticar'] >= 1) {
-            $tipo_usuario = $verificar->identificarUsuario($cod_user['id_autenticacao']);
+            $tipo_usuario = $verificar->identificarUsuario($cod_user['id_autenticacao']);          
+            $_SESSION['user_name'] = $tipo_usuario['user_name'];
+            $_SESSION['area_user'] = $tipo_usuario['area_user'];
+            $_SESSION['acesso_user'] = $tipo_usuario['acesso_user'];
+                        
             session_name(md5($_SESSION['user_name'] . $_SESSION['area_user'] . $_SESSION['acesso_user']));
-            session_regenerate_id();
-            header("refresh: 0; url=" . $tipo_usuario);
+            $_SESSION['id'] = base64_encode($cod_user['id_autenticacao'].".".rand(9999,999999));
+            header("refresh: 0; url=" . $tipo_usuario['url']);
         } else {
             unset($_SESSION);
             session_destroy();

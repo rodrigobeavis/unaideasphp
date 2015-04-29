@@ -8,7 +8,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-require './assets/Smarty/libs/Smarty.class.php';
+require_once './assets/Smarty/libs/Smarty.class.php';
 
 //$dados = $_REQUEST;
 //if ($dados['fail'] == base64_encode(1)) {

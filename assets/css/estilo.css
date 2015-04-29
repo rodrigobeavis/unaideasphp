@@ -1,11 +1,12 @@
 @charset "UTF-8";
 
-a:link {text-decoration: none !important;}
-a:active {text-decoration: none !important;}
-a:visited {text-decoration: none !important;}
-a:hover {text-decoration: none !important;}
 
-a.menu_index{ color:  #FFFFFF !important; }
+a:link {text-decoration: none !important; color: #FFFFFF !important;}
+a:active {text-decoration: none !important; color: #361e43 !important;}
+a:visited {text-decoration: none !important; color: #FFFFFF !important;}
+a:hover {text-decoration: none !important;color: #361e43 !important;}
+
+//a.menu_index{ color:  #FFFFFF !important; }
 
 
 @font-face {

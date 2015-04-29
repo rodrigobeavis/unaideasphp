@@ -55,7 +55,8 @@ class DaoAutenticacao extends PDOConnectionFactory {
                     FROM
                         autenticacao
                     WHERE
-                        id_autenticacao = :id";
+                        id_autenticacao = :id
+                        AND status = '1'";
             $stmt = $this->conex->prepare($sql);
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();

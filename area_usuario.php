@@ -11,15 +11,17 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-require './assets/Smarty/libs/Smarty.class.php';
+require_once './assets/Smarty/libs/Smarty.class.php';
+
+include_once('./system/funcoes/f_login.php');
 
 $smarty = new Smarty;
 
-//$smarty->force_compile = true;
+$smarty->force_compile = true;
 //$smarty->debugging = true;
 //$smarty->caching = true;
 //$smarty->cache_lifetime = 120;
 
 
-$smarty->assign("title", "UNAIDEAS");
+$smarty->assign("title", "Área do usuário");
 $smarty->display('area_usuario.tpl');
