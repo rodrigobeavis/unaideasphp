@@ -37,13 +37,3 @@ $(document).ready(function () {
         });
     });
 });
-
-
-$( "a#sobre" ).mouseover(function() {
-   $('#sobre_modal').modal('show');
-    });
-    
-$('#body_sobre').mouseleave(function() {
-    $('#sobre_modal').modal('hide');
-  });
-

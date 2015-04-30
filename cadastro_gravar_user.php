@@ -17,6 +17,8 @@ require_once './system/controller/GravarUsuarioController.php';
 $cadastro = $_REQUEST;
 $cadastro['keyu'] = md5($cadastro['keyu']);
 
+var_dump($cadastro);
+
 
 if (isset($cadastro['user_name'])) {
 $gravar_controller = new GravarUsuarioController();
