@@ -19,7 +19,6 @@ class UsuarioController {
     }
     public function listarUsuariosDaTurma($id) {
        $lista_usuarios_da_mesma_turma = $this->DAO->localizarUserDaMesmaTurma($id);
-       var_dump($id);
         return $lista_usuarios_da_mesma_turma; 
      }
 }

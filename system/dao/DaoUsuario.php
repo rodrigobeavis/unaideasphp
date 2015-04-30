@@ -73,11 +73,11 @@ class DaoUsuario extends PDOConnectionFactory {
                         turma t2 ON t1.id_turma = t2.id_turma
                     WHERE
                         t1.id_turma = (SELECT 
-                                id_usuario
+                                id_turma
                             FROM
                                 usuario
                             WHERE
-                                id_usuario = :id);";
+                                id_autenticacao = :id);";
             $stmt = $this->conex->prepare($sql);
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
