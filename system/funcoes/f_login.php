@@ -4,7 +4,7 @@
 //} else {
 //    require_once('../dao/DaoAutenticacao.php');
 //}
-//  
+//   
 //$autenticar = new DaoAutenticacao();
 if (!$_SESSION['user_name'] && !$_SESSION['id']) {
     unset($_SESSION);
