@@ -27,7 +27,9 @@ class ProjetoController {
         $this->model_projeto = new ProjetoClass();
     }
     
-    
+    public function gravarProjeto($projeto) {
+        
+    }
     
     
 }

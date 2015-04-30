@@ -13,7 +13,7 @@
             <ul>
                 <li><a class="menu_index" href="index.php">Início</a></li>
                 <li><a class="menu_index" href="" data-toggle="modal" data-target="#cadastro">Criar Conta</a></li>
-                <li><a href="#" class="menu_index">Sobre</a></li>
+                <li><a href="#" id="sobre" class="menu_index">Sobre</a></li>
                 <li style="height: 40px; top:100px;"><span style="font-size:20pt; vertical-align:top"><a class="menu_index" href="" data-toggle="modal" data-target="#fale_conosco">Fale conosco</a></span></li>
             </ul>
         </nav>
@@ -133,6 +133,21 @@
                 </form>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="sobre_modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div id="body_sobre" class="modal-content">
+                    <div class="modal-header">
+                        <div><p class="corpo_modal">Sobre</p></div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="jumbotron">
+                            <p>O ambiente universitário é um terreno extremamente propício ao aparecimento de boas ideias. Dentro da exigência das disciplinas em questão, de se elaborar projetos e aplicar neles todo o conhecimento amealhado ao longo do curso, essas ideias ganham forma e conteúdo, transformando-se em produtos interessantes, mas que muitas vezes se perdem ao final do semestre por falta de incentivo financeiro para transpor as paredes do campus e ganhar o mercado.</p>
+                        </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
     </div><!-- /.modal -->
     {include file="footer.tpl"}
     <script src="./system/funcoes/js/f_index.js"></script>
