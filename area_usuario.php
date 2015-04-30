@@ -51,6 +51,8 @@ $user_id;
 $area_user;
 $acesso_user;
 
+
+$smarty->assign("lista_usuarios_da_mesma_turma", $lista_usuarios_da_mesma_turma);
 $smarty->assign("user_name", $user_name);
 $smarty->assign("title", "UNAIDEAS - Usu&aacute;rio");
 $smarty->display('area_usuario.tpl');
