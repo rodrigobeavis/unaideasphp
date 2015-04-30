@@ -14,3 +14,9 @@ if (!$_SESSION['user_name'] && !$_SESSION['id']) {
             header("refresh: 0; url=index.php");
 }
 session_regenerate_id();
+
+$user_name = $_SESSION['user_name'];
+$user_id =  implode(" ",array_splice(explode(".",base64_decode($_SESSION['id'])), 0, 1));
+
+$area_user = $tipo_usuario['area_user'];
+$acesso_user = $tipo_usuario['acesso_user'];

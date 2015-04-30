@@ -26,7 +26,7 @@ class DaoUsuario extends PDOConnectionFactory {
     }
 
     public function gravarUsuario($cadastro) {
-         try {
+        try {
             $sql = "start transaction;
                     INSERT INTO autenticacao
                         (user_name,area_user,pw,acesso_user,status)
@@ -50,7 +50,7 @@ class DaoUsuario extends PDOConnectionFactory {
             $stmt->bindParam(':nome_usuario', $cadastro['nome_usuario'], PDO::PARAM_STR);
             $stmt->bindParam(':ra_usuario', $cadastro['ra'], PDO::PARAM_STR);
             $stmt->bindParam(':id_turma', $cadastro['turma'], PDO::PARAM_INT);
-            
+
             return $stmt->execute();
         } catch (PDOException $e) {
             echo $e->getMessage();
@@ -58,5 +58,34 @@ class DaoUsuario extends PDOConnectionFactory {
         parent::Close();
     }
 
+    public function localizarUserDaMesmaTurma($id) {
+        try {
+            $sql = "SELECT 
+                        t1.nome_usuario,
+                        t1.telefone,
+                        t1.ra_usuario,
+                        t1.id_turma,
+                        t1.id_usuario,
+                        t2.curso_turma
+                    FROM
+                        usuario t1
+                            INNER JOIN
+                        turma t2 ON t1.id_turma = t2.id_turma
+                    WHERE
+                        t1.id_turma = (SELECT 
+                                id_usuario
+                            FROM
+                                usuario
+                            WHERE
+                                id_usuario = :id);";
+            $stmt = $this->conex->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+        parent::Close();
+    }
 
 }

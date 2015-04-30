@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         {include file="header.tpl" title=$title}
         <link rel="stylesheet" type="text/css" href="./assets/css/estilo_pagina_idealizadores1.css">
+        <link rel="stylesheet" type="text/css" href="./assets/js/bootstrap-tagsinput/bootstrap-tagsinput.css">
     </head>
     <body>
         <img src="./assets/img/barra-superior-geral.png" id="barra-superior">	
@@ -16,12 +17,15 @@
                     </td>
                     <td>
                         <nav id="menu">
-                            <ul style="margin-top: 45px; margin-bottom: 0px">
+                            <ul style="margin-top: 35px; margin-bottom: 0px">
                                 <a href="#" onclick="exibeMeusProjetos();">
                                     <li>Meus projetos</li>
                                 </a>
                                 <a href="#abrirModal" onclick="exibeCadastrarProjeto();">
                                     <li >Cadastrar novo projeto</li>
+                                </a>
+                                <a href="#">
+                                    <li >{$user_name}</li>
                                 </a>
                             </ul>
                         </nav>
@@ -29,92 +33,29 @@
                 </tr>
             </table>
         </div>
-        <!-- <section id="section_projetos">
-                <div id="projeto"><a href="#">
-                        <table id="table_projeto">
-                                <tr>
-                                        <td>
-                                                <h2>Nome do projeto</h2>
-                                        </td>
-                                </tr>
-                                <tr>
-                                        <td>
-                                                <p>Aqui ficará a descrição do projeto. Esta descrição foi previamente escrita no momento do cadastro do projeto no sistema e vai ser de total responabilidade dos idealizadores.</p>
-                                        </td>
-                                </tr>
-                                <tr>
-                                        <td>
-                                                <p>Aqui ficará o percentual já concluído do projeto.</p>
-                                        </td>
-                                </tr>
-                        </table></a>
-                </div>
-        
-                <div id="projeto"><a href="#">
-                        <table id="table_projeto">
-                                <tr>
-                                        <td>
-                                                <h2>Nome do projeto</h2>
-                                        </td>
-                                </tr>
-                                <tr>
-                                        <td>
-                                                <p>Aqui ficará a descrição do projeto. Esta descrição foi previamente escrita no momento do cadastro do projeto no sistema e vai ser de total responabilidade dos idealizadores.</p>
-                                        </td>
-                                </tr>
-                                <tr>
-                                        <td>
-                                                <p>Aqui ficará o percentual já concluído do projeto.</p>
-                                        </td>
-                                </tr>
-                        </table></a>
-        
-                </div>
-        
-                <div id="projeto"><a href="#">
-                        <table id="table_projeto">
-                                <tr>
-                                        <td>
-                                                <h2>Nome do projeto</h2>
-                                        </td>
-                                </tr>
-                                <tr>
-                                        <td>
-                                                <p>Aqui ficará a descrição do projeto. Esta descrição foi previamente escrita no momento do cadastro do projeto no sistema e vai ser de total responabilidade dos idealizadores.</p>
-                                        </td>
-                                </tr>
-                                <tr>
-                                        <td>
-                                                <p>Aqui ficará o percentual já concluído do projeto.</p>
-                                        </td>
-                                </tr>
-                        </table></a>
-        
-                </div>
-        
-                <div id="projeto"><a href="#">
-                        <table id="table_projeto">
-                                <tr>
-                                        <td>
-                                                <h2>Nome do projeto</h2>
-                                        </td>
-                                </tr>
-                                <tr>
-                                        <td>
-                                                <p>Aqui ficará a descrição do projeto. Esta descrição foi previamente escrita no momento do cadastro do projeto no sistema e vai ser de total responabilidade dos idealizadores.</p>
-                                        </td>
-                                </tr>
-                                <tr>
-                                        <td>
-                                                <p>Aqui ficará o percentual já concluído do projeto.</p>
-                                        </td>
-                                </tr>
-                        </table></a>
-        
-                </div>
-        
-        </section>-->
-
+        <section id="section_projetos">
+            <div id="projeto">
+                <a href="#">
+                    <table id="table_projeto">
+                        <tr>
+                            <td>
+                                <h2>Nome do projeto</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Aqui ficará a descrição do projeto. Esta descrição foi previamente escrita no momento do cadastro do projeto no sistema e vai ser de total responabilidade dos idealizadores.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Aqui ficará o percentual já concluído do projeto.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </a>
+            </div>
+        </section>
         <footer>
             <div id="rodape">
                 <p>UnaIdeas</p>
@@ -126,17 +67,18 @@
                 <a class="close" title="Fechar" href="#close">X</a>
                 <h2>Cadastro de novo projeto</h2>
 
-                <form id="formulario_cadastro_projeto" method="post" action="">
-                    <input name="nome_projeto" required type="text" placeholder="Nome do projeto" style="width: 100%;">
+                <form id="formulario_cadastro_projeto" method="post" action="#">
+                    <input name="nome_projeto" required type="text" placeholder="Nome do projeto" style="width: 100%;"  maxlength="180">
 
-                    <textarea name="descricao_projeto" required type="text" placeholder="Descrição do projeto" style="width: 100%;" rows="5"></textarea>
+                    <textarea name="descricao_projeto" required type="text" placeholder="Descrição do projeto" style="width: 100%;" rows="5" maxlength="1800"></textarea>
+                    <input class="palavras_chave_input" name="plavra_chave" required type="text" placeholder="Palavras chave" data-role="tagsinput" style="width: 100%;"  maxlength="500">
                     <div id="grupo">
                         <table id="table_grupo" style="width:100%;">
                             <tr>
                                 <td style="width:45%;">
                                     <span  class="grupo">Integrantes do grupo</span>
 
-                                    <input type="button" id="botao" value="+ Adicionar" onclick="adicionaIntegrante()"></br>			
+                                    <input type="button" id="botao" value="+ Adicionar" onclick="adicionaIntegrante();"></br>			
 
                                     <div id="input_integrante">
                                         <input name="nome" type=text required placeholder='Nome do integrante' style='width: 70%;'>
@@ -156,7 +98,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <input type="submit" value="Cadastrar">
+                        <input type="submit" id="cadastro_projeto" value="Cadastrar">
                     </div>
 
                 </form>
@@ -206,5 +148,7 @@
             </script>
         {/literal}
         {include file="footer.tpl"}
+        <script src="./assets/js/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="./system/funcoes/js/f_user_area.js"></script>
     </body>
 </html>
