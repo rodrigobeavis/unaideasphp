@@ -77,7 +77,11 @@ class DaoUsuario extends PDOConnectionFactory {
                             FROM
                                 usuario
                             WHERE
-                                id_autenticacao = :id);";
+                                id_autenticacao = :id)
+                        AND t1.id_usuario NOT IN (SELECT 
+                                id_usuario
+                            FROM
+                                equipe)";
             $stmt = $this->conex->prepare($sql);
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();

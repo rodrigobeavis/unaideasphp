@@ -72,7 +72,7 @@
                     <input name="nome_projeto" required type="text" placeholder="Nome do projeto" style="width: 100%;"  maxlength="180">
 
                     <textarea name="descricao_projeto" required type="text" placeholder="Descrição do projeto" style="width: 100%;" rows="5" maxlength="1800"></textarea>
-                    <input class="palavras_chave_input" name="plavra_chave" required type="text" placeholder="Palavras chave"  style="width: 100%;"  maxlength="500"> <!-- data-role="tagsinput"-->
+                    <input class="palavras_chave_input" name="plavra_chave" required  type="text" placeholder="Palavras chave"  style="width: 100%;"  maxlength="500"> <!-- data-role="tagsinput"-->
                     <div id="grupo">
                         <table id="table_grupo" style="width:100%;">
                             <tr>
@@ -98,7 +98,7 @@
                                     <span id="texto_numero_integrantes" value="1" style="font-size:15pt; color:#666"> 1 Integrante(s)</span>
                                 </td>
                                 <td style="vertical-align: top; width: 30%;">
-                                    <span id="estado_projeto">Estado do projeto</span>
+                                    <span id="estado_projeto">Porcentagem do projeto</span>
                                     <input type="text" id="valor_status" size="5" style="color: white; text-align: center;">
                                     </br>						
 
@@ -118,15 +118,13 @@
         {literal}
             <script type="text/javascript">
                                        $(document).ready(function () {                                            
-                                            user_options(0);
-                                        });
-                                                
-                                                function user_options(id){
-                                                    alert(id);
+                                            user_options();
+                                        });     
+                                                function user_options(){
                                                     var detalhes = [];
                                                     detalhes = {/literal}{$lista_usuarios_da_mesma_turma|@json_encode}{literal};
                                                     campo_select = document.forms[0].nome;
-                                   
+                                                   
                                                     if (detalhes) {
                                                         campo_select.options.length = 0;
                                                         for (var i = 0; i < detalhes.length; i++)
@@ -134,7 +132,12 @@
                                                             campo_select.options[i] = new Option(detalhes[i]['nome_usuario']+" = RA - "+detalhes[i]['ra_usuario'], detalhes[i]['id_usuario']);
                                                         }
                                                     }
-                                                }                                               
+                                                } 
+                                         function copiar_option(id){
+                                             alert(id);
+                                             $('#nome'+id).html($('#nome').html());
+                                             alert($('#nome').html());
+                                         }
                                         function printValue() {
                                             var origem = document.getElementById("status_projeto").value;
                                             if (origem < 20)
@@ -160,14 +163,11 @@
                                             var proximadiv = quantidadeIntegrantes + 1;
                                            // input = "<input id='nome" + quantidadeIntegrantes + "' type=text required placeholder='Nome do integrante' style='width: 70%;'><input type='button' id='" + divanterior + "'class='botaoremove' value='-'' onclick='removeIntegrante(id)''></br></div><div id='" + quantidadeIntegrantes + "'>";
                                            input = "<select id='nome" + quantidadeIntegrantes + "' name='nome" + quantidadeIntegrantes + "'required placeholder='Nome do integrante' style='width: 70%;'> </select>\n\<input type='button' id='" + divanterior + "'class='botaoremove' value='-'' onclick='removeIntegrante(id)''></br></div><div id='" + quantidadeIntegrantes + "'>";
-                                              
-                                            
-        
-                                            document.getElementById(divanterior).innerHTML = input;
+                                           document.getElementById(divanterior).innerHTML = input;
                                             document.getElementById("texto_numero_integrantes").setAttribute("value", quantidadeIntegrantes);
                                             document.getElementById("texto_numero_integrantes").innerHTML = quantidadeIntegrantes + " Integrantes";
-                                        }
-
+                                            copiar_option(quantidadeIntegrantes);
+                                            }
                                         function removeIntegrante(valor) {
                                             var remover = valor;
                                             document.getElementById(remover).innerHTML = "";

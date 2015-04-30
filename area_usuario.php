@@ -31,11 +31,9 @@ $smarty = new Smarty;
 $usuario_controller = new UsuarioController();
 $lista_usuarios_da_mesma_turma = $usuario_controller->listarUsuariosDaTurma($user_id);
 
-var_dump($lista_usuarios_da_mesma_turma);
 
 if (filter_input(INPUT_POST, 'nome_projeto')) {
-     $projeto = $_REQUEST;
-      
+     $projeto = $_REQUEST; 
 }
 
 

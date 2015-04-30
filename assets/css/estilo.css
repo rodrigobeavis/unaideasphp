@@ -137,3 +137,7 @@ p#descricao-professor {
 p#descricao-investidor {
 	margin-top: 3px !important;
 }
+
+.cabecalho_new{
+    background-image: url("../img/barra-superior-home.png") !important;
+}

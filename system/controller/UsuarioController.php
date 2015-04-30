@@ -18,12 +18,6 @@ class UsuarioController {
           $this->DAO = new DaoUsuario();
     }
     public function listarUsuariosDaTurma($id) {
-       $lista_usuarios_da_mesma_turma = $this->DAO->localizarUserDaMesmaTurma($id);
-       
-       
-       
-       
-       
-       return $lista_usuarios_da_mesma_turma; 
+        return $lista_usuarios_da_mesma_turma = $this->DAO->localizarUserDaMesmaTurma($id); 
      }
 }
