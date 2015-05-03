@@ -52,11 +52,11 @@ $(document).ready(function () {
         }
 
         var validar_form = validar(tipo);
-      //  alert(validar_form);
+        //  alert(validar_form);
         if (validar_form == 0) {
             ajaxforms(page);
         } else {
-            alertify.error("Erro no cadastro verifique os campos!");
+            alertify.error("Erro no cadastro verifique o formulário!");
         }
 
 
@@ -75,7 +75,10 @@ function ajaxforms(page) {
             success: limparForm(),
 //            fail: erroAjax()
 //        context: jQuery('#formulario'),
-//        success: 
+//        success:
+            error: function () {
+                alertify.error("Falha ao enviar o formulário.");
+            }
         });
     }
     function limparForm() {
@@ -110,7 +113,7 @@ function validar(tipo) {
     } else {
         $('#button1id').removeAttr('data-dismiss', 'modal').removeAttr('data-toggle', 'modal').removeAttr('data-target', '#login');
     }
-   
+
     //alert(validar);
     return validar;
 }
@@ -132,9 +135,11 @@ $(document).ready(function ()
 {
     $('#email').change(function () {
         if ($.validateEmail($('#email').val())) {
-          //  alert("email valido");
+            //  alert("email valido");
         } else {
-           alertify.error("email invalido");
+            //alertify.error("email inválido");
+            alertify.alert("email inválido");
+            $('#email').focus();
         }
     });
 });
