@@ -25,7 +25,7 @@
             </div>
             <div class="col-md-3">
                 <select id="tipo_professor" name="tipo_professor" class="form-control">
-                    <option disabled selected>Tipo...</option>
+                    <option disabled selected value="">Tipo...</option>
                     <option value="1">Orientador</option>
                     <option value="2">Avaliador</option>
                     <option value="3">Avaliador/Orientador</option>
@@ -61,7 +61,7 @@
         <div class="control-group">
             <label class="control-label" for="button1id"></label>
             <div class="controls">
-                <button id="button1id" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#login">cadastrar</button>
+                <button id="button1id" class="btn btn-success" >cadastrar</button><!-- data-dismiss="modal" data-toggle="modal" data-target="#login" -->
                 <button id="cancelar" type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
             </div>
         </div>

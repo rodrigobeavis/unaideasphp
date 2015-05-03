@@ -18,11 +18,11 @@ session_destroy();
 unset($_SESSION);
 
 if (empty($_SESSION)) {
-    if (file_exists('../../index.html')) {
-        header('Location: ../../index.html');
+    if (file_exists('../../index.php')) {
+        header('Location: ../../index.php');
     } else {
-        header('Location: ./index.html');
+        header('Location: ./index.php');
     }
-    header("Refresh: 2; url=../../index.html");
-    header("Refresh: 2; url=./index.html");
+    header("Refresh: 2; url=../../index.php");
+    header("Refresh: 2; url=./index.php");
 }

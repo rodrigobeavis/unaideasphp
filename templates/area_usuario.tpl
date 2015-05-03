@@ -16,14 +16,15 @@
                         <a class="navbar-brand img-responsive" href="index.php"><img class="img-responsive" src="./assets/img/una-ideas-logo.png"></a>
                     </div>
                 </div>
-                        <div class="pull-right">                            
-                            <ul class="nav nav-pills">
-                                <li><a href="#" onclick="exibeMeusProjetos();">Meus projetos</a></li>
-                                <li><a href="#abrirModal" onclick="exibeCadastrarProjeto();">Cadastrar novo projeto</a></li>
-                                <li><a href="#">{$user_name}</a></li>
-                                <li><a href="#" data-toggle="modal" data-target="#fale_conosco">Fale conosco</a></li>               
-                            </ul>
-                        </div>             
+                <div class="pull-right">                            
+                    <ul class="nav nav-pills">
+                        <li><a href="#" onclick="exibeMeusProjetos();">Meus projetos</a></li>
+                        <li><a href="#abrirModal" onclick="exibeCadastrarProjeto();">Cadastrar novo projeto</a></li>
+                        <li><a href="#">{$user_name}</a></li>
+                        <li><a href="logout.php" >Logout</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#fale_conosco">Fale conosco</a></li>               
+                    </ul>
+                </div>             
             </nav>
         </header>
         <!--  <img src="./assets/img/barra-superior-geral.png" id="barra-superior">	
@@ -94,7 +95,7 @@
                     </table>
                 </a>
             </div>
-            
+
         </section>
         <footer>
             <div id="rodape">

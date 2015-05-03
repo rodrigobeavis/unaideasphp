@@ -53,7 +53,7 @@
         <div class="control-group">
             <label class="control-label" for="button1id"></label>
             <div class="controls">        
-                <button id="button1id" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#login">cadastrar</button>
+                <button id="button1id" class="btn btn-success" >cadastrar</button> <!-- data-dismiss="modal" data-toggle="modal" data-target="#login" -->
                 <button id="cancelar" type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
             </div>
         </div>

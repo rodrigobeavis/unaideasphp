@@ -50,16 +50,21 @@ $(document).ready(function () {
                 page = "cadastro_investidor.php";
                 break;
         }
-        ajaxforms(page);
+
+        var validar_form = validar(tipo);
+      //  alert(validar_form);
+        if (validar_form == 0) {
+            ajaxforms(page);
+        } else {
+            alertify.error("Erro no cadastro verifique os campos!");
+        }
+
+
 
     });
 });
 
 function ajaxforms(page) {
-    $('tel').serialize();
-
-
-
     var dados = $('#cadastro_gravar_user').serialize();
 
     if (dados) {
@@ -86,6 +91,54 @@ function ajaxforms(page) {
 //    }
 
 }
+function validar(tipo) {
+    var validar = 0;
+    $("#cadastro_gravar_user input").each(function () {
+        $(this).val() == "" ? validar++ : "";
+    });
+
+    if (tipo == "1") {
+        $('#turma').val() == null ? "" : validar--;//validar select turma
+    }
+    if (tipo == "2") {
+        $('#tipo_professor').val() == null ? validar++ : ""; //validar select tipo de professor
+        //  alert($('#tipo_professor').val());
+    }
+    //instruções para fachar o modal de cadastro e abrir o modal login se o formulario estiver correto
+    if (validar == 0) {
+        $('#button1id').attr('data-dismiss', 'modal').attr('data-toggle', 'modal').attr('data-target', '#login');
+    } else {
+        $('#button1id').removeAttr('data-dismiss', 'modal').removeAttr('data-toggle', 'modal').removeAttr('data-target', '#login');
+    }
+   
+    //alert(validar);
+    return validar;
+}
+
+
+
+
+
+$.validateEmail = function (email)
+{
+    er = /^[a-zA-Z0-9][a-zA-Z0-9\._-]+@([a-zA-Z0-9\._-]+\.)[a-zA-Z-0-9]{2}/;
+    if (er.exec(email))
+        return true;
+    else
+        return false;
+};
+
+$(document).ready(function ()
+{
+    $('#email').change(function () {
+        if ($.validateEmail($('#email').val())) {
+          //  alert("email valido");
+        } else {
+           alertify.error("email invalido");
+        }
+    });
+});
+
 $(function ($) {
     $("#tel").mask("(99) 9999-9999");
     $("#telefone_professor").mask("(99) 9999-9999");
