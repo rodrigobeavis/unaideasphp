@@ -20,7 +20,7 @@ body {
 	overflow-x:hidden !important;
 	overflow-y:hidden !important;
 }
-
+/*
 #barra-superior {
 	width: 110% !important;
 	position: absolute !important;
@@ -37,7 +37,7 @@ body {
 	top: 30px !important;
 }
 
-/*Formataçõa do menu*/
+Formataçõa do menu
 
 nav#menu ul {
 	font-family: BebasNeue !important;
@@ -67,7 +67,7 @@ nav#menu li:hover {
 	margin-right: 20px !important;
 	padding: 5px 10px 0px 10px !important;
 	background-color: rgba(223, 223, 223, 100) !important;
-}
+}*/
 
 table {
 	position: absolute !important;
@@ -140,4 +140,20 @@ p#descricao-investidor {
 
 .cabecalho_new{
     background-image: url("../img/barra-superior-home.png") !important;
+    font-family: BebasNeue !important;
+    font-size: 30px !important;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+menu_index{ 
+   padding-top:50px !important;
+}
+
+.texto_sobre{
+     font-family: Helvetica,Arial,sans-serif !important;
+     font-size: 20px !important;
+     text-align: justify !important;
+     
+     
 }

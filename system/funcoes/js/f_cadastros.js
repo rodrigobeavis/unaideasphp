@@ -31,7 +31,6 @@ $(function () {
 });
 
 $(document).ready(function () {
-    // $('#turma').data("placeholder","Selecione a turma").chosen();
     $('#turma').chosen({no_results_text: "Oops, não encontrado!!"});
 });
 
@@ -57,29 +56,37 @@ $(document).ready(function () {
 });
 
 function ajaxforms(page) {
+    $('tel').serialize();
+
+
 
     var dados = $('#cadastro_gravar_user').serialize();
 
-    //alert(dados);
-    //alert(page);
-
-    $.ajax({
-        type: 'POST',
-        url: page,
-        data: dados,
-        success: limparForm()
+    if (dados) {
+        $.ajax({
+            type: 'POST',
+            url: page,
+            data: dados,
+            success: limparForm(),
+//            fail: erroAjax()
 //        context: jQuery('#formulario'),
 //        success: 
-    });
-
+        });
+    }
     function limparForm() {
-                alertify.alert('cadastro realizado');
+        alertify.success("cadastro realizado");
         $(':input', '#cadastro_gravar_user')
                 .removeAttr('checked')
                 .removeAttr('selected')
                 .not(':button, :submit, :reset, :hidden, :radio, :checkbox')
                 .val('');
     }
-
+//    function erroAjax() {
+//        alertify.error("Erro ao enviar!");
+//    }
 
 }
+$(function ($) {
+    $("#tel").mask("(99) 9999-9999");
+    $("#telefone_professor").mask("(99) 9999-9999");
+});

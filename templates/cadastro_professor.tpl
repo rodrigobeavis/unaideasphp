@@ -61,13 +61,14 @@
         <div class="control-group">
             <label class="control-label" for="button1id"></label>
             <div class="controls">
-                <button id="button1id" class="btn btn-success">cadastrar</button>
-                <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+                <button id="button1id" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#login">cadastrar</button>
+                <button id="cancelar" type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
             </div>
         </div>
     
     {include file="footer.tpl"}
     <script src="./assets/js/complexifyjs/jquery.complexify.min.js"></script>
+    <script src="./assets/js/maskedinput/jquery.maskedinput.min.js"></script>
     <script src="./system/funcoes/js/f_cadastros.js"></script>
 </body>    
 </html>
