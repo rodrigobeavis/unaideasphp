@@ -112,7 +112,7 @@ img#icone-investidor {
 	width: 140px !important;
 }
 
-p {
+p{
 	font-family: BebasNeue !important;
 	color: rgba(54, 30, 67, 100) !important;
 	font-size: 30px !important;
@@ -147,13 +147,12 @@ p#descricao-investidor {
 }
 
 menu_index{ 
-   padding-top:50px !important;
+   padding-top: 2% !important;
 }
 
 .texto_sobre{
      font-family: Helvetica,Arial,sans-serif !important;
      font-size: 20px !important;
      text-align: justify !important;
-     
-     
+   
 }

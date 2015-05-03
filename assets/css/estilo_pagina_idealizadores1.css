@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
-a:link {text-decoration: none; color: white;}
-a:active {text-decoration: none;}
-a:visited {text-decoration: none; color: white;}
-a:hover {text-decoration: none;}
+a:link {text-decoration: none !important; color: #FFFFFF !important;}
+a:active {text-decoration: none !important; color: #361e43 !important;}
+a:visited {text-decoration: none !important; color: #FFFFFF !important;}
+a:hover {text-decoration: none !important;color: #361e43 !important;}
 
 @font-face {
 	font-family: "BebasNeue";
@@ -16,18 +16,18 @@ body {
 	overflow-x: hidden;
 }
 
-#barra-superior{
+/*#barra-superior{
 	position: fixed;
 	width: 110%;
 	margin: -10px 0px 10px -10px;
 	z-index: 1;
-}
+}*/
 
-div#div_idmenu{
+/*div#div_idmenu{
 	top: 10px;
 	text-align: right;
-}
-
+}*/
+/*
 table#table_menu {
 	width:80%;
 	margin: 0px 10% 0px 10%;
@@ -74,10 +74,10 @@ nav#menu li:hover {
 	display: inline-block;
 	padding: 5px 10px 0px 10px;
 	background-color: white;
-}
+}*/
 
 #section_projetos{
-	margin-top: 8%;
+	margin-top: 1%;
 }
 
 
@@ -87,7 +87,7 @@ nav#menu li:hover {
 	background-color: #fff;
 	margin-left: 10%;
 	margin-right: 10%;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	border-radius: 10px;
 	box-shadow: 5px 5px 5px #888888;
 	transition: 0.1s;
@@ -238,4 +238,14 @@ box-shadow: 1px 1px 3px #000;
 	font-family: BebasNeue;
 	color: #361e43;
 	font-size: 18pt;
+}
+
+
+.cabecalho_new{
+    background-image: url("../img/barra-superior-roxa.png") !important;
+    font-family: BebasNeue !important;
+    font-size: 20px !important;
+    background-repeat: no-repeat!important;
+    background-size: 100% 100% !important;
+    height: 100% !important;
 }

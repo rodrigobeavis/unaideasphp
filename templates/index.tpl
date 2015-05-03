@@ -9,9 +9,9 @@
     <body>
         <div id="index_body">
             <header class="cabecalho_new">
-                <nav class="navbar ">
+                <nav class="navbar">
                     <div class="row container-fluid">
-                        <div class="navbar-header">                        
+                        <div class="col-md-3 navbar-header">                        
                             <a class="navbar-brand img-responsive" href="index.php"><img class="img-responsive" src="./assets/img/una-ideas-logo.png"></a>
                         </div>
                     </div>
@@ -19,13 +19,13 @@
                     <div class="menu_index pull-right">                            
                         <ul class="nav nav-pills">
                             <li><a href="index.php">Início</a></li>
-                            <li><a href="" data-toggle="modal" data-target="#cadastro">Criar Conta</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#cadastro">Criar Conta</a></li>
                             <li><a href="#" id="sobre" >Sobre</a></li>
-                            <li><a href="" data-toggle="modal" data-target="#fale_conosco">Fale conosco</a></li>               
+                            <li><a href="#" data-toggle="modal" data-target="#fale_conosco">Fale conosco</a></li>               
                         </ul>
                     </div>
                 </nav>
-
+                
             </header>
             <!--<img class="img-responsive" src="./assets/img/barra-superior-home.png" id="barra-superior">
             <img class="img-responsive" src="./assets/img/una-ideas-logo.png" id="logo-una-ideas">
@@ -57,7 +57,7 @@
                                 </div>
                             </div>
                         </div>
-                    <div class="modal-footer"> </div>
+                        <div class="modal-footer"> </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
@@ -91,7 +91,7 @@
                         </div>
                         <div class="modal-footer">
                             <input class="btn btn-primary" type="submit" value="Enviar" data-toggle="tooltip" data-placement="left" title="Click Aqui para enviar">
-                            <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                         </div>
                         </form>
                     </div><!-- /.modal-content -->
@@ -193,7 +193,7 @@
                         <div class="modal-footer">
                             <div id="validacao"></div>
                             <input class="btn btn-primary" type="submit" value="Entrar" data-toggle="tooltip" data-placement="left" title="Click Aqui para entrar.">
-                            <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                         </div>
                     </form>
                 </div><!-- /.modal-content -->
