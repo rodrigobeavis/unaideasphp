@@ -10,9 +10,6 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-
-
-
 require_once './assets/Smarty/libs/Smarty.class.php';
 require_once './system/controller/ProjetoController.php';
 require_once './system/controller/EquipeController.php';
@@ -24,17 +21,22 @@ if ($_REQUEST) {
 }
 
 $smarty = new Smarty;
-
-//var_dump($projeto);
-
-
 $usuario_controller = new UsuarioController();
+$ctrl_equipe = new EquipeController();
+$ctrl_projeto = new ProjetoController();
+
+
 $lista_usuarios_da_mesma_turma = $usuario_controller->listarUsuariosDaTurma($user_id);
 
 
+
 if (filter_input(INPUT_POST, 'nome_projeto')) {
-     $projeto = $_REQUEST; 
+    
+    $ctrl_projeto->gravarProjeto($projeto);
+    
 }
+
+
 
 
 

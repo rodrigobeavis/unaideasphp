@@ -23,18 +23,30 @@ class DaoProjeto extends PDOConnectionFactory {
         $this->conex = PDOConnectionFactory::getConnection();
     }
 
-    public function gravarProjeto($dados) {
+    public function gravarProjeto($projeto) {
         try {
-            $sql = "";
+            var_dump($projeto);
+            $sql = "INSERT INTO projeto
+                        (tema_projeto,
+                        descricao_projeto,
+                        palavras_chave_projeto,
+                        status,data_cadastro)
+                    VALUES
+                        (:tema_projeto,
+                        :descricao_projeto,
+                        :palavras_chave_projeto,
+                        :status,NOW())";
             $stmt = $this->conex->prepare($sql);
             //autenticação
-            $stmt->bindParam(':user_name', $cadastro['user_name'], PDO::PARAM_STR);
-            $stmt->bindParam(':area_user', $cadastro['tipo'], PDO::PARAM_STR);
-            $stmt->bindParam(':pw', $cadastro['keyu'], PDO::PARAM_STR);
-
-            return $stmt->execute();
+            $stmt->bindParam(':tema_projeto', $projeto['nome_projeto'], PDO::PARAM_STR);
+            $stmt->bindParam(':descricao_projeto', $projeto['descricao_projeto'], PDO::PARAM_STR);
+            $stmt->bindParam(':palavras_chave_projeto', $projeto['palavra_chave'], PDO::PARAM_STR);
+            $stmt->bindParam(':status', $projeto['status_projeto'], PDO::PARAM_STR);
+            $stmt->execute();
+           
+            return $this->conex->lastInsertId();
         } catch (PDOException $e) {
-            echo $e->getMessage();
+            echo $e->getMesssage();
         }
         parent::Close();
     }

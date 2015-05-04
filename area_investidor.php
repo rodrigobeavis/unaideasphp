@@ -15,6 +15,10 @@ require './assets/Smarty/libs/Smarty.class.php';
 include_once('./system/funcoes/f_login.php');
 $smarty = new Smarty;
 
+if(!isset($_REQUEST)){
+$cadastro = $_REQUEST;
+}
+
 //$smarty->force_compile = true;
 //$smarty->debugging = true;
 //$smarty->caching = true;

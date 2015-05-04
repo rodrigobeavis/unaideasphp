@@ -26,5 +26,7 @@ class EquipeController {
         $this->model_equipe = new EquipeClass();
     }
     
-    
+    public function gravarEquipe($projeto) {
+        
+    }
 }

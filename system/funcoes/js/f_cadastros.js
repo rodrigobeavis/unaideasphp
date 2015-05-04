@@ -34,7 +34,7 @@ $(document).ready(function () {
     $('#turma').chosen({no_results_text: "Oops, não encontrado!!"});
 });
 
-
+//acionamento do POST para php de acordo com tipo de usuario
 $(document).ready(function () {
     $('#button1id').click(function () {
         var tipo = $('#tipo').val();
@@ -50,7 +50,6 @@ $(document).ready(function () {
                 page = "cadastro_investidor.php";
                 break;
         }
-
         var validar_form = validar(tipo);
         //  alert(validar_form);
         if (validar_form == 0) {
@@ -63,10 +62,10 @@ $(document).ready(function () {
 
     });
 });
-
+//Ajax para postar os dados
 function ajaxforms(page) {
     var dados = $('#cadastro_gravar_user').serialize();
-
+   
     if (dados) {
         $.ajax({
             type: 'POST',

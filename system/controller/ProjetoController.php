@@ -18,17 +18,19 @@ if (file_exists('./system/model/ProjetoClass.php')) {
 
 class ProjetoController {
    
-    private $dao_projto;
+    private $dao_projeto;
     private $model_projeto;
     
-    public function EquipeController() {
+    public function ProjetoController() {
         
-        $this->dao_projto = new DaoProjeto();
+        $this->dao_projeto = new DaoProjeto();
         $this->model_projeto = new ProjetoClass();
     }
     
     public function gravarProjeto($projeto) {
-        
+       $teste = $this->dao_projeto->gravarProjeto($projeto);
+       var_dump($teste);
+        return $teste;
     }
     
     
