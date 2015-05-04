@@ -24,9 +24,14 @@ class DaoEquipe extends PDOConnectionFactory {
         $this->conex = PDOConnectionFactory::getConnection();
     }
 
-    public function gravarEquipe($dados) {
+    public function gravarEquipe($equipe,$id_last_projeto) {
         try {
-            $sql = "";
+            $sql = "INSERT INTO equipe
+                        (id_projeto,
+                        id_usuario)
+                    VALUES
+                        (<{id_projeto}>,
+                        <{id_usuario}>)";
             $stmt = $this->conex->prepare($sql);
             //autenticação
             $stmt->bindParam(':user_name', $cadastro['user_name'], PDO::PARAM_STR);

@@ -22,18 +22,18 @@ if ($_REQUEST) {
 
 $smarty = new Smarty;
 $usuario_controller = new UsuarioController();
-$ctrl_equipe = new EquipeController();
 $ctrl_projeto = new ProjetoController();
-
+$ctrl_equipe = new EquipeController();
 
 $lista_usuarios_da_mesma_turma = $usuario_controller->listarUsuariosDaTurma($user_id);
 
-
-
 if (filter_input(INPUT_POST, 'nome_projeto')) {
     
-    $ctrl_projeto->gravarProjeto($projeto);
-    
+   $id_last_projeto =  $ctrl_projeto->gravarProjeto($projeto); 
+   
+   
+   
+   $resultado_insert =  $ctrl_equipe->gravarEquipe($projeto,$id_last_projeto,$user_id);
 }
 
 

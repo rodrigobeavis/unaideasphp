@@ -26,7 +26,19 @@ class EquipeController {
         $this->model_equipe = new EquipeClass();
     }
     
-    public function gravarEquipe($projeto) {
+    public function gravarEquipe($projeto,$id_last_projeto,$user_id) {
+        for ($i = 1; $i < 8; $i++) {
+            if ($projeto['nome'.$i]) {
+                 $equipe[] = $projeto['nome'.$i];
+            }      
+        }
+        $equipe[] = $user_id;
         
+        sort($equipe);
+               
+        
+        $this->dao_equipe->gravarEquipe($equipe,$id_last_projeto);
+        var_dump($equipe);
+     
     }
 }

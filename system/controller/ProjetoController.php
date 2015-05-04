@@ -28,9 +28,7 @@ class ProjetoController {
     }
     
     public function gravarProjeto($projeto) {
-       $teste = $this->dao_projeto->gravarProjeto($projeto);
-       var_dump($teste);
-        return $teste;
+        return $this->dao_projeto->gravarProjeto($projeto);
     }
     
     

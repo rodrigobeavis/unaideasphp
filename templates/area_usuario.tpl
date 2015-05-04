@@ -118,7 +118,7 @@
                                     <span  class="grupo">Integrantes do grupo</span>
                                     <input type="button" id="botao" value="+ Adicionar" onclick="adicionaIntegrante();"></br>			
                                     <div id="input_integrante">
-                                        <select class="select_equipe" name="nome" id="nome" required></select>
+                                        <select class="select_equipe" name="nome1" id="nome" required></select>
                                         <div id="1"></div>
                                     </div>
                                     <span id="texto_numero_integrantes" value="1" style="font-size:15pt; color:#666"> 1 Integrante(s)</span>
@@ -158,9 +158,9 @@
                     }
                 }
                 function copiar_option(id) {
-                   // alert(id);
+                    alert(id);
                     $('#nome' + id).html($('#nome').html());
-                    //alert($('#nome').html());
+                    alert($('#nome').html());
                 }
                 function printValue() {
                     var origem = document.getElementById("status_projeto").value;
