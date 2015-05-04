@@ -13,9 +13,9 @@ require_once './system/controller/GravarUsuarioController.php';
 
 $smarty = new Smarty;
 
-if(!isset($_REQUEST)){
+
 $cadastro = $_REQUEST;
-}
+
 
 
 if (isset($cadastro['user_name'])) {

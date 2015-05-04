@@ -273,4 +273,6 @@ box-shadow: 1px 1px 3px #000;
 .bootstrap-tagsinput{
   display: block !important;
   width: 100% !important;
+  font-family: Helvetica,Arial,sans-serif !important;
+    font-size: 15px !important;
   }

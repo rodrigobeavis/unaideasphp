@@ -58,21 +58,19 @@ $(document).ready(function () {
             alertify.error("Erro no cadastro verifique o formulário!");
         }
 
-
-
     });
 });
 //Ajax para postar os dados
 function ajaxforms(page) {
     var dados = $('#cadastro_gravar_user').serialize();
-   
+    alert(dados);
     if (dados) {
         $.ajax({
             type: 'POST',
             url: page,
             data: dados,
             success: limparForm(),
-//            fail: erroAjax()
+//          fail: erroAjax()
 //        context: jQuery('#formulario'),
 //        success:
             error: function () {
