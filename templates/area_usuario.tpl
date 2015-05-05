@@ -26,31 +26,6 @@
                 </div>             
             </nav>
         </header>
-        <!--  <img src="./assets/img/barra-superior-geral.png" id="barra-superior">	
-          <div id="div_menu">
-              <table id="table_menu">
-                  <tr>
-                      <td>
-                          <img id="logo_topo"src="./assets/img/una-ideas-logo.png">
-                      </td>
-                      <td>
-                          <nav id="menu">
-                              <ul style="margin-top: 35px; margin-bottom: 0px">
-                                  <a href="#" onclick="exibeMeusProjetos();">
-                                      <li>Meus projetos</li>
-                                  </a>
-                                  <a href="#abrirModal" onclick="exibeCadastrarProjeto();">
-                                      <li >Cadastrar novo projeto</li>
-                                  </a>
-                                  <a href="#">
-                                      <li >{$user_name}</li>
-                                  </a>
-                              </ul>
-                          </nav>
-                      </td>
-                  </tr>
-              </table>
-          </div>-->
         <section id="section_projetos">
             <div id="projeto">
                 <a href="#">
@@ -148,19 +123,24 @@
                     var detalhes = [];
                     detalhes = {/literal}{$lista_usuarios_da_mesma_turma|@json_encode}{literal};
                     campo_select = document.forms[0].nome;
-
+                    
                     if (detalhes) {
                         campo_select.options.length = 0;
+                        
+                        //campo_select.options[] = new Option("Selecione os membros...","");
                         for (var i = 0; i < detalhes.length; i++)
                         {
                             campo_select.options[i] = new Option(detalhes[i]['nome_usuario'] + " = RA - " + detalhes[i]['ra_usuario'], detalhes[i]['id_usuario']);
                         }
+                        campo_select.options[i] = (new Option("Selecione os membros...",""));
+                       
+                      $('.select_equipe option[value=""]').attr("selected", "selected");
                     }
                 }
                 function copiar_option(id) {
-                    alert(id);
+                   // alert(id);
                     $('#nome' + id).html($('#nome').html());
-                    alert($('#nome').html());
+                    //alert($('#nome').html());
                 }
                 function printValue() {
                     var origem = document.getElementById("status_projeto").value;
@@ -184,12 +164,15 @@
                     quantidadeIntegrantes++;
                     var divanterior = quantidadeIntegrantes - 1;
                     var proximadiv = quantidadeIntegrantes + 1;
+                    if (quantidadeIntegrantes < 8) {
                     // input = "<input id='nome" + quantidadeIntegrantes + "' type=text required placeholder='Nome do integrante' style='width: 70%;'><input type='button' id='" + divanterior + "'class='botaoremove' value='-'' onclick='removeIntegrante(id)''></br></div><div id='" + quantidadeIntegrantes + "'>";
                     input = "<select id='nome" + quantidadeIntegrantes + "' name='nome" + quantidadeIntegrantes + "'required placeholder='Nome do integrante' class='select_equipe'> </select>\n\<input type='button' id='" + divanterior + "'class='botaoremove' value='-'' onclick='removeIntegrante(id)''></br></div><div id='" + quantidadeIntegrantes + "'>";
                     document.getElementById(divanterior).innerHTML = input;
                     document.getElementById("texto_numero_integrantes").setAttribute("value", quantidadeIntegrantes);
                     document.getElementById("texto_numero_integrantes").innerHTML = quantidadeIntegrantes + " Integrantes";
                     copiar_option(quantidadeIntegrantes);
+                    }
+                    
                 }
                 function removeIntegrante(valor) {
                     var remover = valor;

@@ -26,7 +26,7 @@ if (filter_input(INPUT_POST, 'user_name')) {
             $_SESSION['acesso_user'] = $tipo_usuario['acesso_user'];
                         
             session_name(md5($_SESSION['user_name'] . $_SESSION['area_user'] . $_SESSION['acesso_user']));
-            $_SESSION['id'] = base64_encode($cod_user['id_autenticacao'].".".rand(9999,999999));
+            $_SESSION['id'] = base64_encode($cod_user['id_autenticacao'].".".rand(9999,999999).".".rand(0,999999));
             header("refresh: 0; url=" . $tipo_usuario['url']);
         } else {
             unset($_SESSION);

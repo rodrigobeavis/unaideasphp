@@ -63,7 +63,7 @@ $(document).ready(function () {
 //Ajax para postar os dados
 function ajaxforms(page) {
     var dados = $('#cadastro_gravar_user').serialize();
-    alert(dados);
+    //alert(dados);
     if (dados) {
         $.ajax({
             type: 'POST',

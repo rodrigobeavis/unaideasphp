@@ -17,6 +17,8 @@ session_regenerate_id();
 
 $user_name = $_SESSION['user_name'];
 $user_id =  implode(" ",array_splice(explode(".",base64_decode($_SESSION['id'])), 0, 1));
+$area_user = $_SESSION['area_user'];
+$acesso_user = $_SESSION['acesso_user'];
 
-$area_user = $tipo_usuario['area_user'];
-$acesso_user = $tipo_usuario['acesso_user'];
+
+

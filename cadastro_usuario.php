@@ -17,9 +17,9 @@ $smarty = new Smarty;
 $turma_control = new TurmaController; 
 $lista_turmas = $turma_control->listarTurmas();
 
-
+if (filter_input(INPUT_POST, 'user_name')) {
 $cadastro = $_REQUEST;
-
+}
 
 
 if (isset($cadastro['user_name'])) {
