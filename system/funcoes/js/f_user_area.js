@@ -1,13 +1,24 @@
 
 
 function verificar_integrante(){
+    var users = [];
+    var user;
     $( ".select_equipe option:selected" ).each(function() {
-        if ($( this ).attr('selected', 'false')) {
-             $( this ).attr('selected', 'selected');
+        
+                
+         user = $( this ).val();
+         
+        if (users.indexOf(user) >= 0) {
+            alert(users.indexOf(user));
+            alert("opção selecionada");
+        }else{
+             users.push($( this ).val());
         }
-       
-   
+           
+//    $( "option [ ]" ).hide();     
+        // alert($( "[id^='nome']" ).html());
     });
+
 }
 
 

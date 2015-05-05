@@ -132,9 +132,9 @@
                         {
                             campo_select.options[i] = new Option(detalhes[i]['nome_usuario'] + " = RA - " + detalhes[i]['ra_usuario'], detalhes[i]['id_usuario']);
                         }
-                        campo_select.options[i] = (new Option("Selecione os membros...",""));
+                        campo_select.options[i] = (new Option("Selecione os membros...","0"));
                        
-                      $('.select_equipe option[value=""]').attr("selected", "selected");
+                      $('.select_equipe option[value="0"]').attr("selected", "selected");
                     }
                 }
                 function copiar_option(id) {
