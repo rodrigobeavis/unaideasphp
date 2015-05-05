@@ -24,41 +24,35 @@ class DaoEquipe extends PDOConnectionFactory {
         $this->conex = PDOConnectionFactory::getConnection();
     }
 
-    public function gravarEquipe($equipe,$id_last_projeto) {
+    public function gravarEquipe($string_equipe) {
         try {
             $sql = "INSERT INTO equipe
                         (id_projeto,
                         id_usuario)
                     VALUES
-                        (<{id_projeto}>,
-                        <{id_usuario}>)";
-            $stmt = $this->conex->prepare($sql);
-            //autenticação
-            $stmt->bindParam(':user_name', $cadastro['user_name'], PDO::PARAM_STR);
-            $stmt->bindParam(':area_user', $cadastro['tipo'], PDO::PARAM_STR);
-            $stmt->bindParam(':pw', $cadastro['keyu'], PDO::PARAM_STR);
-            
+                        $string_equipe";
+            $stmt = $this->conex->prepare($sql);           
             return $stmt->execute();
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
         parent::Close();
     }
-    public function atualizarEquipe($dados) {
-         try {
-            $sql = "";
-            $stmt = $this->conex->prepare($sql);
-            //autenticação
-            $stmt->bindParam(':user_name', $cadastro['user_name'], PDO::PARAM_STR);
-            $stmt->bindParam(':area_user', $cadastro['tipo'], PDO::PARAM_STR);
-            $stmt->bindParam(':pw', $cadastro['keyu'], PDO::PARAM_STR);
-            
-            return $stmt->execute();
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
-        parent::Close();
-    }
+//    public function atualizarEquipe($dados) {
+//         try {
+//            $sql = "";
+//            $stmt = $this->conex->prepare($sql);
+//            //autenticação
+//            $stmt->bindParam(':user_name', $cadastro['user_name'], PDO::PARAM_STR);
+//            $stmt->bindParam(':area_user', $cadastro['tipo'], PDO::PARAM_STR);
+//            $stmt->bindParam(':pw', $cadastro['keyu'], PDO::PARAM_STR);
+//            
+//            return $stmt->execute();
+//        } catch (PDOException $e) {
+//            echo $e->getMessage();
+//        }
+//        parent::Close();
+//    }
         
     
 }

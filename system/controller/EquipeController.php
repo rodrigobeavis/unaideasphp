@@ -35,10 +35,14 @@ class EquipeController {
         $equipe[] = $user_id;
         
         sort($equipe);
-               
         
-        $this->dao_equipe->gravarEquipe($equipe,$id_last_projeto);
         var_dump($equipe);
-     
+        foreach ($equipe as $row) {
+            $string_equipe .= " ('{$id_last_projeto}', '{$row}'),";
+        }       
+        $string_equipe = substr($string_equipe, 0, -1);   
+        var_dump($string_equipe);
+        
+        return $this->dao_equipe->gravarEquipe($string_equipe);       
     }
 }
