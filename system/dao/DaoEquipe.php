@@ -24,6 +24,9 @@ class DaoEquipe extends PDOConnectionFactory {
         $this->conex = PDOConnectionFactory::getConnection();
     }
 
+   
+    
+    
     public function gravarEquipe($string_equipe) {
         try {
             $sql = "INSERT INTO equipe
@@ -38,6 +41,22 @@ class DaoEquipe extends PDOConnectionFactory {
         }
         parent::Close();
     }
+    
+//     public function lastCodEquipe() {
+//        try {
+//            $sql = "INSERT INTO equipe
+//                        (id_projeto,
+//                        id_usuario)
+//                    VALUES
+//                        $string_equipe";
+//            $stmt = $this->conex->prepare($sql);           
+//            return $stmt->execute();
+//        } catch (PDOException $e) {
+//            echo $e->getMessage();
+//        }
+//        parent::Close();
+//    }
+    
 //    public function atualizarEquipe($dados) {
 //         try {
 //            $sql = "";

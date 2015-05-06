@@ -99,7 +99,7 @@
                                     <span id="texto_numero_integrantes" value="1" style="font-size:15pt; color:#666"> 1 Integrante(s)</span>
                                 </td>
                                 <td style="vertical-align: top; width: 30%;">
-                                    <span id="estado_projeto">Porcentagem do projeto</span>
+                                    <span id="estado_projeto">Percentual de conclusão</span>
                                     <input type="text" id="valor_status" size="5" style="color: white; text-align: center;">
                                     </br>						
                                     <input id="status_projeto" name="status_projeto" type="range" value="0" min="0" max="100" step="5" onchange="printValue()" style="width: 100%;"/>

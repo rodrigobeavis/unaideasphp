@@ -20,4 +20,21 @@ class DaoQualificacao extends PDOConnectionFactory {
     public function DaoQualificacao()  {
         $this->conex = PDOConnectionFactory::getConnection();
     }
+    
+    
+     public function gravarQualificacaoProjeto($dados) {
+        try {
+            $sql = "";
+            $stmt = $this->conex->prepare($sql);
+            //autenticação
+            $stmt->bindParam(':user_name', $cadastro['user_name'], PDO::PARAM_STR);
+            $stmt->bindParam(':area_user', $cadastro['tipo'], PDO::PARAM_STR);
+            $stmt->bindParam(':pw', $cadastro['keyu'], PDO::PARAM_STR);
+
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+        parent::Close();
+    }
 }

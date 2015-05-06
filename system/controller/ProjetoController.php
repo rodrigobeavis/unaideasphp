@@ -31,5 +31,8 @@ class ProjetoController {
         return $this->dao_projeto->gravarProjeto($projeto);
     }
     
-    
+    public function listarProjetosUsuario($user_id) {
+      $lista_projetos =   $this->dao_projeto->atualizarProjeto($user_id);
+      var_dump($lista_projetos);
+    }
 }

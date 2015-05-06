@@ -30,18 +30,18 @@ $lista_usuarios_da_mesma_turma = $usuario_controller->listarUsuariosDaTurma($use
 if (filter_input(INPUT_POST, 'nome_projeto')) {
     
    $id_last_projeto =  $ctrl_projeto->gravarProjeto($projeto); 
-   var_dump($id_last_projeto);
+
    $resultado_insert =  $ctrl_equipe->gravarEquipe($projeto,$id_last_projeto,$user_id);
    var_dump($resultado_insert);
-//   if ($resultado_insert) {
-//       unset($resultado_insert);
-//       unset($id_last_projeto);
-//       unset($projeto);
-//       unset($_REQUEST);
-//   }
+   if ($resultado_insert) {
+       unset($resultado_insert);
+       unset($id_last_projeto);
+       unset($projeto);
+       unset($_REQUEST);
+   }
 }
 
-
+ $projetos_usuario =  $ctrl_projeto->listarProjetosUsuario($user_id);
 
 
 
