@@ -25,18 +25,7 @@
                         </ul>
                     </div>
                 </nav>
-                
             </header>
-            <!--<img class="img-responsive" src="./assets/img/barra-superior-home.png" id="barra-superior">
-            <img class="img-responsive" src="./assets/img/una-ideas-logo.png" id="logo-una-ideas">
-            <nav id="menu">
-                <ul>
-                    <li><a class="menu_index" href="index.php">Início</a></li>
-                    <li><a class="menu_index" href="" data-toggle="modal" data-target="#cadastro">Criar Conta</a></li>
-                    <li><a href="#" id="sobre" class="menu_index">Sobre</a></li>
-                    <li style="height: 40px; top:100px;"><span style="font-size:20pt; vertical-align:top"><a class="menu_index" href="" data-toggle="modal" data-target="#fale_conosco">Fale conosco</a></span></li>
-                </ul>
-            </nav> -->
             <div class="modal fade" id="cadastro" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -101,7 +90,7 @@
             <table id="tabela">
                 <tr>
                     <td>
-                        <a href="" data-toggle="modal" data-target="#login">
+                        <a id="call_login_idealizador" href="" data-toggle="modal" data-target="#login">
                             <div onmouseover="mostraDescricao('descricao-idealizador', 'descricao-professor', 'descricao-investidor')" onmouseout="esconde('descricao-idealizador')" id="quadro1" class="quadros">
                                 <p>Idealizador</p>
                                 <img id="icone-aluno" src="./assets/img/icone-aluno.png">
@@ -109,7 +98,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="" data-toggle="modal" data-target="#login">
+                        <a id="call_login_professor" href="" data-toggle="modal" data-target="#login">
                             <div onmouseover="mostraDescricao('descricao-professor', 'descricao-investidor', 'descricao-idealizador')" onmouseout="esconde('descricao-professor')" id="quadro2" class="quadros">
                                 <p>Professor</p>
                                 <img id="icone-professor" src="./assets/img/icone-professor.png">
@@ -118,7 +107,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="" data-toggle="modal" data-target="#login">
+                        <a id="call_login_investidor" href="" data-toggle="modal" data-target="#login">
                             <div onmouseover="mostraDescricao('descricao-investidor', 'descricao-idealizador', 'descricao-professor')" onmouseout="esconde('descricao-investidor')" id="quadro3" class="quadros">
                                 <p>Investidor</p>
                                 <img id="icone-investidor" src="./assets/img/icone-investidor.png">

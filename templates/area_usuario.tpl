@@ -17,7 +17,7 @@
                 </div>
                 <div class="pull-right">                            
                     <ul class="nav nav-pills">
-                        <li><a href="#" onclick="exibeMeusProjetos();">Meus projetos</a></li>
+                        <!-- <li><a href="#" onclick="exibeMeusProjetos();">Meus projetos</a></li> -->
                         <li><a href="#abrirModal" onclick="exibeCadastrarProjeto();">Cadastrar novo projeto</a></li>
                         <li><a href="#">{$user_name}</a></li>
                         <li><a href="logout.php" >Logout</a></li>
@@ -27,49 +27,57 @@
             </nav>
         </header>
         <section id="section_projetos">
-            <div id="projeto">
-                <a href="#">
-                    <table id="table_projeto">
+            {section name="projetos" loop=$projetos_usuario}
+                <div id="projeto{$smarty.section.projetos.index}" class="projeto">
+                    <table id="projeto{$smarty.section.table_projeto.index}" class="table_projeto">
                         <tr>
-                            <td>
-                                <h2>Nome do projeto</h2>
+                            <td rowspan="5">
+                                <h2>&nbsp;&nbsp;{$projetos_usuario[projetos].tema_projeto}&nbsp;&nbsp;</h2>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <p>Aqui ficará a descrição do projeto. Esta descrição foi previamente escrita no momento do cadastro do projeto no sistema e vai ser de total responabilidade dos idealizadores.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Aqui ficará o percentual já concluído do projeto.</p>
-                            </td>
-                        </tr>
-                    </table>
-                </a>
-            </div>
-            <div id="projeto">
-                <a href="#">
-                    <table id="table_projeto">
-                        <tr>
-                            <td>
-                                <h2>Nome do projeto</h2>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Aqui ficará a descrição do projeto. Esta descrição foi previamente escrita no momento do cadastro do projeto no sistema e vai ser de total responabilidade dos idealizadores.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Aqui ficará o percentual já concluído do projeto.</p>
-                            </td>
-                        </tr>
-                    </table>
-                </a>
-            </div>
 
+                        </tr>
+                        <tr>
+                            <td width="15%"><label>Descrição</label></td>
+                            <td width="75%">
+
+                                <p>{$projetos_usuario[projetos].descricao_projeto}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%"><label>Palavras chave</label></td>
+                            <td>
+                                <p>{$projetos_usuario[projetos].palavras_chave_projeto}</p>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td width="15%"><label>Equipe</label></td>
+                            <td>
+                                {section name="eq" loop=$projetos_usuario[projetos].membros_equipe}
+                            <li class="">{$projetos_usuario[projetos].membros_equipe[eq].nome_usuario}</li>
+                                {/section}
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%"><label>Progresso</label></td>
+                            <td>                                
+                                <p><div class="progress">
+                                   <div class="progress-bar progress-bar-success" style="width: {$projetos_usuario[projetos].status}%">{$projetos_usuario[projetos].status}% Pronto
+                                        <span class="sr-only">{$projetos_usuario[projetos].status}% Complete (success)</span>
+                                    </div>
+                                    <div class="progress-bar progress-bar-warning" style="width: {100 - $projetos_usuario[projetos].status}%">{100 - $projetos_usuario[projetos].status}% A fazer
+                                        <span class="sr-only">{100 - $projetos_usuario[projetos].status}% Complete (warning)</span>
+                                    </div>
+                                </div>
+                                </p>
+                                <input type="hidden" value="{$projetos_usuario[projetos].status}">
+                            </td>
+                        </tr>                       
+                    </table>
+
+                </div>
+            {/section}
         </section>
         <footer>
             <div id="rodape">
@@ -116,72 +124,72 @@
         <script src="./system/funcoes/js/f_user_area.js"></script>
         {literal}
             <script type="text/javascript">
-                $(document).ready(function () {
-                    user_options();
-                });
-                function user_options() {
-                    var detalhes = [];
-                    detalhes = {/literal}{$lista_usuarios_da_mesma_turma|@json_encode}{literal};
-                    campo_select = document.forms[0].nome;
-                    
-                    if (detalhes) {
-                        campo_select.options.length = 0;
-                        
-                        //campo_select.options[] = new Option("Selecione os membros...","");
-                        for (var i = 0; i < detalhes.length; i++)
-                        {
-                            campo_select.options[i] = new Option(detalhes[i]['nome_usuario'] + " = RA - " + detalhes[i]['ra_usuario'], detalhes[i]['id_usuario']);
-                        }
-                        campo_select.options[i] = (new Option("Selecione os membros...","0"));
-                       
-                      $('.select_equipe option[value="0"]').attr("selected", "selected");
-                    }
-                }
-                function copiar_option(id) {
-                   // alert(id);
-                    $('#nome' + id).html($('#nome').html());
-                    //alert($('#nome').html());
-                }
-                function printValue() {
-                    var origem = document.getElementById("status_projeto").value;
-                    if (origem < 20)
-                        document.getElementById("valor_status").style.background = "#800000";
-                    if (origem >= 20 && origem < 40)
-                        document.getElementById("valor_status").style.background = "#ff4500";
-                    if (origem >= 40 && origem < 60)
-                        document.getElementById("valor_status").style.background = "#ffff00";
-                    if (origem >= 60 && origem < 80)
-                        document.getElementById("valor_status").style.background = "#7cfc00";
-                    if (origem >= 80)
-                        document.getElementById("valor_status").style.background = "#00ff00";
-                    if (origem == 100)
-                        document.getElementById("valor_status").style.background = "#4682B4";
-                    document.getElementById("valor_status").value = origem + "%";
-                }
-                function adicionaIntegrante() {
+                                        $(document).ready(function () {
+                                            user_options();
+                                        });
+                                        function user_options() {
+                                            var detalhes = [];
+                                            detalhes = {/literal}{$lista_usuarios_da_mesma_turma|@json_encode}{literal};
+                                            campo_select = document.forms[0].nome;
 
-                    var quantidadeIntegrantes = document.getElementById("texto_numero_integrantes").getAttribute("value");
-                    quantidadeIntegrantes++;
-                    var divanterior = quantidadeIntegrantes - 1;
-                    var proximadiv = quantidadeIntegrantes + 1;
-                    if (quantidadeIntegrantes < 8) {
-                    // input = "<input id='nome" + quantidadeIntegrantes + "' type=text required placeholder='Nome do integrante' style='width: 70%;'><input type='button' id='" + divanterior + "'class='botaoremove' value='-'' onclick='removeIntegrante(id)''></br></div><div id='" + quantidadeIntegrantes + "'>";
-                    input = "<select id='nome" + quantidadeIntegrantes + "' name='nome" + quantidadeIntegrantes + "'required placeholder='Nome do integrante' class='select_equipe'> </select>\n\<input type='button' id='" + divanterior + "'class='botaoremove' value='-'' onclick='removeIntegrante(id)''></br></div><div id='" + quantidadeIntegrantes + "'>";
-                    document.getElementById(divanterior).innerHTML = input;
-                    document.getElementById("texto_numero_integrantes").setAttribute("value", quantidadeIntegrantes);
-                    document.getElementById("texto_numero_integrantes").innerHTML = quantidadeIntegrantes + " Integrantes";
-                    copiar_option(quantidadeIntegrantes);
-                    }
-                    
-                }
-                function removeIntegrante(valor) {
-                    var remover = valor;
-                    document.getElementById(remover).innerHTML = "";
-                    var quantidadeIntegrantes = document.getElementById("texto_numero_integrantes").getAttribute("value");
-                    quantidadeIntegrantes--;
-                    document.getElementById("texto_numero_integrantes").setAttribute("value", quantidadeIntegrantes);
-                    document.getElementById("texto_numero_integrantes").innerHTML = quantidadeIntegrantes + " Integrantes";
-                }
+                                            if (detalhes) {
+                                                campo_select.options.length = 0;
+
+                                                //campo_select.options[] = new Option("Selecione os membros...","");
+                                                for (var i = 0; i < detalhes.length; i++)
+                                                {
+                                                    campo_select.options[i] = new Option(detalhes[i]['nome_usuario'] + " = RA - " + detalhes[i]['ra_usuario'], detalhes[i]['id_usuario']);
+                                                }
+                                                campo_select.options[i] = (new Option("Selecione os membros...", "0"));
+
+                                                $('.select_equipe option[value="0"]').attr("selected", "selected");
+                                            }
+                                        }
+                                        function copiar_option(id) {
+                                            // alert(id);
+                                            $('#nome' + id).html($('#nome').html());
+                                            //alert($('#nome').html());
+                                        }
+                                        function printValue() {
+                                            var origem = document.getElementById("status_projeto").value;
+                                            if (origem < 20)
+                                                document.getElementById("valor_status").style.background = "#800000";
+                                            if (origem >= 20 && origem < 40)
+                                                document.getElementById("valor_status").style.background = "#ff4500";
+                                            if (origem >= 40 && origem < 60)
+                                                document.getElementById("valor_status").style.background = "#ffff00";
+                                            if (origem >= 60 && origem < 80)
+                                                document.getElementById("valor_status").style.background = "#7cfc00";
+                                            if (origem >= 80)
+                                                document.getElementById("valor_status").style.background = "#00ff00";
+                                            if (origem == 100)
+                                                document.getElementById("valor_status").style.background = "#4682B4";
+                                            document.getElementById("valor_status").value = origem + "%";
+                                        }
+                                        function adicionaIntegrante() {
+
+                                            var quantidadeIntegrantes = document.getElementById("texto_numero_integrantes").getAttribute("value");
+                                            quantidadeIntegrantes++;
+                                            var divanterior = quantidadeIntegrantes - 1;
+                                            var proximadiv = quantidadeIntegrantes + 1;
+                                            if (quantidadeIntegrantes < 8) {
+                                                // input = "<input id='nome" + quantidadeIntegrantes + "' type=text required placeholder='Nome do integrante' style='width: 70%;'><input type='button' id='" + divanterior + "'class='botaoremove' value='-'' onclick='removeIntegrante(id)''></br></div><div id='" + quantidadeIntegrantes + "'>";
+                                                input = "<select id='nome" + quantidadeIntegrantes + "' name='nome" + quantidadeIntegrantes + "'required placeholder='Nome do integrante' class='select_equipe'> </select>\n\<input type='button' id='" + divanterior + "'class='botaoremove' value='-'' onclick='removeIntegrante(id)''></br></div><div id='" + quantidadeIntegrantes + "'>";
+                                                document.getElementById(divanterior).innerHTML = input;
+                                                document.getElementById("texto_numero_integrantes").setAttribute("value", quantidadeIntegrantes);
+                                                document.getElementById("texto_numero_integrantes").innerHTML = quantidadeIntegrantes + " Integrantes";
+                                                copiar_option(quantidadeIntegrantes);
+                                            }
+
+                                        }
+                                        function removeIntegrante(valor) {
+                                            var remover = valor;
+                                            document.getElementById(remover).innerHTML = "";
+                                            var quantidadeIntegrantes = document.getElementById("texto_numero_integrantes").getAttribute("value");
+                                            quantidadeIntegrantes--;
+                                            document.getElementById("texto_numero_integrantes").setAttribute("value", quantidadeIntegrantes);
+                                            document.getElementById("texto_numero_integrantes").innerHTML = quantidadeIntegrantes + " Integrantes";
+                                        }
             </script>
         {/literal} 
     </body>

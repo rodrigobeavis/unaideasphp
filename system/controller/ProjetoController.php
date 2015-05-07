@@ -33,6 +33,22 @@ class ProjetoController {
     
     public function listarProjetosUsuario($user_id) {
       $lista_projetos =   $this->dao_projeto->atualizarProjeto($user_id);
-      var_dump($lista_projetos);
+          $lista_projetos_array = null;
+      foreach ($lista_projetos as $row) {
+          $lista_projetos_array[$row->id_projeto]['id_projeto'] = $row->id_projeto;
+          $lista_projetos_array[$row->id_projeto]['tema_projeto'] = $row->tema_projeto;
+          $lista_projetos_array[$row->id_projeto]['descricao_projeto'] = $row->descricao_projeto;
+          $lista_projetos_array[$row->id_projeto]['palavras_chave_projeto'] = $row->palavras_chave_projeto;
+          $lista_projetos_array[$row->id_projeto]['status'] = $row->status;
+          $lista_projetos_array[$row->id_projeto]['data_cadastro'] = $row->data_cadastro;
+          if ($row->id_usuario != $id) {
+           $lista_projetos_array[$row->id_projeto]['membros_equipe'][] = (array) $row;
+              
+              $id = $row->id_usuario;
+          }
+          
+      }      
+      sort($lista_projetos_array);
+      return $lista_projetos_array;
     }
 }

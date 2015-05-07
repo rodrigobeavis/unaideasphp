@@ -42,7 +42,7 @@ if (filter_input(INPUT_POST, 'nome_projeto')) {
 }
 
  $projetos_usuario =  $ctrl_projeto->listarProjetosUsuario($user_id);
-
+// var_dump($projetos_usuario[0]['membros_equipe'][0]);
 
 
 $smarty->force_compile = true;
@@ -56,7 +56,7 @@ $user_id;
 $area_user;
 $acesso_user;
 
-
+$smarty->assign("projetos_usuario", $projetos_usuario);
 $smarty->assign("lista_usuarios_da_mesma_turma", $lista_usuarios_da_mesma_turma);
 $smarty->assign("user_name", $user_name);
 $smarty->assign("title", "UNAIDEAS - Usu&aacute;rio");

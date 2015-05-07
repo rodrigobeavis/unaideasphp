@@ -81,7 +81,7 @@ nav#menu li:hover {
 }
 
 
-#projeto {
+.projeto  {
 	width: 80%;
 	height: 20%;
 	background-color: #fff;
@@ -93,29 +93,30 @@ nav#menu li:hover {
 	transition: 0.1s;
 }
 
-#projeto:hover {
+.projeto:hover {
 	border-left: 10px solid #361E43;
 }
 
-table#table_projeto {
+table.table_projeto {
 	padding: 5px 15px 5px 15px;
 	font-family: BebasNeue;
 }
 
-table#table_projeto h2 {
+table.table_projeto h2 {
 	margin: 0px;
-	font-size: 28pt;
+	font-size: 25pt;
 	color: #361E43;
 }
 
-table#table_projeto p {
-	font-size: 25px;
+table.table_projeto p {
+	font-size: 20px;
 	text-decoration: none;
 	color: #888;
-	margin: 0px;
+	margin: 2px;
+        margin-bottom: 10px;
 }
 
-table#table_projeto td {
+table.table_projeto td {
 	border-bottom: 1px solid #bbb;
 	margin: 0px 0px 10px 0px;
 }
