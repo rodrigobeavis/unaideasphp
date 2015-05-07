@@ -50,20 +50,20 @@
                                 <p>{$projetos_usuario[projetos].palavras_chave_projeto}</p>
                             </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td width="15%"><label>Equipe</label></td>
                             <td>
                                 {section name="eq" loop=$projetos_usuario[projetos].membros_equipe}
                             <li class="">{$projetos_usuario[projetos].membros_equipe[eq].nome_usuario}</li>
-                                {/section}
-
-                            </td>
+                            {/section}
+                        </td>
                         </tr>
                         <tr>
                             <td width="15%"><label>Progresso</label></td>
                             <td>                                
-                                <p><div class="progress">
-                                   <div class="progress-bar progress-bar-success" style="width: {$projetos_usuario[projetos].status}%">{$projetos_usuario[projetos].status}% Pronto
+                                <p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" style="width: {$projetos_usuario[projetos].status}%">{$projetos_usuario[projetos].status}% Pronto
                                         <span class="sr-only">{$projetos_usuario[projetos].status}% Complete (success)</span>
                                     </div>
                                     <div class="progress-bar progress-bar-warning" style="width: {100 - $projetos_usuario[projetos].status}%">{100 - $projetos_usuario[projetos].status}% A fazer
@@ -71,11 +71,9 @@
                                     </div>
                                 </div>
                                 </p>
-                                <input type="hidden" value="{$projetos_usuario[projetos].status}">
                             </td>
                         </tr>                       
                     </table>
-
                 </div>
             {/section}
         </section>
@@ -131,11 +129,9 @@
                                             var detalhes = [];
                                             detalhes = {/literal}{$lista_usuarios_da_mesma_turma|@json_encode}{literal};
                                             campo_select = document.forms[0].nome;
-
                                             if (detalhes) {
                                                 campo_select.options.length = 0;
 
-                                                //campo_select.options[] = new Option("Selecione os membros...","");
                                                 for (var i = 0; i < detalhes.length; i++)
                                                 {
                                                     campo_select.options[i] = new Option(detalhes[i]['nome_usuario'] + " = RA - " + detalhes[i]['ra_usuario'], detalhes[i]['id_usuario']);
@@ -189,7 +185,7 @@
                                             quantidadeIntegrantes--;
                                             document.getElementById("texto_numero_integrantes").setAttribute("value", quantidadeIntegrantes);
                                             document.getElementById("texto_numero_integrantes").innerHTML = quantidadeIntegrantes + " Integrantes";
-                                        }
+                        }
             </script>
         {/literal} 
     </body>

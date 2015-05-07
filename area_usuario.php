@@ -32,7 +32,7 @@ if (filter_input(INPUT_POST, 'nome_projeto')) {
    $id_last_projeto =  $ctrl_projeto->gravarProjeto($projeto); 
 
    $resultado_insert =  $ctrl_equipe->gravarEquipe($projeto,$id_last_projeto,$user_id);
-   var_dump($resultado_insert);
+   //var_dump($resultado_insert);
    if ($resultado_insert) {
        unset($resultado_insert);
        unset($id_last_projeto);

@@ -177,7 +177,6 @@
                                     <a id="modal_call_login" class="btn label-warning" href="" data-toggle="modal" data-target="#cadastro">Criar Conta?</a>
                                 </div>
                             </div>
-
                         </div>
                         <div class="modal-footer">
                             <div id="validacao"></div>
@@ -196,7 +195,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="well">
-                            <p class="texto_sobre">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O ambiente universitário é um terreno extremamente propício ao aparecimento de boas ideias. Dentro da exigência das disciplinas em questão, de se elaborar projetos e aplicar neles todo o conhecimento amealhado ao longo do curso, essas ideias ganham forma e conteúdo, transformando-se em produtos interessantes, mas que muitas vezes se perdem ao final do semestre por falta de incentivo financeiro para transpor as paredes do campus e ganhar o mercado.</p>
+                            <p class="texto_sobre">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O ambiente universitário é um terreno extremamente propício ao aparecimento de boas ideias. Dentro da exigência das disciplinas em questão, de se elaborar projetos e aplicar neles todo o conhecimento adquirido ao longo do curso, essas ideias ganham forma e conteúdo, transformando-se em produtos interessantes, mas que muitas vezes se perdem ao final do semestre por falta de incentivo financeiro para transpor as paredes do campus e ganhar o mercado.</p>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->

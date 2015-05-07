@@ -87,7 +87,7 @@ nav#menu li:hover {
 	background-color: #fff;
 	margin-left: 10%;
 	margin-right: 10%;
-	margin-bottom: 10px;
+	margin-bottom: 3%;
 	border-radius: 10px;
 	box-shadow: 5px 5px 5px #888888;
 	transition: 0.1s;
@@ -227,17 +227,17 @@ box-shadow: 1px 1px 3px #000;
 	background-color: #eeeeee;
 	border: solid 5px #888888;
 	width: 110%;
-	height: 80px;
+	height: 35px;
 	margin: 0px 0px 0px -15px;
 	padding-left: 11%;
-	top: 90%;
+	top: 95%;
 	z-index: 2;
 }
 
 #rodape p{
 	font-family: BebasNeue;
 	color: #361e43;
-	font-size: 18pt;
+	font-size: 15pt;
 }
 
 
