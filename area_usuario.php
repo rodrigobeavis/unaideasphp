@@ -31,7 +31,9 @@ if (filter_input(INPUT_POST, 'nome_projeto')) {
     
    $id_last_projeto =  $ctrl_projeto->gravarProjeto($projeto); 
 
-   $resultado_insert =  $ctrl_equipe->gravarEquipe($projeto,$id_last_projeto,$user_id);
+   if ($id_last_projeto && $id_last_projeto > 0) {
+       $resultado_insert =  $ctrl_equipe->gravarEquipe($projeto,$id_last_projeto,$user_id);
+   }
    //var_dump($resultado_insert);
    if ($resultado_insert) {
        unset($resultado_insert);
@@ -39,6 +41,7 @@ if (filter_input(INPUT_POST, 'nome_projeto')) {
        unset($projeto);
        unset($_REQUEST);
    }
+   echo '{literal}<script> alertify.error("Erro no cadastro verifique o formulário!");</script>{/literal}';
 }
 
  $projetos_usuario =  $ctrl_projeto->listarProjetosUsuario($user_id);

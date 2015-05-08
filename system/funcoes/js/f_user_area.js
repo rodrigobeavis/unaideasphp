@@ -1,5 +1,5 @@
-
-
+//
+//
 function verificar_integrante(){
 //    var users = [];
 //    var user;
@@ -16,15 +16,28 @@ function verificar_integrante(){
 //        }           
 //    $( "option [ ]" ).hide();     
         // alert($( "[id^='nome']" ).html());
+         var alert2 = [];
+        
+        for (var i = 0, max = 7; i < max; i++) {
+            
+            $('#nome'+i).val();
+           
+            alert2.push($('#nome'+i).val());
+        }
+        
+        alert(alert2);
+        
     });
 
 }
 
 
-$('.select_equipe').click(function (){
+$('.select_equipe').change(function (){
    verificar_integrante();
 });
-//
+$('.select_equipe option:selected').click(function (){
+   verificar_integrante();
+});//
 //$('.select_equipe').focusout(function (){
 //    verificar_integrante();
 //});
@@ -36,4 +49,3 @@ $('.select_equipe').click(function (){
 $('#botao').click(function (){
     verificar_integrante();
 });
-

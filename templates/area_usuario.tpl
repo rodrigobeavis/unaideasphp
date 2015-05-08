@@ -91,7 +91,7 @@
                 <form id="formulario_cadastro_projeto" method="POST" action="#">
                     <input name="nome_projeto" required type="text" placeholder="Nome do projeto" style="width: 100%;"  maxlength="180">
                     <textarea  name="descricao_projeto" required type="text" placeholder="Descrição do projeto" style="width: 100%;" rows="3" maxlength="1800"></textarea>
-                    <input id="palavra_chave" name="palavra_chave" required  type="text" placepalavra_chaveholder="Palavras chave"   maxlength="500" data-role="tagsinput"> <!-- data-role="tagsinput"-->
+                    <input id="palavra_chave" name="palavra_chave" required  type="text" placeholder="Palavras chave"   maxlength="500" data-role="tagsinput"> <!-- data-role="tagsinput"-->
                     <div id="grupo">
                         <table id="table_grupo" style="width:100%;">
                             <tr>
@@ -117,7 +117,7 @@
                 </form>
             </div>
         </div>
-        {include file="footer.tpl"}
+        {include file="footer.tpl"}        
         <script src="./assets/js/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
         <script src="./system/funcoes/js/f_user_area.js"></script>
         {literal}

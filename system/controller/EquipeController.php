@@ -34,9 +34,8 @@ class EquipeController {
         }
         $equipe[] = $user_id;
         
-        sort($equipe);
         
-     
+        $equipe =  array_unique ($equipe);
         foreach ($equipe as $row) {
             $string_equipe .= " ('{$id_last_projeto}', '{$row}'),";
         }       
