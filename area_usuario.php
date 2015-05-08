@@ -41,7 +41,6 @@ if (filter_input(INPUT_POST, 'nome_projeto')) {
        unset($projeto);
        unset($_REQUEST);
    }
-   echo '{literal}<script> alertify.error("Erro no cadastro verifique o formulário!");</script>{/literal}';
 }
 
  $projetos_usuario =  $ctrl_projeto->listarProjetosUsuario($user_id);
