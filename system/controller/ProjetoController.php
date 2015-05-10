@@ -31,8 +31,12 @@ class ProjetoController {
         return $this->dao_projeto->gravarProjeto($projeto);
     }
     
+    public function editarProjeto($editar_projeto) {
+        return $this->dao_projeto->editarProjeto($editar_projeto);
+    }
+    
     public function listarProjetosUsuario($user_id) {
-      $lista_projetos =   $this->dao_projeto->atualizarProjeto($user_id);
+      $lista_projetos =   $this->dao_projeto->listarProjetos($user_id);
           $lista_projetos_array = null;
       foreach ($lista_projetos as $row) {
           $lista_projetos_array[$row->id_projeto]['id_projeto'] = $row->id_projeto;
@@ -43,10 +47,8 @@ class ProjetoController {
           $lista_projetos_array[$row->id_projeto]['data_cadastro'] = $row->data_cadastro;
           if ($row->id_usuario != $id) {
            $lista_projetos_array[$row->id_projeto]['membros_equipe'][] = (array) $row;
-              
               $id = $row->id_usuario;
-          }
-          
+          }    
       }      
       sort($lista_projetos_array);
       return $lista_projetos_array;

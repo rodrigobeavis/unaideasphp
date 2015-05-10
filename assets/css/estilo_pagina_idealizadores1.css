@@ -98,8 +98,9 @@ nav#menu li:hover {
 }
 
 table.table_projeto {
-	padding: 5px 15px 5px 15px;
+	//padding: 5px 15px 5px 15px;
 	font-family: BebasNeue;
+        width: 99%;
 }
 
 table.table_projeto h2 {
@@ -112,8 +113,6 @@ table.table_projeto p {
 	font-size: 20px;
 	text-decoration: none;
 	color: #888;
-	margin: 2px;
-        margin-bottom: 10px;
 }
 
 table.table_projeto td {
@@ -121,6 +120,13 @@ table.table_projeto td {
 	margin: 0px 0px 10px 0px;
 }
 
+table.table_projeto .table_left {
+    padding-left: 1%;
+    width: 15%;
+}
+table.table_projeto .table_right {
+    width: 75%;
+}
 #modal form textarea, input{
 	
 	font-size: 15pt;

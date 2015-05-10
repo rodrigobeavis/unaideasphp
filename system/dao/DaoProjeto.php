@@ -50,7 +50,7 @@ class DaoProjeto extends PDOConnectionFactory {
         parent::Close();
     }
 
-    public function atualizarProjeto($user_id) {
+    public function listarProjetos($user_id) {
         try {
             $sql = "SELECT 
                         t1.id_projeto,
@@ -89,5 +89,34 @@ class DaoProjeto extends PDOConnectionFactory {
         }
         parent::Close();
     }
+    
+   
+    
+    public function editarProjeto($editar_projeto) {
+        //var_dump($editar_projeto);
+         try {
+            $sql = "UPDATE unaideasbdmysql.projeto
+                        SET
+                            tema_projeto = :tema_projeto,
+                            descricao_projeto = :descricao_projeto,
+                            palavras_chave_projeto = :palavras_chave_projeto,
+                            status = :status
+                        WHERE id_projeto = :id";
+            $stmt = $this->conex->prepare($sql);
 
+            $stmt->bindParam(':tema_projeto', $editar_projeto['editar_nome_projeto'], PDO::PARAM_STR);
+            $stmt->bindParam(':descricao_projeto', $editar_projeto['editar_descricao_projeto'], PDO::PARAM_STR);
+            $stmt->bindParam(':palavras_chave_projeto', $editar_projeto['editar_palavra_chave'], PDO::PARAM_STR);
+            $stmt->bindParam(':status', $editar_projeto['editar_status_projeto'], PDO::PARAM_STR);
+            $stmt->bindParam(':id', $editar_projeto['editar_id_projeto'], PDO::PARAM_STR);
+         
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+        parent::Close();
+    }
+    
+    
+    
 }
