@@ -27,20 +27,17 @@ class EquipeController {
     }
     
     public function gravarEquipe($projeto,$id_last_projeto,$user_id) {
-        for ($i = 1; $i < 8; $i++) {
-            if ($projeto['nome'.$i]) {
-                 $equipe[] = $projeto['nome'.$i];
-            }      
-        }
+        foreach ($projeto['nome'] as $row) {
+            $equipe[] = $row;
+        }         
         $equipe[] = $user_id;
-     
         $equipe =  array_unique ($equipe);
+               
         foreach ($equipe as $row) {
             $string_equipe .= " ('{$id_last_projeto}', '{$row}'),";
         }       
         $string_equipe = substr($string_equipe, 0, -1);   
 
-        
         return $this->dao_equipe->gravarEquipe($string_equipe);       
     }
 }

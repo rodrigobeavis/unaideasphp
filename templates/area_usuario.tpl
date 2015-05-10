@@ -6,6 +6,7 @@
         {include file="header.tpl" title=$title}
         <link rel="stylesheet"  href="./assets/css/estilo_pagina_idealizadores1.css">
         <link rel="stylesheet" type="text/css" href="./assets/js/bootstrap-tagsinput/bootstrap-tagsinput.css">
+        <link href="./assets/js/bootstrap-multiselect/dist/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header class="cabecalho_new">
@@ -97,12 +98,20 @@
                             <tr>
                                 <td style="width:45%;">
                                     <span  class="grupo">Integrantes do grupo</span>
-                                    <input type="button" id="botao" value="+ Adicionar" onclick="adicionaIntegrante();"></br>			
+                                  <!--  <input type="button" id="botao" value="+ Adicionar" onclick="adicionaIntegrante();"></br>	-->		
                                     <div id="input_integrante">
-                                        <select class="select_equipe" name="nome1" id="nome" required></select>
-                                        <div id="1"></div>
+                                        <select  name="nome[]" id="nome"class="form-control" required multiple="multiple"  > 
+                                            <option selected disabled  value="">Selecione os integrantes da equipe...</option>
+                                            {section name=alu loop=$lista_usuarios_da_mesma_turma}
+                                                <option value="{$lista_usuarios_da_mesma_turma[alu].id_usuario}">{$lista_usuarios_da_mesma_turma[alu].nome_usuario} - RA: {$lista_usuarios_da_mesma_turma[alu].ra_usuario}</option>
+                                            {sectionelse}
+                                                <option value="" selected disabled>Não Há outros usuários</option>
+                                            {/section}
+                                        </select>                           
+                                       <!-- <select class="select_equipe" name="nome1" id="nome" required></select>-->
+                                        <!--<div id="1"></div>-->
                                     </div>
-                                    <span id="texto_numero_integrantes" value="1" style="font-size:15pt; color:#666"> 1 Integrante(s)</span>
+                                    <!-- <span id="texto_numero_integrantes" value="1" style="font-size:15pt; color:#666"> 1 Integrante(s)</span>-->
                                 </td>
                                 <td style="vertical-align: top; width: 30%;">
                                     <span id="estado_projeto">Percentual de conclusão</span>
@@ -119,10 +128,11 @@
         </div>
         {include file="footer.tpl"}        
         <script src="./assets/js/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="./assets/js/bootstrap-multiselect/dist/js/bootstrap-multiselect.js" type="text/javascript"></script>
         <script src="./system/funcoes/js/f_user_area.js"></script>
         {literal}
             <script type="text/javascript">
-                                        $(document).ready(function () {
+                                       /* $(document).ready(function () {
                                             user_options();
                                         });
                                         function user_options() {
@@ -145,7 +155,7 @@
                                             // alert(id);
                                             $('#nome' + id).html($('#nome').html());
                                             //alert($('#nome').html());
-                                        }
+                                        }*/
                                         function printValue() {
                                             var origem = document.getElementById("status_projeto").value;
                                             if (origem < 20)
@@ -162,7 +172,7 @@
                                                 document.getElementById("valor_status").style.background = "#4682B4";
                                             document.getElementById("valor_status").value = origem + "%";
                                         }
-                                        function adicionaIntegrante() {
+                                        /*function adicionaIntegrante() {
 
                                             var quantidadeIntegrantes = document.getElementById("texto_numero_integrantes").getAttribute("value");
                                             quantidadeIntegrantes++;
@@ -185,7 +195,7 @@
                                             quantidadeIntegrantes--;
                                             document.getElementById("texto_numero_integrantes").setAttribute("value", quantidadeIntegrantes);
                                             document.getElementById("texto_numero_integrantes").innerHTML = quantidadeIntegrantes + " Integrantes";
-                        }
+                        }*/
             </script>
         {/literal} 
     </body>

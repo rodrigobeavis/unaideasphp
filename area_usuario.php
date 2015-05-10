@@ -19,7 +19,7 @@ include_once('./system/funcoes/f_login.php'); // variaveis reservadas ($user_nam
 if ($_REQUEST) {
     $projeto = $_REQUEST;
 }
-
+//var_dump($projeto);
 $smarty = new Smarty;
 $usuario_controller = new UsuarioController();
 $ctrl_projeto = new ProjetoController();
