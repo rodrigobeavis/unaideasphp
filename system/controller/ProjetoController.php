@@ -32,7 +32,9 @@ class ProjetoController {
     }
     
     public function editarProjeto($editar_projeto) {
-        return $this->dao_projeto->editarProjeto($editar_projeto);
+        $this->dao_projeto->gravar_log_projeto($editar_projeto);    
+         return $this->dao_projeto->editarProjeto($editar_projeto);
+ 
     }
     
     public function listarProjetosUsuario($user_id) {

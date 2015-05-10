@@ -17,7 +17,7 @@ require_once './system/controller/UsuarioController.php';
 include_once('./system/funcoes/f_login.php'); // variaveis reservadas ($user_name;$user_id;$area_user;$acesso_user;)
 
 if ($_REQUEST) {
-    $projeto = $_REQUEST;
+    $projeto = $_REQUEST;    
 }
 //var_dump($projeto);
 $smarty = new Smarty;
@@ -43,6 +43,8 @@ if (filter_input(INPUT_POST, 'nome_projeto')) {
 }
 
 if (filter_input(INPUT_POST, 'editar_nome_projeto')) {
+    
+    $projeto['user_id'] = $user_id;
     $verifica_editar_projeto =  $ctrl_projeto->editarProjeto($projeto); 
 
     if ($verifica_editar_projeto) {

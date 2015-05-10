@@ -262,15 +262,17 @@ box-shadow: 1px 1px 3px #000;
 .glyphicon-1 {font-size: 4em;}
 .glyphicon-1 {font-size: 5em;}
 
-
-.select_equipe{
-    font-family: Helvetica,Arial,sans-serif !important;
-    font-size: 15px !important;
-    width: 70% !important;
-    padding-top: 5px;
+.modal_editar{
+    font-family: BebasNeue;
+font-size: 15pt;
+background-color: #eeeeee !important;
 }
 
+.select_equipe{
+font-family: BebasNeue;
+font-size: 15pt;
 
+}
 .palavras_chave{
     font-family: Helvetica,Arial,sans-serif !important;
     font-size: 15px !important;

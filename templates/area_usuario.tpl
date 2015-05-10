@@ -41,10 +41,10 @@
                         <!-- Modal -->
                         <div class="modal fade" id="editar_projeto{$smarty.section.projetos.index}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
-                                <div class="modal-content">
+                                <div class="modal-content modal_editar">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">{$projetos_usuario[projetos].tema_projeto}</h4>
+                                        <h4 class="modal-title" id="modal_editar_projeto{$smarty.section.projetos.index}">{$projetos_usuario[projetos].tema_projeto}</h4>
                                     </div>
                                     <div class="modal-body">
                                         <form id="formulario_editar_projeto" method="POST" action="#">
@@ -158,32 +158,32 @@
         {literal}
             <script type="text/javascript">
                                        
-                                        $(document).ready(function () {
+                $(document).ready(function () {
 
-                                            var max = {/literal}{$smarty.section.projetos.total}{literal}
-                                            var i = 0;
+                    var max = {/literal}{$smarty.section.projetos.total}{literal}
+                    var i = 0;
 
-                                            while (i <= max) {
-                                                printValue(i);
-                                                i++;
-                                            }
-                                        });
-                                        function printValue(id) {
-                                            var origem = document.getElementById("status_projeto" + id).value;
-                                            if (origem < 20)
-                                                document.getElementById("valor_status" + id).style.background = "#800000";
-                                            if (origem >= 20 && origem < 40)
-                                                document.getElementById("valor_status" + id).style.background = "#ff4500";
-                                            if (origem >= 40 && origem < 60)
-                                                document.getElementById("valor_status" + id).style.background = "#ffff00";
-                                            if (origem >= 60 && origem < 80)
-                                                document.getElementById("valor_status" + id).style.background = "#7cfc00";
-                                            if (origem >= 80)
-                                                document.getElementById("valor_status" + id).style.background = "#00ff00";
-                                            if (origem == 100)
-                                                document.getElementById("valor_status" + id).style.background = "#4682B4";
-                                            document.getElementById("valor_status" + id).value = origem + "%";
-                                        }
+                    while (i <= max) {
+                        printValue(i);
+                        i++;
+                    }
+                });
+                function printValue(id) {
+                    var origem = document.getElementById("status_projeto" + id).value;
+                    if (origem < 20)
+                        document.getElementById("valor_status" + id).style.background = "#800000";
+                    if (origem >= 20 && origem < 40)
+                        document.getElementById("valor_status" + id).style.background = "#ff4500";
+                    if (origem >= 40 && origem < 60)
+                        document.getElementById("valor_status" + id).style.background = "#ffff00";
+                    if (origem >= 60 && origem < 80)
+                        document.getElementById("valor_status" + id).style.background = "#7cfc00";
+                    if (origem >= 80)
+                        document.getElementById("valor_status" + id).style.background = "#00ff00";
+                    if (origem == 100)
+                        document.getElementById("valor_status" + id).style.background = "#4682B4";
+                    document.getElementById("valor_status" + id).value = origem + "%";
+                }
 
             </script>
         {/literal} 
