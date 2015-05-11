@@ -20,7 +20,8 @@ include_once('./system/funcoes/f_login.php'); // variaveis reservadas ($user_nam
 if ($_REQUEST) {
     $dados = $_REQUEST;    
 }
-var_dump($dados);
+//var_dump($dados);
+
 $smarty = new Smarty;
 $turma_control = new TurmaController; 
 $usuario_controller = new UsuarioController();
@@ -34,7 +35,6 @@ $lista_turmas = $turma_control->listarTurmas();
 
 if (filter_input(INPUT_POST, 'turma')) {
     $projetos_por_turma =  $ctrl_projeto->listarProjetosPorTurma($dados['turma']);
-    var_dump($projetos_por_turma);
 }
 
 
@@ -60,6 +60,7 @@ $acesso_user;
 
 
 $smarty->assign("lista_turmas", $lista_turmas);
+$smarty->assign("projetos_por_turma", $projetos_por_turma);
 $smarty->assign("user_name", $user_name);
 
 $smarty->assign("title", "UNAIDEAS - Professor");
