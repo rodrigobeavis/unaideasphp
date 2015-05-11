@@ -120,7 +120,8 @@
         </div>
         <footer>
             <div id="rodape">
-                <div> UnaIdeas <span class="rodape_email col-md-offset-8"><span class="glyphicon glyphicon-envelope"> </span> contato@unaideas.com.br</span></div>           
+                <div> UnaIdeas <span class="fa fa-facebook-square fa-2x"></span><span class="rodape_email col-md-offset-8"><span class="glyphicon glyphicon-envelope"> </span> contato@unaideas.com.br</span></div>           
+            
             </div>
         </footer>
         <div class="modal fade" id="login" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">

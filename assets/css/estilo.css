@@ -15,7 +15,7 @@ p.corpo_modal {text-align: justify;}
 	}
 
 body {
-	background: url("../imagens/fundo-home.png")!important;
+	background: url("../img/fundo-home.png")!important;
 	background-size: 100% !important;
 	overflow-x:hidden !important;
 	overflow-y:hidden !important;
@@ -71,7 +71,7 @@ nav#menu li:hover {
 
 table {
 	position: absolute !important;
-	top: 250px !important;
+	top: 35% !important;
 	vertical-align: baseline !important;
 }
 td {
@@ -81,9 +81,9 @@ td {
 }
 
 .quadros {
-	top: 200px !important;
+	top: 50% !important;
 	width: 85% !important;
-	height: 300px !important;
+	height: 85% !important;
 	text-align: center !important;
 	border: solid 6px rgba(54, 30, 67, 100) !important;
 	border-radius: 20px !important;
@@ -93,23 +93,23 @@ td {
 }
 
 .quadros:hover {
-	height: 350px !important;
+	height: 100% !important;
 }
 
 
 img#icone-aluno {
 	top: 100px !important;
-	width: 150px !important;
+	width: 40% !important;
 }
 
 img#icone-professor {
 	top: 100px !important;
-	width: 160px !important;
+	width: 41% !important;
 }
 
 img#icone-investidor {
-	top: 105px !important;
-	width: 140px !important;
+	top: 100px !important;
+	width: 40% !important;
 }
 
 p{
