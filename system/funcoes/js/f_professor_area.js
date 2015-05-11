@@ -5,3 +5,9 @@
  */
 
 
+    $(document).ready(function() {
+        $('#turma').multiselect({
+            enableFiltering: true,
+            numberDisplayed: 1
+        });
+    });

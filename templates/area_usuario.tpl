@@ -32,9 +32,9 @@
                 <div id="projeto{$smarty.section.projetos.index}" class="projeto">
                     <table id="projeto{$smarty.section.table_projeto.index}" class="table_projeto">
                         <tr>
-                            <td class="table_left"> <button id="editar_projeto_call" type="button" class="btn btn-primary" data-toggle="modal" data-target="#editar_projeto{$smarty.section.projetos.index}">Editar Projeto</button></td>
-                            <td class="table_right">
-                                <h2>&nbsp;&nbsp;{$projetos_usuario[projetos].tema_projeto}&nbsp;&nbsp;</h2>
+                            <!--<td class="table_left"> </td> -->
+                            <td class="table_right" colspan="2">
+                                <h2>&nbsp;&nbsp;{$projetos_usuario[projetos].tema_projeto}&nbsp;&nbsp; <button id="editar_projeto_call" type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#editar_projeto{$smarty.section.projetos.index}">Editar Projeto</button></h2>
                                 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Editar Equipe</button>-->
                             </td>
                         </tr>
@@ -58,8 +58,8 @@
                                             </br>
                                             <input id="status_projeto{$smarty.section.projetos.index}" name="editar_status_projeto" type="range" value="{$projetos_usuario[projetos].status}" min="0" max="100" step="5" onchange="printValue({$smarty.section.projetos.index});" style="width: 100%;"/>                    
                                             <div class="modal-footer">
-                                                <input type="submit" class="btn btn-primary" id="cadastro_projeto" value="Cadastrar">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <input id="alterar_projeto{$smarty.section.projetos.index}" type="submit" class="btn btn-warning" value="Salvar alterações">
+                                                <button id="cancelar_editacao{$smarty.section.projetos.index}" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                                             </div>
                                         </form>
                                     </div>
@@ -107,7 +107,7 @@
         </section>
         <footer>
             <div id="rodape">
-                <p>UnaIdeas</p>
+                <div> UnaIdeas <span class="rodape_email col-md-offset-8"><span class="glyphicon glyphicon-envelope"> </span> contato@unaideas.com.br</span></div>           
             </div>
         </footer>
         <div id="abrirModal" class="modalDialog">

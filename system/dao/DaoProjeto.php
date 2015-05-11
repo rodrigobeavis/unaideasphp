@@ -78,7 +78,7 @@ class DaoProjeto extends PDOConnectionFactory {
                             FROM
                                 equipe
                             WHERE
-                                id_usuario = :user_id);";
+                                id_usuario = :user_id)";
             $stmt = $this->conex->prepare($sql);
             //autenticação
             $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
@@ -121,7 +121,7 @@ class DaoProjeto extends PDOConnectionFactory {
             $sql = "INSERT INTO log_projeto
                                 (id_projeto, tema_projeto, descricao_projeto, palavras_chave_projeto,
                                 status, id_usuario, data_alteracao)
-                      VALUES
+                            VALUES
                                 (:id_projeto, :tema_projeto, :descricao_projeto,:palavras_chave_projeto,
                                 :status, :user_id, NOW())";
             $stmt = $this->conex->prepare($sql);
@@ -138,5 +138,46 @@ class DaoProjeto extends PDOConnectionFactory {
             echo $e->getMessage();
         }
     }    
+    
+    public function listarProjetosPorTurma($id_turma) {
+        try {
+            $sql = "SELECT 
+                        t1.id_projeto,
+                        t1.tema_projeto,
+                        t1.descricao_projeto,
+                        t1.palavras_chave_projeto,
+                        t1.status,
+                        t1.data_cadastro,
+                        t2.id_equipe,
+                        t2.id_projeto,
+                        t2.id_usuario,
+                        t3.nome_usuario,
+                        t3.email,
+                        t3.telefone
+                    FROM
+                        projeto t1
+                            INNER JOIN
+                        equipe t2 ON t1.id_projeto = t2.id_projeto
+                            INNER JOIN
+                        usuario t3 ON t2.id_usuario = t3.id_usuario
+                    WHERE
+                        t1.id_projeto IN (SELECT 
+                                id_projeto
+                            FROM
+                                equipe
+                            WHERE
+                                id_turma = :id_turma)";
+            $stmt = $this->conex->prepare($sql);
+            //autenticação
+            $stmt->bindParam(':id_turma', $id_turma, PDO::PARAM_INT);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+        parent::Close();
+    }
+    
     
 }

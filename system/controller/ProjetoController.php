@@ -34,12 +34,20 @@ class ProjetoController {
     public function editarProjeto($editar_projeto) {
         $this->dao_projeto->gravar_log_projeto($editar_projeto);    
          return $this->dao_projeto->editarProjeto($editar_projeto);
- 
+     }
+    
+    public function listarProjetosPorTurma($id_turma) {
+       $lista_projetos =  $this->dao_projeto->listarProjetosPorTurma($id_turma);
+       return $this->organizarListagemDeProjetos($lista_projetos);
     }
     
     public function listarProjetosUsuario($user_id) {
       $lista_projetos =   $this->dao_projeto->listarProjetos($user_id);
-          $lista_projetos_array = null;
+      return $this->organizarListagemDeProjetos($lista_projetos);
+    }
+    
+    private function organizarListagemDeProjetos($lista_projetos) {
+        $lista_projetos_array = null;
       foreach ($lista_projetos as $row) {
           $lista_projetos_array[$row->id_projeto]['id_projeto'] = $row->id_projeto;
           $lista_projetos_array[$row->id_projeto]['tema_projeto'] = $row->tema_projeto;
@@ -55,4 +63,6 @@ class ProjetoController {
       sort($lista_projetos_array);
       return $lista_projetos_array;
     }
+    
+    
 }
