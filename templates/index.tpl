@@ -122,22 +122,20 @@
         <footer>
             <div id="rodape">
                 <div id="" class="row"> 
-                    <div id="" class="col-md-1">UnaIdeas</div>
                     <div id="" class="col-md-2">
                         <div id="" class="link_rodape"> 
                         <a id="link_facebook" class="" href="https://www.facebook.com/unaideas" target="_blank"><span class="fa fa-facebook-square fa-2x"></span></a>
-                        <a id="link_twitter" class="" href="https://www.facebook.com/unaideas" target="_blank"><span class="fa fa-twitter-square fa-2x"></span></a>
+                        <a id="link_twitter" class="" href="https://www.twitter.com/unaideas" target="_blank"><span class="fa fa-twitter-square fa-2x"></span></a>
                         <a id="link_google" class="" href="https://www.facebook.com/unaideas" target="_blank"><span class="fa fa-google-plus-square fa-2x"></span></a>    
-                        </div>
-                        
-                   
+                        </div>                
                     </div>
+                   
                     <div id="" class="col-md-offset-9"> 
-                        <span class="rodape_email">
+                        <div id="" class="col-md-1">UnaIdeas</div><br>
+                       <!-- <span class="rodape_email">
                             <span class="glyphicon glyphicon-envelope"> 
-                     </span> contato@unaideas.com.br</span></div>  
-                </div>
-                
+                     </span> contato@unaideas.com.br</span></div>  -->
+                </div>            
             </div>
         </footer>
         <div class="modal fade" id="login" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
