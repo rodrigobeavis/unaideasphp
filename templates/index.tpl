@@ -20,6 +20,7 @@
                         <ul class="nav nav-pills">
                             <li><a href="index.php">Início</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#cadastro">Criar Conta</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#login">login</a></li>
                             <li><a href="#" id="sobre" >Sobre</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#fale_conosco">Fale conosco</a></li>               
                         </ul>
@@ -120,8 +121,23 @@
         </div>
         <footer>
             <div id="rodape">
-                <div> UnaIdeas <span class="fa fa-facebook-square fa-2x"></span><span class="rodape_email col-md-offset-8"><span class="glyphicon glyphicon-envelope"> </span> contato@unaideas.com.br</span></div>           
-            
+                <div id="" class="row"> 
+                    <div id="" class="col-md-1">UnaIdeas</div>
+                    <div id="" class="col-md-2">
+                        <div id="" class="link_rodape"> 
+                        <a id="link_facebook" class="" href="https://www.facebook.com/unaideas" target="_blank"><span class="fa fa-facebook-square fa-2x"></span></a>
+                        <a id="link_twitter" class="" href="https://www.facebook.com/unaideas" target="_blank"><span class="fa fa-twitter-square fa-2x"></span></a>
+                        <a id="link_google" class="" href="https://www.facebook.com/unaideas" target="_blank"><span class="fa fa-google-plus-square fa-2x"></span></a>    
+                        </div>
+                        
+                   
+                    </div>
+                    <div id="" class="col-md-offset-9"> 
+                        <span class="rodape_email">
+                            <span class="glyphicon glyphicon-envelope"> 
+                     </span> contato@unaideas.com.br</span></div>  
+                </div>
+                
             </div>
         </footer>
         <div class="modal fade" id="login" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
@@ -158,7 +174,7 @@
             <div class="modal-dialog modal-lg">
                 <div id="body_sobre" class="modal-content">
                     <div class="modal-header">
-                       <p class="corpo_modal">Sobre<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+                        <p class="corpo_modal">Sobre<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
                     </div>
                     <div class="modal-body">
                         <div class="well">
@@ -172,14 +188,14 @@
         <script src="./system/funcoes/js/f_index.js"></script>
         {literal}
             <script>
-                function mostraDescricao(exibe, esconde, esconde2) {
-                    document.getElementById(exibe).style.display = "block";
-                    document.getElementById(esconde).style.display = "none";
-                    document.getElementById(esconde2).style.display = "none";
-                }
-                function esconde(esconder) {
-                    document.getElementById(esconder).style.display = "none";
-                }
+                                function mostraDescricao(exibe, esconde, esconde2) {
+                                    document.getElementById(exibe).style.display = "block";
+                                    document.getElementById(esconde).style.display = "none";
+                                    document.getElementById(esconde2).style.display = "none";
+                                }
+                                function esconde(esconder) {
+                                    document.getElementById(esconder).style.display = "none";
+                                }
             </script>
         {/literal}   
     </body>
