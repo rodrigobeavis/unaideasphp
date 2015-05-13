@@ -63,5 +63,5 @@ $smarty->assign("lista_turmas", $lista_turmas);
 $smarty->assign("projetos_por_turma", $projetos_por_turma);
 $smarty->assign("user_name", $user_name);
 
-$smarty->assign("title", "UNAIDEAS - Professor");
-$smarty->display('area_professor.tpl');
+$smarty->assign("title", "UNAIDEAS - Investidor");
+$smarty->display('area_investidor.tpl');

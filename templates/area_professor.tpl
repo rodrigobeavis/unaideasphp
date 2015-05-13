@@ -42,7 +42,6 @@
                                     </select>
                                     <input type="submit" class="btn btn-default" id="filtrar_turma" name="filtrar_turma" value="Filtrar" >
                                 </div>
-                                
                             </form>
                         </div>
                     </div>
