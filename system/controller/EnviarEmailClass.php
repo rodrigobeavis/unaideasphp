@@ -7,19 +7,9 @@
  * @since 18/03/2015
  * @version 00
  */
-//if (file_exists("../assets/PHPMailer/class.phpmailer.php")) {
-//    require_once("../assets/PHPMailer/class.phpmailer.php");
-//} else {
-//    require_once("./assets/PHPMailer/class.phpmailer.php");
-//}
-//
-//if (file_exists("../assets/PHPMailer/class.smtp.php")) {
-//    require_once("../assets/PHPMailer/class.smtp.php");
-//} else {
-//    require_once("./assets/PHPMailer/class.smtp.php");
-//}
-if (file_exists("../assets/PHPMailer/PHPMailerAutoload.php")) {
-    require_once("../assets/PHPMailer/PHPMailerAutoload.php");
+
+if (file_exists("../../assets/PHPMailer/PHPMailerAutoload.php")) {
+    require_once("../../assets/PHPMailer/PHPMailerAutoload.php");
 } else {
     require_once("./assets/PHPMailer/PHPMailerAutoload.php");
 }
@@ -30,11 +20,6 @@ class EnviarEmailClass {
     public function EnviarEmailClass() {
         $this->PHPMailer = new PHPMailer();
     }
-
-//    private $HOST = "smtp.com";
-//    private $USERNAME = "ziyon1@gmail.com";
-//    private $PWD = ";ggx;1920;";
-//    private $PORT = "25";
     
     private $HOST = "ssl://smtp.googlemail.com";
     private $USERNAME = "testeteste1700@gmail.com";

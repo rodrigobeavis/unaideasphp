@@ -13,10 +13,10 @@
  */
 function emailRespAtivacao($dados) {
 
-    $email['de'] = "registros@agnitum.com.br";
-    $email['deName'] = "Registro Agnitum";
+    $email['de'] = "";
+    $email['deName'] = "";
 
-    $email['para'] = "nemerson.marcilio@protagon.com.br";
+    $email['para'] = "";
     //$email['para'] = "testeteste1700@gmail.com";
     $email['paraName'] = "Nemerson";
 

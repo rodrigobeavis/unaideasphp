@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
-a:link {text-decoration: none;}
-a:active {text-decoration: none;}
-a:visited {text-decoration: none;}
-a:hover {text-decoration: none;}
+a:link {text-decoration: none !important; color: #FFFFFF !important;}
+a:active {text-decoration: none !important; color: #361e43 !important;}
+a:visited {text-decoration: none !important; color: #FFFFFF !important;}
+a:hover {text-decoration: none !important;color: #361e43 !important;}
 
 @font-face {
 	font-family: "BebasNeue";
@@ -13,13 +13,21 @@ a:hover {text-decoration: none;}
 body {
 	background: url("../imagens/fundo-home.png");
 	background-size: 100%;
+	overflow-x: hidden;
 }
 
-div#div_idmenu{
+/*#barra-superior{
+	position: fixed;
+	width: 110%;
+	margin: -10px 0px 10px -10px;
+	z-index: 1;
+}*/
+
+/*div#div_idmenu{
 	top: 10px;
 	text-align: right;
-}
-
+}*/
+/*
 table#table_menu {
 	width:80%;
 	margin: 0px 10% 0px 10%;
@@ -30,22 +38,27 @@ table#table_menu td{
 }
 
 #logo_topo {
-	width: 50%;
+	position: fixed;
+	width: 20%;
 	margin: 0px;
-	left: 10px;
+	left: 11%;
 	top: 10px;
+	z-index: 2;
 }
 
 nav#menu ul {
 	font-family: BebasNeue;
+	position: fixed;
 	float: right;
-	top: 3%;
+	top: 10px;
+	left: 60%;
 	font-size: 25px;
-	color: #361E43;
+	color: #white;
 	font-weight: 100;
 	list-style: none;
 	text-transform: uppercase;
-	display: block;	
+	display: block;
+	z-index: 2;	
 }
 
 nav#menu li {
@@ -57,57 +70,67 @@ nav#menu li {
 }
 
 nav#menu li:hover {
-	color: rgba(54, 30, 67, 100);
+	color: #361E43;
 	display: inline-block;
 	padding: 5px 10px 0px 10px;
-	color: white;
-	background-color: #361E43;
+	background-color: white;
+}*/
+
+#section_projetos{
+	margin-top: 1%;
 }
 
 
-#projeto {
+.projeto  {
 	width: 80%;
 	height: 20%;
 	background-color: #fff;
 	margin-left: 10%;
 	margin-right: 10%;
-	margin-bottom: 20px;
+	margin-bottom: 3%;
 	border-radius: 10px;
 	box-shadow: 5px 5px 5px #888888;
 	transition: 0.1s;
 }
 
-#projeto:hover {
+.projeto:hover {
 	border-left: 10px solid #361E43;
 }
 
-table#table_projeto {
-	padding: 5px 15px 5px 15px;
+table.table_projeto {
+	//padding: 5px 15px 5px 15px;
 	font-family: BebasNeue;
+        width: 99%;
 }
 
-table#table_projeto h2 {
+table.table_projeto h2 {
 	margin: 0px;
-	font-size: 28pt;
+	font-size: 25pt;
 	color: #361E43;
 }
 
-table#table_projeto p {
-	font-size: 25px;
+table.table_projeto p {
+	font-size: 20px;
 	text-decoration: none;
 	color: #888;
-	margin: 0px;
 }
 
-table#table_projeto td {
+table.table_projeto td {
 	border-bottom: 1px solid #bbb;
 	margin: 0px 0px 10px 0px;
 }
 
+table.table_projeto .table_left {
+    padding-left: 1%;
+    width: 15%;
+}
+table.table_projeto .table_right {
+    width: 75%;
+}
 #modal form textarea, input{
-	font-family: BebasNeue;
+	
 	font-size: 15pt;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 #modal form span#estado_projeto {
@@ -145,7 +168,7 @@ table#table_projeto td {
 .modalDialog {
 position: fixed;
 font-family: BebasNeue;
-font-size: 25pt;
+font-size: 15pt;
 top: 0;
 right: 0;
 bottom: 0;
@@ -164,7 +187,6 @@ overflow:scroll; /* activa scroll da página se a modal for muito comprida */
 	text-align: center;	
 	font-size: 20pt;
 	color: #361E43;
-
 }
 
 .modalDialog:target {
@@ -205,3 +227,66 @@ box-shadow: 1px 1px 3px #000;
 }
 
 .close:hover { background: #361e43; }
+
+#rodape{
+	position: fixed;
+	background-color: #eeeeee;
+	border: solid 5px #888888;
+	width: 110%;
+	height: 35px;
+	margin: 0px 0px 0px -15px;
+	padding-left: 11%;
+	top: 95%;
+	z-index: 2;
+}
+
+#rodape p{
+	font-family: BebasNeue;
+	color: #361e43;
+	font-size: 15pt;
+}
+
+
+.cabecalho_new{
+    background-image: url("../img/barra-superior-roxa.png") !important;
+    font-family: BebasNeue !important;
+    font-size: 20px !important;
+    background-repeat: no-repeat!important;
+    background-size: 100% 100% !important;
+    height: 100% !important;
+}
+
+.glyphicon-1 {font-size: 1.2em;}
+.glyphicon-1 {font-size: 2em;}
+.glyphicon-1 {font-size: 3em;}
+.glyphicon-1 {font-size: 4em;}
+.glyphicon-1 {font-size: 5em;}
+
+.modal_editar{
+    font-family: BebasNeue;
+font-size: 15pt;
+background-color: #eeeeee !important;
+}
+
+.select_equipe{
+font-family: BebasNeue;
+font-size: 15pt;
+
+}
+.palavras_chave{
+    font-family: Helvetica,Arial,sans-serif !important;
+    font-size: 15px !important;
+    width: 100% !important;
+    padding-top: 5px!important;
+}
+.bootstrap-tagsinput{
+  display: block !important;
+  width: 100% !important;
+  font-family: Helvetica,Arial,sans-serif !important;
+    font-size: 15px !important;
+  }
+
+  .filtro_turma{
+      font-family: "BebasNeue";
+      font-size: 25px !important;
+  }
