@@ -194,3 +194,59 @@ menu_index{
 .link_rodape a:active {text-decoration: none !important; color: #361e43 !important;}
 .link_rodape a:visited {text-decoration: none !important; color: #361e43 !important;}
 .link_rodape a:hover {text-decoration: none !important;color: #361e43 !important;}
+
+
+.btn-default {
+  text-shadow: 0 1px 0 #fff;
+  background-image: -webkit-linear-gradient(top, #9D9DBD 0%, #e0e0e0 100%) !important;
+  background-image:      -o-linear-gradient(top, #9D9DBD 0%, #e0e0e0 100%)!important;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9D9DBD), to(#e0e0e0));
+  background-image:         linear-gradient(to bottom, #9D9DBD 0%, #e0e0e0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9D9DBD', endColorstr='#ffe0e0e0', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  border-color: #dbdbdb;
+  border-color: #ccc;
+}
+.btn-default:hover,
+.btn-default:focus {
+  background-color: #e0e0e0;
+  background-position: 0 -15px;
+}
+.btn-default:active,
+.btn-default.active {
+  background-color: #e0e0e0;
+  border-color: #dbdbdb;
+}
+.btn-default.disabled,
+.btn-default:disabled,
+.btn-default[disabled] {
+  background-color: #e0e0e0;
+  background-image: none;
+}
+.btn-primary {
+  background-image: -webkit-linear-gradient(top, #361e43 0%, #751975 100%);
+  background-image:      -o-linear-gradient(top, #361e43 0%, #751975 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#361e43), to(#751975));
+  background-image:         linear-gradient(to bottom, #361e43 0%, #751975 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff361e43', endColorstr='#ff265a88', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  border-color: #751975;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #751975;
+  background-position: 0 -15px;
+}
+.btn-primary:active,
+.btn-primary.active {
+  background-color: #751975;
+  border-color: #245580;
+}
+.btn-primary.disabled,
+.btn-primary:disabled,
+.btn-primary[disabled] {
+  background-color: #751975;
+  background-image: none;
+}

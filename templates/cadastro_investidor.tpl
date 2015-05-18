@@ -4,6 +4,7 @@
         <title>{$title}</title>
         <meta charset="UTF-8">
         {include file="header.tpl" title=$title}
+        <link href="./assets/css/estilo.css" rel="stylesheet" type="text/css"/>
     </head>
     <body class="container">
     <legend class="well well-sm">Investidor</legend>
@@ -53,8 +54,8 @@
         <div class="control-group">
             <label class="control-label" for="button1id"></label>
             <div class="controls">        
-                <button id="button1id" class="btn btn-success" >cadastrar</button> <!-- data-dismiss="modal" data-toggle="modal" data-target="#login" -->
-                <button id="cancelar" type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+                <button id="button1id" class="btn btn-primary" >cadastrar</button> <!-- data-dismiss="modal" data-toggle="modal" data-target="#login" -->
+                <button id="cancelar" type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
             </div>
         </div>
    

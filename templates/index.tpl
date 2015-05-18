@@ -17,7 +17,7 @@
                     </div>
                     <br>
                     <div class="menu_index pull-right">                            
-                        <ul class="nav nav-pills">
+                        <ul  class="nav nav-pills">
                             <li><a href="index.php">Início</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#cadastro">Criar Conta</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#login">login</a></li>
@@ -81,7 +81,7 @@
                         </div>
                         <div class="modal-footer">
                             <input class="btn btn-primary" type="submit" value="Enviar" data-toggle="tooltip" data-placement="left" title="Click Aqui para enviar">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                         </div>
                         </form>
                     </div><!-- /.modal-content -->
@@ -132,9 +132,6 @@
                    
                     <div id="" class="col-md-offset-9"> 
                         <div id="" class="col-md-1">UnaIdeas</div><br>
-                       <!-- <span class="rodape_email">
-                            <span class="glyphicon glyphicon-envelope"> 
-                     </span> contato@unaideas.com.br</span></div>  -->
                 </div>            
             </div>
         </footer>
@@ -155,14 +152,14 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-offset-7">
-                                    <a id="modal_call_login" class="btn label-warning" href="" data-toggle="modal" data-target="#cadastro">Criar Conta?</a>
+                                    <a id="modal_call_login" class="btn btn-primary" href="" data-toggle="modal" data-target="#cadastro">Criar Conta?</a>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <div id="validacao"></div>
                             <input class="btn btn-primary" type="submit" value="Entrar" data-toggle="tooltip" data-placement="left" title="Click Aqui para entrar.">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                         </div>
                     </form>
                 </div><!-- /.modal-content -->
@@ -186,14 +183,14 @@
         <script src="./system/funcoes/js/f_index.js"></script>
         {literal}
             <script>
-                                function mostraDescricao(exibe, esconde, esconde2) {
-                                    document.getElementById(exibe).style.display = "block";
-                                    document.getElementById(esconde).style.display = "none";
-                                    document.getElementById(esconde2).style.display = "none";
-                                }
-                                function esconde(esconder) {
-                                    document.getElementById(esconder).style.display = "none";
-                                }
+                    function mostraDescricao(exibe, esconde, esconde2) {
+                        document.getElementById(exibe).style.display = "block";
+                        document.getElementById(esconde).style.display = "none";
+                        document.getElementById(esconde2).style.display = "none";
+                    }
+                    function esconde(esconder) {
+                        document.getElementById(esconder).style.display = "none";
+                    }
             </script>
         {/literal}   
     </body>
