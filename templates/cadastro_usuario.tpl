@@ -56,7 +56,7 @@
                         <input id="keyu2"  placeholder="Confirme a senha" maxlength="15" class="form-control" required type="password">
                     </div>
                     <div class="col-md-4">
-                        <h4><label id="erro_senha" class="label btn-warning">As senhas não conferem</label></h4>
+                        <h4><label id="erro_senha" class="label btn-danger">As senhas não conferem</label></h4>
                         <input id="tipo" name="tipo" value="1" type="hidden">
                     </div>
                 </div>
@@ -67,8 +67,8 @@
         <label class="control-label" for="button1id"></label>
         <div class="controls">
 
-            <button id="button1id" class="btn btn-primary" >cadastrar</button> <!-- data-dismiss="modal" data-toggle="modal" data-target="#login" -->
-            <button id="cancelar" type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            <button id="button1id" class="btn btn-success" >cadastrar</button> <!-- data-dismiss="modal" data-toggle="modal" data-target="#login" -->
+            <button id="cancelar" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
         </div>
     </div>
 

@@ -16,12 +16,12 @@
                         </div>
                     </div>
                     <br>
-                    <div class="menu_index pull-right">                            
-                        <ul  class="nav nav-pills">
+                    <div class="menu_index collapse navbar-collapse">                            
+                        <ul  class="nav navbar-nav navbar-right">
                             <li><a href="index.php">Início</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#cadastro">Criar Conta</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#login">login</a></li>
-                            <li><a href="#" id="sobre" >Sobre</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#sobre_modal" id="sobre" >Sobre</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#fale_conosco">Fale conosco</a></li>               
                         </ul>
                     </div>
@@ -80,8 +80,8 @@
                                 </div>
                         </div>
                         <div class="modal-footer">
-                            <input class="btn btn-primary" type="submit" value="Enviar" data-toggle="tooltip" data-placement="left" title="Click Aqui para enviar">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            <input class="btn btn-success" type="submit" value="Enviar" data-toggle="tooltip" data-placement="left" title="Click Aqui para enviar">
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
                         </div>
                         </form>
                     </div><!-- /.modal-content -->
@@ -152,14 +152,14 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-offset-7">
-                                    <a id="modal_call_login" class="btn btn-primary" href="" data-toggle="modal" data-target="#cadastro">Criar Conta?</a>
+                                    <a id="modal_call_login" class="btn btn-warning" href="" data-toggle="modal" data-target="#cadastro">Criar Conta?</a>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <div id="validacao"></div>
-                            <input class="btn btn-primary" type="submit" value="Entrar" data-toggle="tooltip" data-placement="left" title="Click Aqui para entrar.">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            <input class="btn btn-success" type="submit" value="Entrar" data-toggle="tooltip" data-placement="left" title="Click Aqui para entrar.">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                         </div>
                     </form>
                 </div><!-- /.modal-content -->

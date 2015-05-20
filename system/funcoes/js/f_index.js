@@ -41,13 +41,13 @@ $(document).ready(function () {
  *funções do modal. 
  */
 //evento do mouse sobre o menu sobre
-$("a#sobre").mouseover(function () {
-    $('#sobre_modal').modal('show');
-});
-
-$('#body_sobre').mouseleave(function () {
-    $('#sobre_modal').modal('hide');
-});
+//$("a#sobre").mouseover(function () {
+//    $('#sobre_modal').modal('show');
+//});
+//
+//$('#body_sobre').mouseleave(function () {
+//    $('#sobre_modal').modal('hide');
+//});
 
 //Deixar dinamica a o acesso de castro dento do login;
 $('#modal_call_login').click(function () {

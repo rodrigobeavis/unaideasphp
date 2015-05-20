@@ -224,7 +224,7 @@ menu_index{
   background-color: #e0e0e0;
   background-image: none;
 }
-.btn-primary {
+/*.btn-primary {
   background-image: -webkit-linear-gradient(top, #361e43 0%, #751975 100%);
   background-image:      -o-linear-gradient(top, #361e43 0%, #751975 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#361e43), to(#751975));
@@ -249,4 +249,6 @@ menu_index{
 .btn-primary[disabled] {
   background-color: #751975;
   background-image: none;
-}
+}*/
+
+
