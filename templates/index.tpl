@@ -8,15 +8,15 @@
     </head>
     <body>
         <div id="index_body">
-            <header class="cabecalho_new">
-                <nav class="navbar">
+   
+                <nav class=" cabecalho_new navbar  navbar-default">
                     <div class="row container-fluid">
                         <div class="col-md-3 navbar-header">                        
                             <a class="navbar-brand img-responsive" href="index.php"><img class="img-responsive" src="./assets/img/una-ideas-logo.png"></a>
                         </div>
                     </div>
                     <br>
-                    <div class="menu_index collapse navbar-collapse">                            
+                    <div class="collapse navbar-collapse">                            
                         <ul  class="nav navbar-nav navbar-right">
                             <li><a href="index.php">Início</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#cadastro">Criar Conta</a></li>
@@ -26,7 +26,7 @@
                         </ul>
                     </div>
                 </nav>
-            </header>
+          
             <div class="modal fade" id="cadastro" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">

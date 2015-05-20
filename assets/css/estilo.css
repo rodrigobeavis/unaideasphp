@@ -4,7 +4,7 @@
 a:link {text-decoration: none !important; color: #FFFFFF !important;}
 a:active {text-decoration: none !important; color: #361e43 !important;}
 a:visited {text-decoration: none !important; color: #FFFFFF !important;}
-a:hover {text-decoration: none !important;color: #361e43 !important;}
+a:hover {text-decoration: none !important;color: #f8bb00 !important;}
 
 //a.menu_index{ color:  #FFFFFF !important; }
 p.corpo_modal {text-align: justify;}
@@ -146,6 +146,10 @@ p#descricao-investidor {
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
+navbar{
+    background-image: url("../img/barra-superior-home.png") !important;
+     background-repeat: no-repeat;
+}
 
 menu_index{ 
    padding-top: 2% !important;
@@ -252,3 +256,7 @@ menu_index{
 }*/
 
 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+
+}
