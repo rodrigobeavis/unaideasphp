@@ -3,7 +3,7 @@
     <head>
         <title>{$title}</title>
         <meta charset="UTF-8">
-        {include file="header.tpl" title=$title}
+        {include file="header_geral.tpl" title=$title}
         <link href="./assets/css/estilo_pagina_professor.css" rel="stylesheet" type="text/css"/>
         <!-- <link rel="stylesheet" type="text/css" href="./assets/js/bootstrap-tagsinput/bootstrap-tagsinput.css"> -->
         <link href="./assets/js/bootstrap-multiselect/dist/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css"/>
@@ -133,7 +133,7 @@
                 <div> UnaIdeas <span class="rodape_email col-md-offset-8"><span class="glyphicon glyphicon-envelope"> </span> contato@unaideas.com.br</span></div>           
             </div>
     </footer>
-    {include file="footer.tpl"}        
+    {include file="footer_geral.tpl"}        
     <!--<script src="./assets/js/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script> -->
     <script src="./assets/js/bootstrap-multiselect/dist/js/bootstrap-multiselect.js" type="text/javascript"></script>
     <script src="./system/funcoes/js/f_professor_area.js"></script>

@@ -3,7 +3,7 @@
     <head>
         <title>{$title}</title>
         <meta charset="UTF-8">
-        {include file="header.tpl" title=$title}
+        {include file="header_geral.tpl" title=$title}
         <link rel="stylesheet"  href="./assets/css/estilo_pagina_idealizadores1.css">
         <link rel="stylesheet" type="text/css" href="./assets/js/bootstrap-tagsinput/bootstrap-tagsinput.css">
         <link href="./assets/js/bootstrap-multiselect/dist/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css"/>
@@ -151,7 +151,7 @@
                 </form>
             </div>
         </div>
-        {include file="footer.tpl"}        
+        {include file="footer_geral.tpl"}        
         <script src="./assets/js/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
         <script src="./assets/js/bootstrap-multiselect/dist/js/bootstrap-multiselect.js" type="text/javascript"></script>
         <script src="./system/funcoes/js/f_user_area.js"></script>

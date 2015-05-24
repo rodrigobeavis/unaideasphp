@@ -30,9 +30,9 @@ $(function () {
     });
 });
 
-$(document).ready(function () {
-    $('#turma').chosen({no_results_text: "Oops, não encontrado!!"});
-});
+//$(document).ready(function () {
+//    $('#turma').chosen({no_results_text: "Oops, não encontrado!!"});
+//});
 
 //acionamento do POST para php de acordo com tipo de usuario
 $(document).ready(function () {
