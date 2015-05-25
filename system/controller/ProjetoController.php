@@ -46,6 +46,12 @@ class ProjetoController {
       return $this->organizarListagemDeProjetos($lista_projetos);
     }
     
+    public function pesquisarProjetoPorTema($tema) {
+       $tema = "%".$tema."%";
+       $lista_projetos_tema = $this->dao_projeto->listarPesquisaDeProjetosPorTema($tema);
+       return $this->organizarListagemDeProjetos($lista_projetos_tema);
+    }
+    
     private function organizarListagemDeProjetos($lista_projetos) {
         $lista_projetos_array = null;
       foreach ($lista_projetos as $row) {

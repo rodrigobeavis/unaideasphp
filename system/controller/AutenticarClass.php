@@ -40,7 +40,7 @@ class AutenticarClass {
                 $url = "area_professor.php";
                 break;
             case 3:
-                $url = "area_professor.php";
+                $url = "area_investidor.php";
                 break;
         }
         

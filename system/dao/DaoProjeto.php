@@ -37,7 +37,6 @@ class DaoProjeto extends PDOConnectionFactory {
                         :palavras_chave_projeto,
                         :status,NOW())";
             $stmt = $this->conex->prepare($sql);
-            //autenticação
             $stmt->bindParam(':tema_projeto', $projeto['nome_projeto'], PDO::PARAM_STR);
             $stmt->bindParam(':descricao_projeto', $projeto['descricao_projeto'], PDO::PARAM_STR);
             $stmt->bindParam(':palavras_chave_projeto', $projeto['palavra_chave'], PDO::PARAM_STR);
@@ -80,7 +79,6 @@ class DaoProjeto extends PDOConnectionFactory {
                             WHERE
                                 id_usuario = :user_id)";
             $stmt = $this->conex->prepare($sql);
-            //autenticação
             $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
             $stmt->execute();
 
@@ -102,7 +100,7 @@ class DaoProjeto extends PDOConnectionFactory {
                             status = :status
                         WHERE id_projeto = :id_projeto";
             $stmt = $this->conex->prepare($sql);
-            
+
             $stmt->bindParam(':tema_projeto', $editar_projeto['editar_nome_projeto'], PDO::PARAM_STR);
             $stmt->bindParam(':descricao_projeto', $editar_projeto['editar_descricao_projeto'], PDO::PARAM_STR);
             $stmt->bindParam(':palavras_chave_projeto', $editar_projeto['editar_palavra_chave'], PDO::PARAM_STR);
@@ -132,13 +130,13 @@ class DaoProjeto extends PDOConnectionFactory {
             $stmt->bindParam(':status', $editar_projeto['editar_status_projeto'], PDO::PARAM_INT);
             $stmt->bindParam(':user_id', $editar_projeto['user_id'], PDO::PARAM_INT);
             $stmt->bindParam(':id_projeto', $editar_projeto['editar_id_projeto'], PDO::PARAM_INT);
-            
+
             return $stmt->execute();
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
-    }    
-    
+    }
+
     public function listarProjetosPorTurma($id_turma) {
         try {
             $sql = "SELECT 
@@ -168,7 +166,6 @@ class DaoProjeto extends PDOConnectionFactory {
                             WHERE
                                 id_turma = :id_turma)";
             $stmt = $this->conex->prepare($sql);
-            //autenticação
             $stmt->bindParam(':id_turma', $id_turma, PDO::PARAM_INT);
             $stmt->execute();
 
@@ -178,6 +175,38 @@ class DaoProjeto extends PDOConnectionFactory {
         }
         parent::Close();
     }
-    
-    
+
+    public function listarPesquisaDeProjetosPorTema($tema) {
+        try {
+            $sql = "SELECT 
+                        t1.id_projeto,
+                        t1.tema_projeto,
+                        t1.descricao_projeto,
+                        t1.palavras_chave_projeto,
+                        t1.status,
+                        t1.data_cadastro,
+                        t2.id_equipe,
+                        t2.id_projeto,
+                        t2.id_usuario,
+                        t3.nome_usuario,
+                        t3.email,
+                        t3.telefone
+                    FROM
+                        projeto t1
+                            INNER JOIN
+                        equipe t2 ON t1.id_projeto = t2.id_projeto
+                            INNER JOIN
+                        usuario t3 ON t2.id_usuario = t3.id_usuario
+                    WHERE
+                        t1.tema_projeto LIKE :pesquisa";
+            $stmt = $this->conex->prepare($sql);
+            $stmt->bindParam(':pesquisa', $tema, PDO::PARAM_STR);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+        parent::Close();
+    }
+
 }

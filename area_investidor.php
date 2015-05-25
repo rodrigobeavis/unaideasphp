@@ -17,6 +17,11 @@ require_once './system/controller/EquipeController.php';
 require_once './system/controller/UsuarioController.php';
 include_once('./system/funcoes/f_login.php'); // variaveis reservadas ($user_name;$user_id;$area_user;$acesso_user;)
 
+
+$usuarios_autorizados = 3;
+include_once ('./system/funcoes/f_acesso.php');// não permitir o acesso de usuarios de outro tipo
+
+
 if ($_REQUEST) {
     $dados = $_REQUEST;    
 }
@@ -33,15 +38,11 @@ $lista_turmas = $turma_control->listarTurmas();
 
 
 
-if (filter_input(INPUT_POST, 'turma')) {
-    $projetos_por_turma =  $ctrl_projeto->listarProjetosPorTurma($dados['turma']);
+if (filter_input(INPUT_POST, 'pesquisar')) {
+   
+$projetos_por_tema =  $ctrl_projeto->pesquisarProjetoPorTema($dados['pesquisar']);
+var_dump($projetos_por_tema);
 }
-
-
-
-
-
-$lista_usuarios_da_mesma_turma = $usuario_controller->listarUsuariosDaTurma($user_id);
 
 
 
@@ -59,8 +60,7 @@ $area_user;
 $acesso_user;
 
 
-$smarty->assign("lista_turmas", $lista_turmas);
-$smarty->assign("projetos_por_turma", $projetos_por_turma);
+//$smarty->assign("projetos_por_turma", $projetos_por_turma);
 $smarty->assign("user_name", $user_name);
 
 $smarty->assign("title", "UNAIDEAS - Investidor");

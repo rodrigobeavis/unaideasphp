@@ -25,12 +25,13 @@
                 <input id="telefone_professor" name="telefone_professor" placeholder="Telefone" maxlength="12"class="form-control" required="" type="text">
             </div>
             <div class="col-md-3">
-                <select id="tipo_professor" name="tipo_professor" class="form-control">
+                <!--<select id="tipo_professor" name="tipo_professor" class="form-control">
                     <option disabled selected value="">Tipo...</option>
                     <option value="1">Orientador</option>
                     <option value="2">Avaliador</option>
                     <option value="3">Avaliador/Orientador</option>
-                </select>
+                </select>-->
+                <input id="tipo_professor" name="tipo_professor" value="3" type="hidden">
             </div>
         </div>
         <div class="row ">
