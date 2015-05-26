@@ -10,11 +10,11 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-require_once './assets/Smarty/libs/Smarty.class.php';
-require_once './system/controller/TurmaController.php';
-require_once './system/controller/ProjetoController.php';
-require_once './system/controller/EquipeController.php';
-require_once './system/controller/UsuarioController.php';
+require_once ('./assets/Smarty/libs/Smarty.class.php');
+require_once ('./system/controller/TurmaController.php');
+require_once ('./system/controller/ProjetoController.php');
+require_once ('./system/controller/EquipeController.php');
+require_once ('./system/controller/UsuarioController.php');
 include_once('./system/funcoes/f_login.php'); // variaveis reservadas ($user_name;$user_id;$area_user;$acesso_user;)
 
 
@@ -41,7 +41,7 @@ $lista_turmas = $turma_control->listarTurmas();
 if (filter_input(INPUT_POST, 'pesquisar')) {
    
 $projetos_por_tema =  $ctrl_projeto->pesquisarProjetoPorTema($dados['pesquisar']);
-var_dump($projetos_por_tema);
+//var_dump($projetos_por_tema);
 }
 
 
@@ -60,7 +60,7 @@ $area_user;
 $acesso_user;
 
 
-//$smarty->assign("projetos_por_turma", $projetos_por_turma);
+$smarty->assign("projetos_por_tema", $projetos_por_tema);
 $smarty->assign("user_name", $user_name);
 
 $smarty->assign("title", "UNAIDEAS - Investidor");
