@@ -176,7 +176,7 @@ class DaoProjeto extends PDOConnectionFactory {
         parent::Close();
     }
 
-    public function listarPesquisaDeProjetosPorTema($tema) {
+   public function listarPesquisaDeProjetosPorTema($tema) {
         try {
             $sql = "SELECT 
                         t1.id_projeto,
@@ -200,7 +200,8 @@ class DaoProjeto extends PDOConnectionFactory {
                     WHERE
                         t1.tema_projeto LIKE :pesquisa";
             $stmt = $this->conex->prepare($sql);
-            $stmt->bindParam(':pesquisa', $tema, PDO::PARAM_STR);
+
+            $stmt->bindParam(':pesquisa', $tema);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_OBJ);
         } catch (PDOException $e) {
@@ -209,14 +210,14 @@ class DaoProjeto extends PDOConnectionFactory {
         parent::Close();
     }
 
-    public function consultarPesquisaDeProjetosPorTema($tema) {
+    
+    public function consultarPesquisaDeProjetosPorTema() {
         try {
             $sql = "SELECT 
                         tema_projeto
                     FROM
                         projeto";
             $stmt = $this->conex->prepare($sql);
-            $stmt->bindParam(':pesquisa', $tema, PDO::PARAM_STR);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {

@@ -53,7 +53,7 @@
                         <tr>
                             <!--<td class="table_left"> </td> -->
                             <td class="table_right" colspan="2">
-                                <h2>&nbsp;&nbsp;{$projetos_por_tema[projetos].tema_projeto}&nbsp;&nbsp; <button id="editar_projeto_call" type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#editar_projeto{$smarty.section.projetos.index}">Editar Projeto</button></h2>
+                                <h2>&nbsp;&nbsp;{$projetos_por_tema[projetos].tema_projeto}&nbsp;&nbsp; <button id="editar_projeto_call" type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#editar_projeto{$smarty.section.projetos.index}">Enviar Mensagem</button></h2>
                                 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Editar Equipe</button>-->
                             </td>
                         </tr>
@@ -110,10 +110,10 @@
                             <td>                                
                                 <p>
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-success" style="width: {$projetos_por_tema[projetos].status}%">{$projetos_por_turma[projetos].status}% Pronto
+                                    <div class="progress-bar progress-bar-success" style="width: {$projetos_por_tema[projetos].status}%">{$projetos_por_tema[projetos].status}% Pronto
                                         <span class="sr-only">{$projetos_por_tema[projetos].status}% Complete (success)</span>
                                     </div>
-                                    <div class="progress-bar progress-bar-warning" style="width: {100 - $projetos_por_tema[projetos].status}%">{100 - $projetos_por_turma[projetos].status}% A fazer
+                                    <div class="progress-bar progress-bar-warning" style="width: {100 - $projetos_por_tema[projetos].status}%">{100 - $projetos_por_tema[projetos].status}% A fazer
                                         <span class="sr-only">{100 - $projetos_por_tema[projetos].status}% Complete (warning)</span>
                                     </div>
                                 </div>

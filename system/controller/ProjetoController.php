@@ -53,10 +53,10 @@ class ProjetoController {
     }
     
     public function listarTemasDeProjetos() {
-      $lista_temas =   $this->dao_projeto->consultarPesquisaDeProjetosPorTema();
+      $lista_temas = $this->dao_projeto->consultarPesquisaDeProjetosPorTema();
       
-      foreach ($lista_temas as $tema) {
-          $listagem[] = $tema['tema_projeto']; 
+      foreach ($lista_temas as $item) {
+          $listagem[] = $item['tema_projeto']; 
       }      
       
       return $listagem;

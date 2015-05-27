@@ -28,17 +28,13 @@ if ($_REQUEST) {
 //var_dump($dados);
 
 $smarty = new Smarty;
-$turma_control = new TurmaController; 
 $usuario_controller = new UsuarioController();
 $ctrl_projeto = new ProjetoController();
 $ctrl_equipe = new EquipeController();
 
-
-$lista_turmas = $turma_control->listarTurmas();
-
 $lista_temas_projetos = $ctrl_projeto->listarTemasDeProjetos();
 
-var_dump($lista_temas_projetos);
+//var_dump($lista_temas_projetos);
 
 if (filter_input(INPUT_POST, 'pesquisar')) {
    
