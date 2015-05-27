@@ -37,6 +37,18 @@ $(document).ready(function () {
         });
     });
 });
+
+/**
+ * carregando.
+ * beforeSend: function () {
+             $('#page-body').html('<div class="col-md-6 col-md-offset-3 numero gear_animada"><i class="fa fa-cog fa-spin fa-10x"></i></div>');
+        },
+ * 
+ * */
+
+
+
+
 /**
  *funções do modal. 
  */
