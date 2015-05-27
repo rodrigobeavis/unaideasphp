@@ -77,7 +77,7 @@
                                             </br>
                                             <input id="status_projeto{$smarty.section.projetos.index}" name="editar_status_projeto" type="range" value="{$projetos_por_tema[projetos].status}" min="0" max="100" step="5" onchange="printValue({$smarty.section.projetos.index});" style="width: 100%;"/>                    
                                             <div class="modal-footer">
-                                                <input id="alterar_projeto{$smarty.section.projetos.index}" type="submit" class="btn btn-warning" value="Salvar alterações">
+                                                <input id="alterar_projeto{$smarty.section.projetos.index}" type="submit" class="btn btn-success" value="Enviar">
                                                 <button id="cancelar_editacao{$smarty.section.projetos.index}" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                                             </div>
                                         </form>

@@ -18,7 +18,7 @@ require_once ('./system/controller/UsuarioController.php');
 include_once('./system/funcoes/f_login.php'); // variaveis reservadas ($user_name;$user_id;$area_user;$acesso_user;)
 
 
-$usuarios_autorizados = 3;
+$usuarios_autorizados = array(3);
 include_once ('./system/funcoes/f_acesso.php');// não permitir o acesso de usuarios de outro tipo
 
 
