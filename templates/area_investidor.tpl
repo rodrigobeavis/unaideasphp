@@ -132,36 +132,15 @@
         {include file="footer_geral.tpl"}        
         <!--<script src="./assets/js/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script> -->
         <script src="./assets/js/bootstrap-multiselect/dist/js/bootstrap-multiselect.js" type="text/javascript"></script>
-        <script src="./system/funcoes/js/f_professor_area.js"></script>
+        <script src="./system/funcoes/js/f_investidor_area.js"></script>
         {literal}
             <script type="text/javascript">
-
-                $(document).ready(function () {
-
-                    var max = {/literal}{$smarty.section.projetos.total}{literal}
-                    var i = 0;
-
-                    while (i <= max) {
-                        printValue(i);
-                        i++;
-                    }
+                $(function() {
+                    var availableTags = {/literal}{$lista_temas_projetos|@json_encode}{literal};
+                  $( "#pesquisar" ).autocomplete({
+                    source: availableTags
+                  });
                 });
-                function printValue(id) {
-                    var origem = document.getElementById("status_projeto" + id).value;
-                    if (origem < 20)
-                        document.getElementById("valor_status" + id).style.background = "#800000";
-                    if (origem >= 20 && origem < 40)
-                        document.getElementById("valor_status" + id).style.background = "#ff4500";
-                    if (origem >= 40 && origem < 60)
-                        document.getElementById("valor_status" + id).style.background = "#ffff00";
-                    if (origem >= 60 && origem < 80)
-                        document.getElementById("valor_status" + id).style.background = "#7cfc00";
-                    if (origem >= 80)
-                        document.getElementById("valor_status" + id).style.background = "#00ff00";
-                    if (origem == 100)
-                        document.getElementById("valor_status" + id).style.background = "#4682B4";
-                    document.getElementById("valor_status" + id).value = origem + "%";
-                }
             </script>
         {/literal} 
     </body>

@@ -19,6 +19,7 @@ include_once('./system/funcoes/f_login.php'); // variaveis reservadas ($user_nam
 
 
 $usuarios_autorizados = 2;
+
 include_once ('./system/funcoes/f_acesso.php');// não permitir o acesso de usuarios de outro tipo
 
 

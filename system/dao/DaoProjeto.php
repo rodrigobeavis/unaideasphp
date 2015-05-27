@@ -209,4 +209,20 @@ class DaoProjeto extends PDOConnectionFactory {
         parent::Close();
     }
 
+    public function consultarPesquisaDeProjetosPorTema($tema) {
+        try {
+            $sql = "SELECT 
+                        tema_projeto
+                    FROM
+                        projeto";
+            $stmt = $this->conex->prepare($sql);
+            $stmt->bindParam(':pesquisa', $tema, PDO::PARAM_STR);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+        parent::Close();
+    }
+
 }

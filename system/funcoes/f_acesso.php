@@ -1,6 +1,5 @@
 <?php
-
-if ($acesso_user != $usuarios_autorizados) {
+if ($area_user != $usuarios_autorizados) {   
     unset($_SESSION);
     session_destroy();
     echo '<script>alert("Você tentou acessar uma area restrita!");</script>';

@@ -20,7 +20,7 @@ class ProjetoController {
    
     private $dao_projeto;
     private $model_projeto;
-    
+        
     public function ProjetoController() {
         
         $this->dao_projeto = new DaoProjeto();
@@ -51,6 +51,17 @@ class ProjetoController {
        $lista_projetos_tema = $this->dao_projeto->listarPesquisaDeProjetosPorTema($tema);
        return $this->organizarListagemDeProjetos($lista_projetos_tema);
     }
+    
+    public function listarTemasDeProjetos() {
+      $lista_temas =   $this->dao_projeto->consultarPesquisaDeProjetosPorTema();
+      
+      foreach ($lista_temas as $tema) {
+          $listagem[] = $tema['tema_projeto']; 
+      }      
+      
+      return $listagem;
+    }
+    
     
     private function organizarListagemDeProjetos($lista_projetos) {
         $lista_projetos_array = null;

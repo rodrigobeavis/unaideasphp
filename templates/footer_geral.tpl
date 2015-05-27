@@ -4,3 +4,4 @@
 <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="./assets/js/chosen/chosen.jquery.min.js"></script>
 <script src="./assets/js/alertify.js/lib/alertify.min.js"></script>
+<script src="./assets/js/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
