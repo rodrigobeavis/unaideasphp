@@ -11,3 +11,11 @@
             numberDisplayed: 1
         });
     });
+
+$(document).ready(function() {
+        
+    });
+
+//$('div').raty();
+
+$('#qualificacao_value').raty();
