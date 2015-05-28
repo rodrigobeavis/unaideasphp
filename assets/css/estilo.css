@@ -94,23 +94,23 @@ td {
 }
 
 .quadros:hover {
-	height: 100% !important;
+	height: 110% !important;
 }
 
 
 img#icone-aluno {
-	top: 100px !important;
-	width: 40% !important;
+	top: 15% !important;
+	width: 45% !important;
 }
 
 img#icone-professor {
-	top: 100px !important;
-	width: 40% !important;
+	top: 15% !important;
+	width: 45% !important;
 }
 
 img#icone-investidor {
-	top: 100px !important;
-	width: 40% !important;
+	top: 15% !important;
+	width: 45% !important;
 }
 
 p{
@@ -128,15 +128,15 @@ p.descricao {
 }
 
 p#descricao-idealizador {
-	margin-top: 5px !important;
+	margin-top: 1% !important;
 }
 
 p#descricao-professor {
-	margin-top: 12px !important;
+	margin-top: 1% !important;
 }
     
 p#descricao-investidor {
-	margin-top: 3px !important;
+	margin-top: 1% !important;
 }
 
 .cabecalho_new{

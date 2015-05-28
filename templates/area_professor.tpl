@@ -7,6 +7,7 @@
         <link href="./assets/css/estilo_pagina_professor.css" rel="stylesheet" type="text/css"/>
         <!-- <link rel="stylesheet" type="text/css" href="./assets/js/bootstrap-tagsinput/bootstrap-tagsinput.css"> -->
         <link href="./assets/js/bootstrap-multiselect/dist/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css"/>
+        <link href="./assets/js/bootstrap-star-rating-master/css/star-rating.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header class="cabecalho_new">
@@ -53,32 +54,8 @@
             <div id="projeto{$smarty.section.projetos.index}" class="projeto">
                 <table id="projeto{$smarty.section.table_projeto.index}" class="table_projeto">
                     <tr>
-                        <td class=""><h2>&nbsp;&nbsp;{$projetos_por_turma[projetos].tema_projeto}&nbsp;&nbsp;</h2> </td> 
-                        <td class="">
-                            <div id="qualificacao_value" class=""> </div>
-                        </td>
+                        <td colspan="2" class=""><h2>&nbsp;&nbsp;{$projetos_por_turma[projetos].tema_projeto}&nbsp;&nbsp;</h2> </td>             
                     </tr>
-                    <!-- Modal -->
-                    <div class="modal fade" id="editar_projeto{$smarty.section.projetos.index}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content modal_editar">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="modal_editar_projeto{$smarty.section.projetos.index}">{$projetos_por_turma[projetos].tema_projeto}</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <form id="qualificacao_trabalho" method="POST" action="#">
-                                      <input id="id_projeto{$smarty.section.projetos.index}" name="qualificacao_id_projeto" type="hidden" value="{$projetos_por_turma[projetos].id_projeto}">
-                                      <input  id="qualificacao_value2{$smarty.section.projetos.index}" type="text" name="qualificacao_value" value="" />
-                                        <div class="modal-footer">
-                                            <input id="alterar_projeto{$smarty.section.projetos.index}" type="submit" class="btn btn-warning" value="Salvar alterações">
-                                            <button id="cancelar_editacao{$smarty.section.projetos.index}" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <tr>
                         <td class="table_left"><label>Descri&ccedil;&atilde;o</label></td>
                         <td>
@@ -113,7 +90,13 @@
                             </div>
                             </p>
                         </td>
-                    </tr>                       
+                    </tr>  
+                     <tr>
+                        <td class="table_left"><label>Qualificar</label></td>
+                        <td>
+                            <input id="input-id" type="number" class="rating" min = "0.1" max="10" step="0.1" data-size="sm">
+                        </td>
+                    </tr>
                 </table>
             </div>
         {/section}
@@ -127,6 +110,6 @@
     <!--<script src="./assets/js/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script> -->
     <script src="./assets/js/bootstrap-multiselect/dist/js/bootstrap-multiselect.js" type="text/javascript"></script>
     <script src="./system/funcoes/js/f_professor_area.js"></script>
-    
+    <script src="./assets/js/bootstrap-star-rating-master/js/star-rating.min.js" type="text/javascript"></script>
 </body>
 </html>
