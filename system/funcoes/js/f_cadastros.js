@@ -57,13 +57,13 @@ $(document).ready(function () {
         } else {
             alertify.error("Erro no cadastro verifique o formulário!");
         }
-
+        
     });
 });
 //Ajax para postar os dados
 function ajaxforms(page) {
     var dados = $('#cadastro_gravar_user').serialize();
-    //alert(dados);
+   
     if (dados) {
         $.ajax({
             type: 'POST',
@@ -94,14 +94,14 @@ function ajaxforms(page) {
 function validar(tipo) {
     var validar = 0;
     $("#cadastro_gravar_user input").each(function () {
-        $(this).val() == "" ? validar++ : "";
+        ($(this).val() == "") ? validar++ : "";
     });
 
     if (tipo == "1") {
-        $('#turma').val() == null ? "" : validar--;//validar select turma
+       ($('#turma').val() == null )? validar++ : "";//  validar-- validar select turma
     }
     if (tipo == "2") {
-        $('#tipo_professor').val() == null ? validar++ : ""; //validar select tipo de professor
+        ($('#tipo_professor').val() == null) ? validar++ : ""; //validar select tipo de professor
         //  alert($('#tipo_professor').val());
     }
     //instruções para fachar o modal de cadastro e abrir o modal login se o formulario estiver correto

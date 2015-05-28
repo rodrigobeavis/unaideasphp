@@ -28,6 +28,7 @@ class DaoEquipe extends PDOConnectionFactory {
     
     
     public function gravarEquipe($string_equipe) {
+        var_dump($string_equipe);
         try {
             $sql = "INSERT INTO equipe
                         (id_projeto,

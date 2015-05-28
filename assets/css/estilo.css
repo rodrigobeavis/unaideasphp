@@ -169,7 +169,11 @@ menu_index{
 .glyphicon-1 {font-size: 4em;}
 .glyphicon-1 {font-size: 5em;}
 
-
+.fa-7x{font-size:7em}
+.fa-8x{font-size:8em}
+.fa-10x{font-size:10em}
+.fa-11x{font-size:10em}
+.fa-12x{font-size:10em}
 #rodape{
 	position: fixed;
 	background-color: #eeeeee;

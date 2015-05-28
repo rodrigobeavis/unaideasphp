@@ -25,14 +25,16 @@ $(document).ready(function () {
         }
         $.ajax({
             //pegando a url apartir da action do form
+//            beforeSend: function () {
+//             $('#formulario').html('<div class="col-md-6 col-md-offset-3 numero gear_animada"><i class="fa fa-cog fa-spin fa-10x"></i></div>');
+//            },
             url: page,
             data: tipo,
             type: 'POST',
-            context: jQuery('#formulario'),
+            context: jQuery('#formulario'),           
             success: function (data) {
+//                $('#formulario').html(" "),
                 this.append(data);
-
-               
             }
         });
     });
@@ -43,6 +45,7 @@ $(document).ready(function () {
  * beforeSend: function () {
              $('#page-body').html('<div class="col-md-6 col-md-offset-3 numero gear_animada"><i class="fa fa-cog fa-spin fa-10x"></i></div>');
         },
+ * 
  * 
  * */
 
