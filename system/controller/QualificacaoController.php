@@ -26,7 +26,7 @@ class QualificacaoController {
         
     }
     
-    public function informaQualificacao($verifica_qualificacao) {
+    public function rankingQualificacao($verifica_qualificacao) {
         
     }
     

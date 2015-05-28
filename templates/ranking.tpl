@@ -25,17 +25,38 @@
                 </div>             
             </nav>
         </header>
-        <div class="container-fluid"> 
-            <div class="row">
-                <div class="well">
-                    <div class="col-md-4">
-                        <p></p>
-                    </div>
-                </div>            
-            </div>
-        </div>
         <article>
-
+            <div class="container"> 
+                <div class="row">
+                    <div class="well">
+                        <div class="col-md-12">
+                            <p class="title"> Ranking dos Projetos </p>
+                        </div>
+                    </div>            
+                </div> 
+                <div id="" class="row">
+                    <div id="" class="col-md-6"> 
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Panel title</h3>
+                            </div>
+                            <div class="panel-body">
+                                Panel content
+                            </div>
+                        </div>
+                    </div>
+                    <div id="" class="col-md-6"> 
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Panel title</h3>
+                            </div>
+                            <div class="panel-body">
+                                Panel content
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </article>
         <footer>
             <div id="rodape">
