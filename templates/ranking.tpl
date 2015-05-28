@@ -28,20 +28,8 @@
         <div class="container-fluid"> 
             <div class="row">
                 <div class="well">
-                    <div class="row filtro_turma">
-                        <form role="form" method="POST" action="#" id="buscar_tema_form">
-                            <div class="form-group">
-                                <div class="col-xs-1">
-                                    <label for="btn_buscar">Localizar</label>
-                                </div>
-                                <div class="col-xs-6">
-                                    <input type="text" class="form-control" id="pesquisar" name="pesquisar" placeholder="Digite o tema que deseja localizar...">
-                                </div>
-                                <div class="col-xs-2">
-                                    <input type="submit" class="btn btn-default" id="btn_buscar" name="btn_buscar" value="Buscar" >
-                                </div>
-                            </div>
-                        </form>
+                    <div class="col-md-4">
+                        <p></p>
                     </div>
                 </div>            
             </div>
