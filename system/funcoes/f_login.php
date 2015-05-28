@@ -1,11 +1,10 @@
 <?php
-//if (file_exists('./system/dao/DaoAutenticacao.php')) {
-//    require_once('./system/dao/DaoAutenticacao.php');
-//} else {
-//    require_once('../dao/DaoAutenticacao.php');
-//}
-//   
-//$autenticar = new DaoAutenticacao();
+if (file_exists('./system/model/UsuarioClass.php')) {
+    require_once('./system/model/UsuarioClass.php');
+} else {
+    require_once('../model/UsuarioClass.php');
+}
+
 if (!$_SESSION['user_name'] && !$_SESSION['id']) {
     unset($_SESSION);
             session_destroy();
@@ -20,5 +19,6 @@ $user_id =  implode(" ",array_splice(explode(".",base64_decode($_SESSION['id']))
 $area_user = $_SESSION['area_user'];
 $acesso_user = $_SESSION['acesso_user'];
 
-
+$obj_cad_user = new UsuarioController();
+$info_cad_user = $obj_cad_user->infoUsusario($user_id );
 

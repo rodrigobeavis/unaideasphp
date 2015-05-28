@@ -30,12 +30,12 @@ $ctrl_projeto = new ProjetoController();
 $ctrl_equipe = new EquipeController();
 
 $lista_usuarios_da_mesma_turma = $usuario_controller->listarUsuariosDaTurma($user_id);
-$projetos_usuario =  $ctrl_projeto->listarProjetosUsuario($user_id);
+$projetos_usuario =  $ctrl_projeto->listarProjetosUsuario($info_cad_user->id_usuario);
 
 if (filter_input(INPUT_POST, 'nome_projeto')) {
    $id_last_projeto =  $ctrl_projeto->gravarProjeto($projeto); 
    if ($id_last_projeto && $id_last_projeto > 0) {
-       $resultado_insert =  $ctrl_equipe->gravarEquipe($projeto,$id_last_projeto,$user_id);
+       $resultado_insert =  $ctrl_equipe->gravarEquipe($projeto,$id_last_projeto,$info_cad_user->id_usuario);
    }
    if ($resultado_insert) {
        unset($resultado_insert);

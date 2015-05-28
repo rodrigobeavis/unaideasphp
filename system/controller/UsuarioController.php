@@ -21,6 +21,12 @@ class UsuarioController {
         return $this->DAO->localizarUserDaMesmaTurma($id); 
      }
      
+     public function infoUsusario($id) {
+         $info_cad_usuario = $this->DAO->localizarUser($id);
+        return $info_cad_usuario[0]; 
+     } 
+     
+     
 //     public function listarUsuariosDaTurma($id) {
 //       $lista_usuarios_da_mesma_turma = $this->DAO->localizarUserDaMesmaTurma($id); 
 //       var_dump($lista_usuarios_da_mesma_turma);

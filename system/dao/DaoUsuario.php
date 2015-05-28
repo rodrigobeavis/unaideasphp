@@ -93,4 +93,25 @@ class DaoUsuario extends PDOConnectionFactory {
         parent::Close();
     }
 
+    public function localizarUser($id) {
+        try {
+            $sql = "SELECT 
+                        t1.nome_usuario,
+                        t1.telefone,
+                        t1.ra_usuario,
+                        t1.id_usuario
+                    FROM
+                        usuario t1
+                    WHERE
+                    t1.id_autenticacao = :id";
+            $stmt = $this->conex->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();            
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+        parent::Close();
+    }
+    
 }
