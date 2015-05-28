@@ -1,4 +1,5 @@
-
+<link rel="shortcut icon" href="./assets/img/icon/favicon.ico">
+<link rel="icon" type="image/gif" href="./assets/img/icon/favicon.ico">
 <link rel="stylesheet" type="text/css" href="./assets/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="./assets/js/jquery-ui/jquery-ui.min.css">
 <link  rel="stylesheet" type="text/css" href="./assets/js/chosen/chosen.min.css">
