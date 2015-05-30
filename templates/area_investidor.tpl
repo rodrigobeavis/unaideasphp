@@ -66,21 +66,29 @@
                                         <h4 class="modal-title" id="modal_editar_projeto{$smarty.section.projetos.index}">{$projetos_por_tema[projetos].tema_projeto}</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <form id="formulario_editar_projeto" method="POST" action="#">
-
-                                            <input id="id_projeto{$smarty.section.projetos.index}" name="editar_id_projeto" type="hidden" value="{$projetos_por_turma[projetos].id_projeto}">
-                                            <input id="nome_projeto{$smarty.section.projetos.index}" name="editar_nome_projeto" required type="text" placeholder="Nome do projeto" value="{$projetos_por_tema[projetos].tema_projeto}" style="width: 100%;"  maxlength="180">
-                                            <textarea id="nome_projeto{$smarty.section.projetos.index}" name="editar_descricao_projeto" required type="text" placeholder="Descrição do projeto" style="width: 100%;" rows="3" maxlength="1800">{$projetos_por_tema[projetos].descricao_projeto}</textarea>
-                                            <input id="palavra_chave{$smarty.section.projetos.index}" name="editar_palavra_chave" required  type="text" placeholder="Palavras chave" value="{$projetos_por_tema[projetos].palavras_chave_projeto}"  maxlength="500" data-role="tagsinput"> <!-- data-role="tagsinput"-->
-                                            <span id="estado_projeto{$smarty.section.projetos.index}">Percentual de conclusão</span>
-                                            <input type="text" id="valor_status{$smarty.section.projetos.index}" size="5" style="color: white; text-align: center;">
-                                            </br>
-                                            <input id="status_projeto{$smarty.section.projetos.index}" name="editar_status_projeto" type="range" value="{$projetos_por_tema[projetos].status}" min="0" max="100" step="5" onchange="printValue({$smarty.section.projetos.index});" style="width: 100%;"/>                    
-                                            <div class="modal-footer">
-                                                <input id="alterar_projeto{$smarty.section.projetos.index}" type="submit" class="btn btn-success" value="Enviar">
-                                                <button id="cancelar_editacao{$smarty.section.projetos.index}" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                        <form method='POST' action="#" class="">
+                                            <div class="row">
+                                                <div class="col-md-10 col-md-offset-1">
+                                                    <div class="row">
+                                                        <div class="col-md-12"><input type="email" name='email_fale_conosco' id="email_fale_conosco" class="form-control" placeholder="Insira seu Email"  required></div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <!-- Textarea -->
+                                                            <div class="control-group">
+                                                                <label class="control-label" for="textarea"></label>
+                                                                <div class="controls">                     
+                                                                    <textarea id="textarea_fale_conosco" class="form-control" rows="5" name="textarea_fale_conosco" placeholder="Texto..." required></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input class="btn btn-success" type="submit" value="Enviar" data-toggle="tooltip" data-placement="left" title="Click Aqui para enviar">
+                                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
                                     </div>
                                 </div>
                             </div>
@@ -124,6 +132,42 @@
                 </div>
             {/section}
         </section>
+        <div class="modal fade" id="fale_conosco" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="gridSystemModalLabel">Contato</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form method='POST' action='' class="">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="row">
+                                        <div class="col-md-12"><input type="email" name='email_fale_conosco' id="email_fale_conosco" class="form-control" placeholder="Insira seu Email"  required></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <!-- Textarea -->
+                                            <div class="control-group">
+                                                <label class="control-label" for="textarea"></label>
+                                                <div class="controls">                     
+                                                    <textarea id="textarea_fale_conosco" class="form-control" rows="5" name="textarea_fale_conosco" placeholder="Texto..." required></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input class="btn btn-success" type="submit" value="Enviar" data-toggle="tooltip" data-placement="left" title="Click Aqui para enviar">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+                    </div>
+                    </form>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
         <footer>
             <div id="rodape">
                 <div> UnaIdeas <span class="rodape_email col-md-offset-8"><span class="glyphicon glyphicon-envelope"> </span> contato@unaideas.com.br</span></div>           
@@ -135,11 +179,11 @@
         <script src="./system/funcoes/js/f_investidor_area.js"></script>
         {literal}
             <script type="text/javascript">
-                $(function() {
+                $(function () {
                     var availableTags = {/literal}{$lista_temas_projetos|@json_encode}{literal};
-                  $( "#pesquisar" ).autocomplete({
-                    source: availableTags
-                  });
+                    $("#pesquisar").autocomplete({
+                        source: availableTags
+                    });
                 });
             </script>
         {/literal} 

@@ -5,8 +5,6 @@
         <meta charset="UTF-8">
         {include file="header_geral.tpl" title=$title}
         <link href="./assets/css/estilo_pagina_professor.css" rel="stylesheet" type="text/css"/>
-        <!-- <link rel="stylesheet" type="text/css" href="./assets/js/bootstrap-tagsinput/bootstrap-tagsinput.css"> -->
-        <link href="./assets/js/bootstrap-multiselect/dist/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css"/>
         <link href="./assets/js/bootstrap-star-rating-master/css/star-rating.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -91,10 +89,14 @@
                             </p>
                         </td>
                     </tr>  
-                     <tr>
+                    <tr>
                         <td class="table_left"><label>Qualificar</label></td>
                         <td>
-                            <input id="input-id" type="number" class="rating" min = "0.1" max="10" step="0.1" data-size="sm">
+                            <form id="" class="" method="POST" action="">
+                                <input id="qualificar-{$projetos_por_turma[projetos].id_projeto}" name="qualificar_value" type="number" class="rating" min = "0.1" max="10" step="0.1" data-size="sm">
+                                <!--<input id="id_projeto_qualificacao{$smarty.section.projetos.index}" t<!--ype="hidden"  name="id_projeto_qualificacao" value="{$projetos_por_turma[projetos].id_projeto}" />
+                                 <input type="submit" class="btn btn-default" id="qualificar_post" name="qualificar_post" value="Qualificar" > -->
+                            </form>
                         </td>
                     </tr>
                 </table>
@@ -102,14 +104,12 @@
         {/section}
     </section>
     <footer>
-       <div id="rodape">
-                <div> UnaIdeas <span class="rodape_email col-md-offset-8"><span class="glyphicon glyphicon-envelope"> </span> contato@unaideas.com.br</span></div>           
-            </div>
+        <div id="rodape">
+            <div> UnaIdeas <span class="rodape_email col-md-offset-8"><span class="glyphicon glyphicon-envelope"> </span> contato@unaideas.com.br</span></div>           
+        </div>
     </footer>
     {include file="footer_geral.tpl"}        
-    <!--<script src="./assets/js/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script> -->
-    <script src="./assets/js/bootstrap-multiselect/dist/js/bootstrap-multiselect.js" type="text/javascript"></script>
-    <script src="./system/funcoes/js/f_professor_area.js"></script>
     <script src="./assets/js/bootstrap-star-rating-master/js/star-rating.min.js" type="text/javascript"></script>
+    <script src="./system/funcoes/js/f_professor_area.js"></script>
 </body>
 </html>
