@@ -58,7 +58,6 @@ class ProjetoController {
       foreach ($lista_temas as $item) {
           $listagem[] = $item['tema_projeto']; 
       }      
-      
       return $listagem;
     }
     

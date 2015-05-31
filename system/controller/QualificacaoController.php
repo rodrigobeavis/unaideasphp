@@ -23,7 +23,7 @@ class QualificacaoController {
     }
     
     public function gravarQualificacao($qualificacao) {
-        
+        return $this->DAO->gravarQualificacaoProjeto($qualificacao);
     }
     
     public function rankingQualificacao($verifica_qualificacao) {

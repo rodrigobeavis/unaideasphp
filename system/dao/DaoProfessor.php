@@ -56,4 +56,23 @@ class DaoProfessor extends PDOConnectionFactory {
         }
         parent::Close();
     }
+    
+     public function localizarProfessor($id) {
+        try {
+            $sql = "SELECT 
+                        id_professor, nome_professor, email_professor, telefone_professor
+                    FROM
+                        professor
+                    WHERE
+                        id_autenticacao = :id";
+            $stmt = $this->conex->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();            
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+        parent::Close();
+    }
+    
 }
