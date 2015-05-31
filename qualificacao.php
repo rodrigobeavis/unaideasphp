@@ -31,22 +31,16 @@ $user_name;
 $user_id;
 $area_user;
 $acesso_user;
+$info_cad_professor;
 
 
-
-if (filter_input(INPUT_POST, 'id_projeto')) {
+//if (filter_input(INPUT_POST, 'id_projeto')) {
+    $qualificar_projeto = array('id_professor'=> $info_cad_professor->id_professor,
+                                'id_projeto'=> $dados['id_projeto'],
+                                'qualificar_value'=>$dados['qualificar_value'],
+                                'obs_qualificacao'=>" ");
     
-    
-$retorno_qualificar = $obj_qualificar->gravarQualificacao($qualificacao);
-}
-
-
-
-//$smarty->debugging = true;
-//$smarty->caching = true;
-//$smarty->cache_lifetime = 120;
-
-
-
-
+                            var_dump($qualificar_projeto);  
+$retorno_qualificar = $obj_qualificar->gravarQualificacao($qualificar_projeto);
+//}
 

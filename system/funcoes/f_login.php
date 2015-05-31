@@ -10,6 +10,16 @@ if (file_exists('./system/controller/ProfessorController.php')) {
 } else {
     require_once('../controller/ProfessorController.php');
 }
+if (file_exists('./system/controller/InvestidorController.php')) {
+    require_once('./system/controller/InvestidorController.php');
+} else {
+    require_once('../controller/InvestidorController.php');
+}
+if (file_exists('./system/controller/UsuarioController.php')) {
+    require_once('./system/controller/UsuarioController.php');
+} else {
+    require_once('../controller/UsuarioController.php');
+}
 if (!$_SESSION['user_name'] && !$_SESSION['id']) {
     unset($_SESSION);
     session_destroy();
@@ -34,8 +44,8 @@ switch ($area_user) {
         $info_cad_professor = $obj_cad_professor->localizarProfessor($user_id);
         break;
     case 3:
-        
-
+        $obj_cad_investidor = new InvestidorController();
+        $info_cad_investidor = $obj_cad_investidor->localizarInvestidor($user_id);
         break;
 }
 

@@ -33,10 +33,10 @@ class DaoQualificacao extends PDOConnectionFactory {
                     now(),
                     :id_projeto,:id_professor)";
             $stmt = $this->conex->prepare($sql);
-            $stmt->bindParam(':obs_qualificacao', $qualificacao['user_name'], PDO::PARAM_STR);
-            $stmt->bindParam(':valor_qualificacao', $qualificacao['tipo'], PDO::PARAM_);
-            $stmt->bindParam(':id_projeto', $qualificacao['user_name'], PDO::PARAM_STR);
-            $stmt->bindParam(':id_professor', $qualificacao['tipo'], PDO::PARAM_STR);
+            $stmt->bindParam(':obs_qualificacao', $qualificacao['obs_qualificacao'], PDO::PARAM_STR);
+            $stmt->bindParam(':valor_qualificacao', $qualificacao['qualificar_value'], PDO::PARAM_STR);
+            $stmt->bindParam(':id_projeto', $qualificacao['id_projeto'], PDO::PARAM_STR);
+            $stmt->bindParam(':id_professor', $qualificacao['id_professor'], PDO::PARAM_STR);
 
             return $stmt->execute();
         } catch (PDOException $e) {

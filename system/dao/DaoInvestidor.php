@@ -60,4 +60,22 @@ class DaoInvestidor extends PDOConnectionFactory {
         parent::Close();
     }
 
+     public function localizarInvestidor($id) {
+        try {
+            $sql = "SELECT 
+                        id_investidor,telefone_investidor,email_investidor,id_entidade_ensino
+                    FROM
+                        investidor
+                    WHERE
+                        id_autenticacao = :id";
+            $stmt = $this->conex->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();            
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+        parent::Close();
+    }
+    
 }

@@ -22,13 +22,16 @@ $("input[name^='qualificar_value']").on('rating.change', function (event, value,
 function ajax_post_qualificar(id_projeto, qualificar_value) {
        
     var dados = {id_projeto: id_projeto, qualificar_value: qualificar_value};
-    alert(dados.id_projeto);
+   // alert(dados.id_projeto);
     var page = "qualificacao.php";
     $.ajax({
         type: 'POST',
         url: page,
         data: dados,
         success: sucessForm(),
+        complete: function(){
+            //$('#loading').css({display:"none"});
+        },
         error: function () {
             alertify.error("Falha ao enviar.");
         }

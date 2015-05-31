@@ -86,10 +86,6 @@ function ajaxforms(page) {
                 .not(':button, :submit, :reset, :hidden, :radio, :checkbox')
                 .val('');
     }
-//    function erroAjax() {
-//        alertify.error("Erro ao enviar!");
-//    }
-
 }
 function validar(tipo) {
     var validar = 0;
