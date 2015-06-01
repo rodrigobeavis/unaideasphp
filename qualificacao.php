@@ -34,13 +34,18 @@ $acesso_user;
 $info_cad_professor;
 
 
-//if (filter_input(INPUT_POST, 'id_projeto')) {
+if (filter_input(INPUT_POST, 'id_projeto')) {
     $qualificar_projeto = array('id_professor'=> $info_cad_professor->id_professor,
                                 'id_projeto'=> $dados['id_projeto'],
                                 'qualificar_value'=>$dados['qualificar_value'],
                                 'obs_qualificacao'=>" ");
     
-                            var_dump($qualificar_projeto);  
+                           // var_dump($qualificar_projeto);  
 $retorno_qualificar = $obj_qualificar->gravarQualificacao($qualificar_projeto);
-//}
-
+}
+//$qualificar_projeto = array('id_professor'=> $info_cad_professor->id_professor,
+//                                'id_projeto'=> 107);
+//require_once './system/dao/DaoQualificacao.php';
+//$qual = new DaoQualificacao();
+//$teste = $qual->verificaQualificacaoProjeto($qualificar_projeto);
+//var_dump($teste);

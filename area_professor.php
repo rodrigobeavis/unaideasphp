@@ -34,8 +34,14 @@ $usuario_controller = new UsuarioController();
 $ctrl_projeto = new ProjetoController();
 $ctrl_equipe = new EquipeController();
 
+$user_name;
+$user_id;
+$area_user;
+$acesso_user;
+$info_cad_professor;
 
 $lista_turmas = $turma_control->listarTurmas();
+$lista_usuarios_da_mesma_turma = $usuario_controller->listarUsuariosDaTurma($user_id);
 
 
 
@@ -47,9 +53,6 @@ if (filter_input(INPUT_POST, 'turma')) {
 
 
 
-$lista_usuarios_da_mesma_turma = $usuario_controller->listarUsuariosDaTurma($user_id);
-
-
 
 
 
@@ -58,11 +61,6 @@ $smarty->force_compile = true;
 //$smarty->caching = true;
 //$smarty->cache_lifetime = 120;
 
-
-$user_name;
-$user_id;
-$area_user;
-$acesso_user;
 
 
 $smarty->assign("lista_turmas", $lista_turmas);

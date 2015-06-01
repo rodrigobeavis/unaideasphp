@@ -19,10 +19,8 @@ $("input[name^='qualificar_value']").on('rating.change', function (event, value,
 //    console.log(target);
 });
 
-function ajax_post_qualificar(id_projeto, qualificar_value) {
-       
+function ajax_post_qualificar(id_projeto, qualificar_value) {     
     var dados = {id_projeto: id_projeto, qualificar_value: qualificar_value};
-   // alert(dados.id_projeto);
     var page = "qualificacao.php";
     $.ajax({
         type: 'POST',
@@ -38,5 +36,5 @@ function ajax_post_qualificar(id_projeto, qualificar_value) {
     });
 }
 function sucessForm() {
-    alertify.success("<h2>Registrado<h2>");
+    alertify.success("<h5>Ok!<h5>");
 }

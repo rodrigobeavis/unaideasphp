@@ -45,6 +45,27 @@ class DaoQualificacao extends PDOConnectionFactory {
         parent::Close();
     }
     
+    
+    public function verificaQualificacaoProjeto($qualificacao) {
+        try {
+            $sql = "SELECT 
+                        count(id_qualificacao) AS verficar_qual
+                    FROM
+                        qualificacao
+                    WHERE
+                        id_professor = :id_professor
+                        AND id_projeto = :id_projeto";
+            $stmt = $this->conex->prepare($sql);
+            $stmt->bindParam(':id_professor', $qualificacao['id_professor'], PDO::PARAM_INT);
+            $stmt->bindParam(':id_projeto', $qualificacao['id_projeto'], PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+        parent::Close();
+    }
+    
     public function topDezQualificacaoProjeto($dados) {
         try {
             $sql = "";
@@ -53,27 +74,6 @@ class DaoQualificacao extends PDOConnectionFactory {
             $stmt->bindParam(':user_name', $cadastro['user_name'], PDO::PARAM_STR);
             $stmt->bindParam(':area_user', $cadastro['tipo'], PDO::PARAM_STR);
             $stmt->bindParam(':pw', $cadastro['keyu'], PDO::PARAM_STR);
-
-            return $stmt->execute();
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
-        parent::Close();
-    }
-    public function verificaQualificacaoProjeto($dados) {
-        try {
-            $sql = "SELECT 
-                        count(id_qualificacao)
-                    FROM
-                        qualificacao
-                    WHERE
-                        id_professor = :id_professor
-                        AND id_projeto = :id_projeto";
-            $stmt = $this->conex->prepare($sql);
-            //autenticação
-            $stmt->bindParam(':user_name', $dados['user_name'], PDO::PARAM_STR);
-            $stmt->bindParam(':area_user', $dados['tipo'], PDO::PARAM_STR);
-            $stmt->bindParam(':pw', $dados['keyu'], PDO::PARAM_STR);
 
             return $stmt->execute();
         } catch (PDOException $e) {

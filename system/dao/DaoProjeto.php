@@ -140,31 +140,31 @@ class DaoProjeto extends PDOConnectionFactory {
     public function listarProjetosPorTurma($id_turma) {
         try {
             $sql = "SELECT 
-                        t1.id_projeto,
-                        t1.tema_projeto,
-                        t1.descricao_projeto,
-                        t1.palavras_chave_projeto,
-                        t1.status,
-                        t1.data_cadastro,
-                        t2.id_equipe,
-                        t2.id_projeto,
-                        t2.id_usuario,
-                        t3.nome_usuario,
-                        t3.email,
-                        t3.telefone
+                t1.id_projeto,
+                t1.tema_projeto,
+                t1.descricao_projeto,
+                t1.palavras_chave_projeto,
+                t1.status,
+                t1.data_cadastro,
+                t2.id_equipe,
+                t2.id_projeto,
+                t2.id_usuario,
+                t3.nome_usuario,
+                t3.email,
+                t3.telefone
+            FROM
+                projeto t1
+                    INNER JOIN
+                equipe t2 ON t1.id_projeto = t2.id_projeto
+                    INNER JOIN
+                usuario t3 ON t2.id_usuario = t3.id_usuario
+            WHERE
+                t1.id_projeto IN (SELECT 
+                        id_projeto
                     FROM
-                        projeto t1
-                            INNER JOIN
-                        equipe t2 ON t1.id_projeto = t2.id_projeto
-                            INNER JOIN
-                        usuario t3 ON t2.id_usuario = t3.id_usuario
+                        equipe
                     WHERE
-                        t1.id_projeto IN (SELECT 
-                                id_projeto
-                            FROM
-                                equipe
-                            WHERE
-                                id_turma = :id_turma)";
+                        id_turma = :id_turma)";
             $stmt = $this->conex->prepare($sql);
             $stmt->bindParam(':id_turma', $id_turma, PDO::PARAM_INT);
             $stmt->execute();
