@@ -17,9 +17,10 @@ class QualificacaoController {
 
     public function QualificacaoController() {
         $this->DAO = new DaoQualificacao();
+       
     }
 
-    public function verificarQualificacao($verifica_qualificacao) {
+    public function verificarQualificacaoDoProfessor($id_professor) {
         
     }
 

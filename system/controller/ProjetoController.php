@@ -15,7 +15,11 @@ if (file_exists('./system/model/ProjetoClass.php')) {
 } else {
     require_once('../model/ProjetoClass.php');
 }
-
+if (file_exists('./system/controller/QualificacaoController.php')) {
+    require_once('./system/controller/QualificacaoController.php');
+} else {
+    require_once('../controller/QualificacaoController.php');
+}
 class ProjetoController {
    
     private $dao_projeto;

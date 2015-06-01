@@ -24,7 +24,7 @@ class DaoQualificacao extends PDOConnectionFactory {
     
      public function gravarQualificacaoProjeto($qualificacao) {
         try {
-            $sql = "INSERT INTO unaideasbdmysql.qualificacao
+            $sql = "INSERT INTO qualificacao
                     (obs_qualificacao,valor_qualificacao,
                     data_hora_qualificacao,
                     id_projeto,id_professor)
@@ -81,4 +81,19 @@ class DaoQualificacao extends PDOConnectionFactory {
         }
         parent::Close();
     }
+    
+     public function localizarQualificacaoDoProfessorParaProjeto($id_professor) {
+        try {
+            $sql = "";
+            $stmt = $this->conex->prepare($sql);
+            $stmt->bindParam(':user_name', $cadastro['user_name'], PDO::PARAM_INT);
+            
+
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+        parent::Close();
+    }
+    
 }

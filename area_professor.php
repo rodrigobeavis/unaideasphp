@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 
 if (!isset($_SESSION)) {
     session_start();
@@ -34,6 +28,7 @@ $usuario_controller = new UsuarioController();
 $ctrl_projeto = new ProjetoController();
 $ctrl_equipe = new EquipeController();
 
+
 $user_name;
 $user_id;
 $area_user;
@@ -48,11 +43,6 @@ $lista_usuarios_da_mesma_turma = $usuario_controller->listarUsuariosDaTurma($use
 if (filter_input(INPUT_POST, 'turma')) {
     $projetos_por_turma =  $ctrl_projeto->listarProjetosPorTurma($dados['turma']);
 }
-
-
-
-
-
 
 
 
