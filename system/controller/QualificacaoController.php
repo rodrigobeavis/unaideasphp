@@ -34,8 +34,8 @@ class QualificacaoController {
         }
     }
 
-    public function rankingQualificacao($verifica_qualificacao) {
-        
+    public function localizarQualificacaoProfessor($id_projeto,$id_professor) {
+         return $this->DAO->localizarQualificacaoDoProfessorParaProjeto($id_projeto,$id_professor);;
     }
 
 }

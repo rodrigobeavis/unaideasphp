@@ -93,7 +93,7 @@
                         <td class="table_left"><label>Qualificar</label></td>
                         <td>
                             <form id="" class="" method="POST" action="">
-                                <input id="qualificar-{$projetos_por_turma[projetos].id_projeto}" name="qualificar_value" type="number" class="rating" min = "0.1" max="10" step="0.1" data-size="sm">
+                                <input id="qualificar-{$projetos_por_turma[projetos].id_projeto}" name="qualificar_value" type="number" class="rating" min = "0.1" max="10" step="0.1" data-size="sm" value="{$projetos_por_turma[projetos].valor_qualificacao}">
                                 <!--<textarea id="qualificar_obs-{$projetos_por_turma[projetos].id_projeto}" name="qualificar_obs" type="text" placeholder="Obs..." rows="3" maxlength="1800"> </textarea> -->
                             </form>
                         </td>

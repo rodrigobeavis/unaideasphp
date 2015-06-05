@@ -82,14 +82,24 @@ class DaoQualificacao extends PDOConnectionFactory {
         parent::Close();
     }
     
-     public function localizarQualificacaoDoProfessorParaProjeto($id_professor) {
+     public function localizarQualificacaoDoProfessorParaProjeto($id_projeto,$id_professor) {
         try {
-            $sql = "";
+            $sql = "SELECT 
+                        t1.id_projeto,
+                        t1.valor_qualificacao,
+                        t1.data_hora_qualificacao,
+                        t1.obs_qualificacao
+                    FROM
+                        qualificacao t1
+                    WHERE
+                        t1.id_professor = :id_professor
+                            AND t1.id_projeto = :id_projeto";
             $stmt = $this->conex->prepare($sql);
-            $stmt->bindParam(':user_name', $cadastro['user_name'], PDO::PARAM_INT);
-            
+            $stmt->bindParam(':id_professor', $id_professor, PDO::PARAM_INT);
+            $stmt->bindParam(':id_projeto', $id_projeto, PDO::PARAM_INT);
+            $stmt->execute();
 
-            return $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_OBJ);
         } catch (PDOException $e) {
             echo $e->getMessage();
         }

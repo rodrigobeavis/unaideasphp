@@ -36,12 +36,12 @@ $acesso_user;
 $info_cad_professor;
 
 $lista_turmas = $turma_control->listarTurmas();
-$lista_usuarios_da_mesma_turma = $usuario_controller->listarUsuariosDaTurma($user_id);
+//$lista_usuarios_da_mesma_turma = $usuario_controller->listarUsuariosDaTurma($user_id);
 
 
 
 if (filter_input(INPUT_POST, 'turma')) {
-    $projetos_por_turma =  $ctrl_projeto->listarProjetosPorTurma($dados['turma']);
+    $projetos_por_turma =  $ctrl_projeto->listarProjetosPorTurma($dados['turma'],$info_cad_professor->id_professor);
 }
 
 
