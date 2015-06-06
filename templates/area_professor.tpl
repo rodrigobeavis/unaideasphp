@@ -105,7 +105,7 @@
     </section>
     <footer>
         <div id="rodape">
-            <div> UnaIdeas <span class="rodape_email col-md-offset-8"><span class="glyphicon glyphicon-envelope"> </span> contato@unaideas.com.br</span></div>           
+            <div> UNAIDEAS <span class="rodape_email col-md-offset-8"><span class="glyphicon glyphicon-envelope"> </span> contato@unaideas.com.br</span></div>           
         </div>
     </footer>
     {include file="footer_geral.tpl"}        
