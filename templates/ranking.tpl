@@ -54,7 +54,7 @@
                     <div id="" class="col-md-3"> 
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Top 10</h3>
+                                <h3 class="panel-title">Top 10 "COLOCAR UMA COR PARA CADA COLUNA E COLOCAR UM BOTÃO TIPO CIRCLE NO TRABALHO"</h3>
                             </div>
                             <div class="panel-body">
                                 <table border="0" class="top10 table table-condensed table-hover table-responsive">
