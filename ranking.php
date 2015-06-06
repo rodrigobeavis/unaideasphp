@@ -42,7 +42,7 @@ $lista_turmas = $turma_control->listarTurmas();
 $lista_top10_geral = $obj_qualificar->Top10Geral();
 
 if (filter_input(INPUT_POST, 'turma')) {
-    $lista_top10_turma = $obj_qualificar->Top10Tursma($dados['turma']);
+    $lista_top10_turma = $obj_qualificar->Top10Turma($dados['turma']);
 //var_dump($lista_top10_turma);
 }
 
