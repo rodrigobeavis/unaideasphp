@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Description of DaoQualificacao
  *
@@ -14,15 +15,16 @@ if (file_exists('./system/model/QualificacaoClass.php')) {
 } else {
     require_once('../model/QualificacaoClass.php');
 }
-class DaoQualificacao extends PDOConnectionFactory {
-   private $conex = null;
 
-    public function DaoQualificacao()  {
+class DaoQualificacao extends PDOConnectionFactory {
+
+    private $conex = null;
+
+    public function DaoQualificacao() {
         $this->conex = PDOConnectionFactory::getConnection();
     }
-    
-    
-     public function gravarQualificacaoProjeto($qualificacao) {
+
+    public function gravarQualificacaoProjeto($qualificacao) {
         try {
             $sql = "INSERT INTO qualificacao
                     (obs_qualificacao,valor_qualificacao,
@@ -44,8 +46,7 @@ class DaoQualificacao extends PDOConnectionFactory {
         }
         parent::Close();
     }
-    
-    
+
     public function verificaQualificacaoProjeto($qualificacao) {
         try {
             $sql = "SELECT 
@@ -65,24 +66,8 @@ class DaoQualificacao extends PDOConnectionFactory {
         }
         parent::Close();
     }
-    
-    public function topDezQualificacaoProjeto($dados) {
-        try {
-            $sql = "";
-            $stmt = $this->conex->prepare($sql);
-            //autenticação
-            $stmt->bindParam(':user_name', $cadastro['user_name'], PDO::PARAM_STR);
-            $stmt->bindParam(':area_user', $cadastro['tipo'], PDO::PARAM_STR);
-            $stmt->bindParam(':pw', $cadastro['keyu'], PDO::PARAM_STR);
 
-            return $stmt->execute();
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
-        parent::Close();
-    }
-    
-     public function localizarQualificacaoDoProfessorParaProjeto($id_projeto,$id_professor) {
+    public function localizarQualificacaoDoProfessorParaProjeto($id_projeto, $id_professor) {
         try {
             $sql = "SELECT 
                         t1.id_projeto,
@@ -105,5 +90,27 @@ class DaoQualificacao extends PDOConnectionFactory {
         }
         parent::Close();
     }
-    
+
+    public function topDezQualificacaoProjeto() {
+        try {
+            $sql = "SELECT 
+                        t1.id_projeto,
+                        t1.tema_projeto,
+                        ROUND(AVG(t2.valor_qualificacao), 2) AS media_notas
+                    FROM
+                        projeto t1
+                            INNER JOIN
+                        qualificacao t2 ON t1.id_projeto = t2.id_projeto
+                    GROUP BY id_projeto
+                    ORDER BY media_notas DESC
+                    LIMIT 10";
+            $stmt = $this->conex->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+        parent::Close();
+    }
+
 }

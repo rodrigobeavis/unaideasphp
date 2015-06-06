@@ -21,6 +21,7 @@
                         <!-- <li><a href="#" onclick="exibeMeusProjetos();">Meus projetos</a></li> -->
                         <li><a id="cadastrar_projeto_call" href="#abrirModal" onclick="exibeCadastrarProjeto();">Cadastrar novo projeto</a></li>
                         <li><a href="#">{$user_name}</a></li>
+                        <li><a href="ranking.php" >Ranking</a></li>
                         <li><a href="logout.php" >Logout</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#fale_conosco">Fale conosco</a></li>               
                     </ul>
@@ -157,33 +158,33 @@
         <script src="./system/funcoes/js/f_user_area.js"></script>
         {literal}
             <script type="text/javascript">
-                                       
-                $(document).ready(function () {
 
-                    var max = {/literal}{$smarty.section.projetos.total}{literal}
-                    var i = 0;
+                                        $(document).ready(function () {
 
-                    while (i <= max) {
-                        printValue(i);
-                        i++;
-                    }
-                });
-                function printValue(id) {
-                    var origem = document.getElementById("status_projeto" + id).value;
-                    if (origem < 20)
-                        document.getElementById("valor_status" + id).style.background = "#800000";
-                    if (origem >= 20 && origem < 40)
-                        document.getElementById("valor_status" + id).style.background = "#ff4500";
-                    if (origem >= 40 && origem < 60)
-                        document.getElementById("valor_status" + id).style.background = "#ffff00";
-                    if (origem >= 60 && origem < 80)
-                        document.getElementById("valor_status" + id).style.background = "#7cfc00";
-                    if (origem >= 80)
-                        document.getElementById("valor_status" + id).style.background = "#00ff00";
-                    if (origem == 100)
-                        document.getElementById("valor_status" + id).style.background = "#4682B4";
-                    document.getElementById("valor_status" + id).value = origem + "%";
-                }
+                                            var max = {/literal}{$smarty.section.projetos.total}{literal}
+                                            var i = 0;
+
+                                            while (i <= max) {
+                                                printValue(i);
+                                                i++;
+                                            }
+                                        });
+                                        function printValue(id) {
+                                            var origem = document.getElementById("status_projeto" + id).value;
+                                            if (origem < 20)
+                                                document.getElementById("valor_status" + id).style.background = "#800000";
+                                            if (origem >= 20 && origem < 40)
+                                                document.getElementById("valor_status" + id).style.background = "#ff4500";
+                                            if (origem >= 40 && origem < 60)
+                                                document.getElementById("valor_status" + id).style.background = "#ffff00";
+                                            if (origem >= 60 && origem < 80)
+                                                document.getElementById("valor_status" + id).style.background = "#7cfc00";
+                                            if (origem >= 80)
+                                                document.getElementById("valor_status" + id).style.background = "#00ff00";
+                                            if (origem == 100)
+                                                document.getElementById("valor_status" + id).style.background = "#4682B4";
+                                            document.getElementById("valor_status" + id).value = origem + "%";
+                                        }
 
             </script>
         {/literal} 

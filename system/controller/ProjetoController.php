@@ -70,7 +70,7 @@ class ProjetoController {
     
     
     private function organizarListagemDeProjetos($lista_projetos,$id_professor) {
-        $lista_projetos_array = null;
+     $lista_projetos_array = null;
       foreach ($lista_projetos as $row) {
           $lista_projetos_array[$row->id_projeto]['id_projeto'] = $row->id_projeto;
           $lista_projetos_array[$row->id_projeto]['tema_projeto'] = $row->tema_projeto;

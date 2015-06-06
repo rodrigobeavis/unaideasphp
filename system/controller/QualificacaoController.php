@@ -20,10 +20,6 @@ class QualificacaoController {
        
     }
 
-    public function verificarQualificacaoDoProfessor($id_professor) {
-        
-    }
-
     public function gravarQualificacao($qualificacao) {
         $verificar_quali = $this->DAO->verificaQualificacaoProjeto($qualificacao);//verifica se ja foi registrada
         $verificar = $verificar_quali[0];
@@ -38,4 +34,10 @@ class QualificacaoController {
          return $this->DAO->localizarQualificacaoDoProfessorParaProjeto($id_projeto,$id_professor);;
     }
 
+    
+    public function Top10Geral() {
+         return $this->DAO->topDezQualificacaoProjeto();
+    }
+
+    
 }

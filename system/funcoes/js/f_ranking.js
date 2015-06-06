@@ -1,9 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 
 /**
  * Formartar os dados do grafico para porcentagem em duas casas decimais;
@@ -15,104 +9,123 @@ function porcentagemFormat(total, numero) {
     return numero;
 }
 /*
- * @function grafico da pagina quantidade por mes;
+ * @function grafico top 10 geral;
  */
 $(function () {
-    var dados_valor_por_mes = [];
-    var dados_valor_por_mes = $('#info_grafico_atendimento_mes').val();
-
-    Morris.Area({
-        element: 'info_grafico_atendimento_mes_chart',
-        behaveLikeLine: true,
-        data: jQuery.parseJSON(dados_valor_por_mes),
-        xkey: 'mes',
-        ykeys: ['quant','quant_abertos','quant_fechados_insucesso','quant_fechados_sucesso'],
-        labels: ['Quant.Total','Em abertos','Fechados insucesso','Fechados Sucesso'],
-        xLabelAngle: 60,
-        lineColors:['#0033CC','#FF9933','#FF0000','#009933'],
-        parseTime: false
-    });
-
-});
-
-/*
- * @function grafico da pagina valor por mes;
- */
-$(function () {
-    var dados_valor_por_mes = [];
-    var dados_valor_por_mes = $('#info_grafico_atendimento_mes').val();
-
-    Morris.Area({
-        element: 'valor_pre_venda_chart',
-        behaveLikeLine: true,
-        data: jQuery.parseJSON(dados_valor_por_mes),
-        xkey: 'mes',
-        ykeys: ['valor'],
-        labels: ['Valor'],
-        xLabelAngle: 60,
-        lineColors:['#005CB8','#E68A2E','#009933'],
-        parseTime: false
-    });
-
-});
-
-/*
- * @function grafico motivos de insucesso;
- */
-$(function () {
-    var dados_valor_por_mes = [];
-    var dados_valor_por_mes = $('#info_grafico_motivo_chart').val();
-    
-
-    Morris.Area({
-        element: 'motivo_chart',
-        behaveLikeLine: true,
-        data: jQuery.parseJSON(dados_valor_por_mes),
-        xkey: 'MOTIVO_INSUCESSO',
-        ykeys: ['quant'],
-        labels: ['quant'],
-        xLabelAngle: 60,
-        lineColors:['#FF0000'],
-        parseTime: false
-    });
-
-});
-/*
- * @function grafico motivos de status agendamentos;
- */
-$(function () {
-
     var dados = [];
-    var status_value1 = parseInt($('#quant_fechado').html());
-    var status_value2 = parseInt($('#quant_aberto').html());
-    var total = status_value1 + status_value2;
-    var cores = [];
 
-    if (status_value1) {
-        array_status = {
-            'label': $('#status_fechado').html(),
-            'value': porcentagemFormat(total, status_value1)
-        };
-        cores.push('#0BA462');
-        dados.push(array_status);
+    for (var i = 0, max = 10; i < max; i++) {
+       
+        dados.push({Id:i+1, Tema: $('#tema'+i).html(), Nota: $('#nota'+i).html()});
     }
-    if (status_value2) {
-        array_status1 = {
-            'label': $('#status_aberto').html(),
-            'value': porcentagemFormat(total, status_value2)
-        };
-        cores.push('#FF0000');
-        dados.push(array_status1);
-    }
-    Morris.Donut({
-        element: 'chart_status_agendamento',
+
+
+
+    Morris.Bar({
+        element: 'chart_top_10',
         data: dados,
-        colors: cores,
-        stacked: true,
-        formatter: function (x) {
-            return x + "%"
+        xkey: 'Id',
+        ykeys: ['Nota'],
+        labels: ['Nota'],
+        parseTime: false,
+        barColors: function (row, series, type) {
+            if (type === 'bar') {
+                var green = Math.ceil(255 * row.y / this.ymax);
+                return 'rgb(0,' + green + ',0)';
+            }
+            else {
+                return '#000';
+            }
         }
-    }).on('click', function (i, row) {
-        console.log(i, row);
     });
+
+
+
+//    Morris.Bar({
+//        element: 'chart_top_10',
+//        data: [
+//            {y: '2006', a: 100, b: 90},
+//            {y: '2007', a: 75, b: 65},
+//            {y: '2008', a: 50, b: 40},
+//            {y: '2009', a: 75, b: 65},
+//            {y: '2010', a: 50, b: 40},
+//            {y: '2011', a: 75, b: 65},
+//            {y: '2012', a: 100, b: 90}
+//        ],
+//        xkey: 'y',
+//        ykeys: ['a', 'b'],
+//        labels: ['Series A', 'Series B']
+//    });
+//data: [
+//            {x: '2011 Q1', y: 0},
+//            {x: '2011 Q2', y: 1},
+//            {x: '2011 Q3', y: 2},
+//            {x: '2011 Q4', y: 3},
+//            {x: '2012 Q1', y: 4},
+//            {x: '2012 Q2', y: 5},
+//            {x: '2012 Q3', y: 6},
+//            {x: '2012 Q4', y: 7},
+//            {x: '2013 Q1', y: 8}
+//        ],
+
 });
+
+
+/*
+ * @function grafico por turma;
+ */
+$(function () {
+
+    Morris.Bar({
+        element: 'chart_turma',
+        data: [
+            {x: '2011 Q1', y: 0},
+            {x: '2011 Q2', y: 1},
+            {x: '2011 Q3', y: 2},
+            {x: '2011 Q4', y: 3},
+            {x: '2012 Q1', y: 4},
+            {x: '2012 Q2', y: 5},
+            {x: '2012 Q3', y: 6},
+            {x: '2012 Q4', y: 7},
+            {x: '2013 Q1', y: 8}
+        ],
+        xkey: 'x',
+        ykeys: ['y'],
+        labels: ['Y'],
+        barColors: function (row, series, type) {
+            if (type === 'bar') {
+                var red = Math.ceil(255 * row.y / this.ymax);
+                return 'rgb(' + red + ',0,0)';
+            }
+            else {
+                return '#000';
+            }
+        }
+    });
+
+});
+$('#turma').change(function(){
+    alert($(this).val());
+    alert( $( "#turma option:selected" ).text());
+    ajax_post_turma($(this).val(),$( "#turma option:selected" ).text());
+});
+
+function ajax_post_turma(id_turma,nome_turma) {     
+    var dados = id_turma;
+    var page = "ranking.php";
+    $.ajax({
+        type: 'POST',
+        url: page,
+        data: dados,
+        success: sucessForm(nome_turma),
+        complete: function(){
+            //$('#loading').css({display:"none"});selecionar_turma
+        },
+        error: function () {
+            alertify.error("Falha ao enviar.");
+        }
+    });
+}
+function sucessForm(nome_turma) {
+    alertify.success("<h5>"+nome_turma+"<h5>");
+}

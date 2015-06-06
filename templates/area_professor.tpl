@@ -18,6 +18,7 @@
                 <div class="pull-right">                            
                     <ul class="nav nav-pills">
                         <li><a href="#">{$user_name}</a></li>
+                        <li><a href="ranking.php" >Ranking</a></li>
                         <li><a href="logout.php" >Logout</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#fale_conosco">Fale conosco</a></li>               
                     </ul>

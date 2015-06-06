@@ -11,45 +11,12 @@ if (!isset($_SESSION)) {
     session_start();
 }
 require_once ('./assets/Smarty/libs/Smarty.class.php');
-require_once ('./system/controller/TurmaController.php');
-require_once ('./system/controller/ProjetoController.php');
-require_once ('./system/controller/EquipeController.php');
-require_once ('./system/controller/UsuarioController.php');
 include_once('./system/funcoes/f_login.php'); // variaveis reservadas ($user_name;$user_id;$area_user;$acesso_user;)
-
-
+require_once './system/controller/TurmaController.php';
+require_once './system/controller/ProjetoController.php';
+require_once ('./system/controller/QualificacaoController.php');
 $usuarios_autorizados = array(1,2,3);
 include_once ('./system/funcoes/f_acesso.php');// não permitir o acesso de usuarios de outro tipo
-
-
-if ($_REQUEST) {
-    $dados = $_REQUEST;    
-}
-//var_dump($dados);
-
-$smarty = new Smarty;
-$usuario_controller = new UsuarioController();
-$ctrl_projeto = new ProjetoController();
-$ctrl_equipe = new EquipeController();
-
-$lista_temas_projetos = $ctrl_projeto->listarTemasDeProjetos();
-
-//var_dump($lista_temas_projetos);
-
-if (filter_input(INPUT_POST, 'pesquisar')) {
-   
-$projetos_por_tema =  $ctrl_projeto->pesquisarProjetoPorTema($dados['pesquisar']);
-//var_dump($projetos_por_tema);
-}
-
-
-
-
-
-$smarty->force_compile = true;
-//$smarty->debugging = true;
-//$smarty->caching = true;
-//$smarty->cache_lifetime = 120;
 
 
 $user_name;
@@ -58,9 +25,40 @@ $area_user;
 $acesso_user;
 
 
-$smarty->assign("lista_temas_projetos", $lista_temas_projetos);
-$smarty->assign("projetos_por_tema", $projetos_por_tema);
+if ($_REQUEST) {
+    $dados = $_REQUEST;    
+}
+//var_dump($dados);
+
+$smarty = new Smarty;
+$turma_control = new TurmaController;
+$ctrl_projeto = new ProjetoController();
+$obj_qualificar = new QualificacaoController();
+
+
+
+$lista_turmas = $turma_control->listarTurmas();
+
+$lista_top10_geral = $obj_qualificar->Top10Geral();
+
+if (filter_input(INPUT_POST, 'pesquisar')) {
+
+}
+
+
+
+$smarty->force_compile = true;
+
+
+
+
+
+//var_dump($area_user);
+
+$smarty->assign("lista_top10_geral", $lista_top10_geral);
+$smarty->assign("lista_turmas", $lista_turmas);
 $smarty->assign("user_name", $user_name);
+$smarty->assign("area_user", $area_user);
 
 $smarty->assign("title", "UNAIDEAS - Investidor");
 $smarty->display('ranking.tpl');
