@@ -17,11 +17,10 @@ class QualificacaoController {
 
     public function QualificacaoController() {
         $this->DAO = new DaoQualificacao();
-       
     }
 
     public function gravarQualificacao($qualificacao) {
-        $verificar_quali = $this->DAO->verificaQualificacaoProjeto($qualificacao);//verifica se ja foi registrada
+        $verificar_quali = $this->DAO->verificaQualificacaoProjeto($qualificacao); //verifica se ja foi registrada
         $verificar = $verificar_quali[0];
         if ($verificar->verficar_qual == 0) {
             return $this->DAO->gravarQualificacaoProjeto($qualificacao);
@@ -30,17 +29,16 @@ class QualificacaoController {
         }
     }
 
-    public function localizarQualificacaoProfessor($id_projeto,$id_professor) {
-         return $this->DAO->localizarQualificacaoDoProfessorParaProjeto($id_projeto,$id_professor);;
+    public function localizarQualificacaoProfessor($id_projeto, $id_professor) {
+        return $this->DAO->localizarQualificacaoDoProfessorParaProjeto($id_projeto, $id_professor);
     }
 
-    
     public function Top10Geral() {
-         return $this->DAO->topDezQualificacaoProjeto();
+        return $this->DAO->topDezQualificacaoProjeto();
     }
-public function Top10Turma($id_turma) {
-    var_dump($id_turma);
-         return $this->DAO->topDezTurmaQualificacaoProjeto($id_turma);
+
+    public function Top10Turma($id_turma) {
+        return $this->DAO->topDezTurmaQualificacaoProjeto($id_turma);
     }
-    
+
 }

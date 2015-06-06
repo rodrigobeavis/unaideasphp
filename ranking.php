@@ -15,8 +15,8 @@ include_once('./system/funcoes/f_login.php'); // variaveis reservadas ($user_nam
 require_once './system/controller/TurmaController.php';
 require_once './system/controller/ProjetoController.php';
 require_once ('./system/controller/QualificacaoController.php');
-$usuarios_autorizados = array(1,2,3);
-include_once ('./system/funcoes/f_acesso.php');// não permitir o acesso de usuarios de outro tipo
+$usuarios_autorizados = array(1, 2, 3);
+include_once ('./system/funcoes/f_acesso.php'); // não permitir o acesso de usuarios de outro tipo
 
 
 $user_name;
@@ -26,9 +26,9 @@ $acesso_user;
 
 
 if ($_REQUEST) {
-    $dados = $_REQUEST;    
+    $dados = $_REQUEST;
 }
-var_dump($dados);
+//var_dump($dados);
 
 $smarty = new Smarty;
 $turma_control = new TurmaController;
@@ -42,8 +42,8 @@ $lista_turmas = $turma_control->listarTurmas();
 $lista_top10_geral = $obj_qualificar->Top10Geral();
 
 if (filter_input(INPUT_POST, 'turma')) {
-$lista_top10_turma = $obj_qualificar->Top10Turma($dados['turma']);
-var_dump($lista_top10_turma);
+    $lista_top10_turma = $obj_qualificar->Top10Tursma($dados['turma']);
+//var_dump($lista_top10_turma);
 }
 
 
