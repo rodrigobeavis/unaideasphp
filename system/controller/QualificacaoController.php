@@ -38,6 +38,9 @@ class QualificacaoController {
     public function Top10Geral() {
          return $this->DAO->topDezQualificacaoProjeto();
     }
-
+public function Top10Turma($id_turma) {
+    var_dump($id_turma);
+         return $this->DAO->topDezTurmaQualificacaoProjeto($id_turma);
+    }
     
 }

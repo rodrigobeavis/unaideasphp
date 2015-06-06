@@ -112,5 +112,33 @@ class DaoQualificacao extends PDOConnectionFactory {
         }
         parent::Close();
     }
+    public function topDezTurmaQualificacaoProjeto($id_turma) {
+        try {
+            $sql = "SELECT 
+                        t1.id_projeto,
+                        t1.tema_projeto,
+                        ROUND(AVG(t2.valor_qualificacao), 2) AS media_notas
+                    FROM
+                        projeto t1
+                            INNER JOIN
+                        qualificacao t2 ON t1.id_projeto = t2.id_projeto
+                    WHERE
+                        t1.id_projeto IN (SELECT 
+                                id_projeto
+                            FROM
+                                equipe t3 inner join usuario t4 on t3.id_usuario = t4.id_usuario
+                                where t4.id_turma = :id_turma)
+                    GROUP BY t1.id_projeto
+                    ORDER BY media_notas DESC
+                    LIMIT 10";
+            $stmt = $this->conex->prepare($sql);
+            $stmt->bindParam(':id_turma', $id_turma, PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+        parent::Close();
+    }
 
 }

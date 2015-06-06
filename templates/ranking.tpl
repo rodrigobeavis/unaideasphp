@@ -64,8 +64,7 @@
                                             <th>Tema</th>
                                             <th>Nota</th>
                                         </tr>
-                                    </thead>
-                                    
+                                    </thead>                                    
                                         <tbody>
                                             {section name="top_geral" loop=$lista_top10_geral}
                                             <tr>
@@ -87,7 +86,7 @@
                                 <h3 class="panel-title">Classificação por Turma</h3>
                             </div>
                             <div class="panel-body">
-                                <div id="chart_turma" class=""> </div>
+                                <div id="chart_top_10_turma" class=""> </div>
                             </div>
                         </div>
                     </div>
@@ -96,21 +95,35 @@
                             <div class="panel-heading">
                                 <h5 class="panel-title">
                                     <form method="POST" action="#" id="selecionar_turma">
-
-                                        <label class="">Selecione a turma</label>
-                                        <select id="turma" name="turma" required>
-                                            <option disabled selected>Turma...</option>
+                                       <select id="turma" name="turma" required class="input-sm">
+                                            <option disabled selected>Selecione a Turma...</option>
                                             {section name=turma loop=$lista_turmas}
                                                 <option value="{$lista_turmas[turma].id_turma}">{$lista_turmas[turma].curso_turma}</option>
                                             {/section}
                                         </select>
-                                        <!-- <input type="submit" class="btn btn-default" id="filtrar_turma" name="filtrar_turma" value="Filtrar" > -->
-
+                                         <input type="submit" class="btn btn-circle btn-default" id="filtrar_turma" name="filtrar_turma" value="OK" > 
                                     </form>
                                 </h5>
                             </div>
                             <div class="panel-body">
-                                Panel content
+                               <table border="0" class="top10 table table-condensed table-hover table-responsive">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Tema</th>
+                                            <th>Nota</th>
+                                        </tr>
+                                    </thead>                                    
+                                        <tbody>
+                                            {section name="top_turma" loop=$lista_top10_turma}
+                                            <tr>
+                                                <td>{$smarty.section.top_turma.iteration}</td>
+                                                <td id="tema_turma{$smarty.section.top_turma.index}">{$lista_top10_turma[top_turma].tema_projeto}</td>
+                                                <td id="nota_turma{$smarty.section.top_turma.index}">{$lista_top10_turma[top_turma].media_notas}</td>
+                                            </tr>
+                                            {/section}
+                                        </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

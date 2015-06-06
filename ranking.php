@@ -28,7 +28,7 @@ $acesso_user;
 if ($_REQUEST) {
     $dados = $_REQUEST;    
 }
-//var_dump($dados);
+var_dump($dados);
 
 $smarty = new Smarty;
 $turma_control = new TurmaController;
@@ -41,8 +41,9 @@ $lista_turmas = $turma_control->listarTurmas();
 
 $lista_top10_geral = $obj_qualificar->Top10Geral();
 
-if (filter_input(INPUT_POST, 'pesquisar')) {
-
+if (filter_input(INPUT_POST, 'turma')) {
+$lista_top10_turma = $obj_qualificar->Top10Turma($dados['turma']);
+var_dump($lista_top10_turma);
 }
 
 
@@ -56,6 +57,7 @@ $smarty->force_compile = true;
 //var_dump($area_user);
 
 $smarty->assign("lista_top10_geral", $lista_top10_geral);
+$smarty->assign("lista_top10_turma", $lista_top10_turma);
 $smarty->assign("lista_turmas", $lista_turmas);
 $smarty->assign("user_name", $user_name);
 $smarty->assign("area_user", $area_user);
