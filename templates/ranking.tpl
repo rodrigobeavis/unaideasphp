@@ -41,7 +41,7 @@
                     </div>            
                 </div> 
                 <div id="" class="row">
-                    <div id="" class="col-md-9"> 
+                    <div id="" class="col-md-8"> 
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Top 10</h3>
@@ -51,26 +51,28 @@
                             </div>
                         </div>
                     </div>
-                    <div id="" class="col-md-3"> 
+                    <div id="" class="col-md-4"> 
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Top 10 "COLOCAR UMA COR PARA CADA COLUNA E COLOCAR UM BOTÃO TIPO CIRCLE NO TRABALHO"</h3>
+                                <h3 class="panel-title">Top 10</h3>
                             </div>
                             <div class="panel-body">
                                 <table border="0" class="top10 table table-condensed table-hover table-responsive">
                                     <thead>
                                         <tr>
-                                            <th></th>
+                                            <th data-toggle="tooltip" data-placement="top" title="Posi&ccedil;&atilde;o">P</th>
                                             <th>Tema</th>
                                             <th>Nota</th>
+                                            <th data-toggle="tooltip" data-placement="top" title="Legenda">L</th>
                                         </tr>
                                     </thead>                                    
                                         <tbody>
                                             {section name="top_geral" loop=$lista_top10_geral}
                                             <tr>
-                                                <td>{$smarty.section.top_geral.iteration}</td>
+                                                <td id="posicao{$smarty.section.top_turma.index}">{$smarty.section.top_geral.iteration}º</td>
                                                 <td id="tema{$smarty.section.top_geral.index}">{$lista_top10_geral[top_geral].tema_projeto}</td>
                                                 <td id="nota{$smarty.section.top_geral.index}">{$lista_top10_geral[top_geral].media_notas}</td>
+                                                <td id="legenda{$smarty.section.top_geral.index}" class="btn btn-circle btn-sm"></td>
                                             </tr>
                                             {/section}
                                         </tbody>
@@ -80,7 +82,7 @@
                     </div>
                 </div>
                 <div id="" class="row">
-                    <div id="" class="col-md-9"> 
+                    <div id="" class="col-md-8"> 
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Classificação por Turma</h3>
@@ -90,7 +92,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="" class="col-md-3"> 
+                    <div id="" class="col-md-4"> 
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h5 class="panel-title">
@@ -109,17 +111,19 @@
                                <table border="0" class="top10 table table-condensed table-hover table-responsive">
                                     <thead>
                                         <tr>
-                                            <th></th>
+                                            <th data-toggle="tooltip" data-placement="top" title="Posi&ccedil;&atilde;o" >P</th>
                                             <th>Tema</th>
                                             <th>Nota</th>
+                                            <th data-toggle="tooltip" data-placement="top" title="Legenda" >L</th>
                                         </tr>
                                     </thead>                                    
                                         <tbody>
                                             {section name="top_turma" loop=$lista_top10_turma}
                                             <tr>
-                                                <td>{$smarty.section.top_turma.iteration}</td>
+                                                <td id="posicao_turma{$smarty.section.top_turma.index}">{$smarty.section.top_turma.iteration}º</td>
                                                 <td id="tema_turma{$smarty.section.top_turma.index}">{$lista_top10_turma[top_turma].tema_projeto}</td>
                                                 <td id="nota_turma{$smarty.section.top_turma.index}">{$lista_top10_turma[top_turma].media_notas}</td>
+                                                <td id="legenda_turma{$smarty.section.top_turma.index}" class="btn btn-circle btn-sm"></td>
                                             </tr>
                                             {/section}
                                         </tbody>
@@ -132,7 +136,7 @@
         </article>
         <footer>
             <div id="rodape">
-                <div> UnaIdeas <span class="rodape_email col-md-offset-8"><span class="glyphicon glyphicon-envelope"> </span> contato@unaideas.com.br</span></div>           
+                <div> UNAIDEAS <span class="rodape_email col-md-offset-8"><span class="glyphicon glyphicon-envelope"> </span> contato@unaideas.com.br</span></div>           
             </div>
         </footer>
         {include file="footer_geral.tpl"}        
@@ -140,29 +144,5 @@
         <script src="./assets/js/morris.js/morris.min.js" type="text/javascript"></script>
         <script src="./system/funcoes/js/f_rankin.js" type="text/javascript"></script>
         <script src="./system/funcoes/js/f_ranking.js" type="text/javascript"></script>
-        <!--   {literal}
-               
-               <script>
-                   $(function () {
-    
-       Morris.Bar({
-           element: 'chart_top_10',
-           data: [
-               {y: '2006', a: 100, b: 90},
-               {y: '2007', a: 75, b: 65},
-               {y: '2008', a: 50, b: 40},
-               {y: '2009', a: 75, b: 65},
-               {y: '2010', a: 50, b: 40},
-               {y: '2011', a: 75, b: 65},
-               {y: '2012', a: 100, b: 90}
-           ],
-           xkey: 'y',
-           ykeys: ['a', 'b'],
-           labels: ['Series A', 'Series B']
-       });
-   
-   });
-               </script>
-        {/literal} -->
-        </body>
+       </body>
     </html>

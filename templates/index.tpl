@@ -156,7 +156,7 @@
                         <div id="" class="link_rodape"> 
                             <a id="link_facebook" class="" href="https://www.facebook.com/unaideas" target="_blank"><span class="fa fa-facebook-square fa-2x"></span></a>
                             <a id="link_twitter" class="" href="https://www.twitter.com/unaideas" target="_blank"><span class="fa fa-twitter-square fa-2x"></span></a>
-                            <a id="link_google" class="" href="https://www.facebook.com/unaideas" target="_blank"><span class="fa fa-google-plus-square fa-2x"></span></a>    
+                            <a id="link_google" class="" href="https://plus.google.com/102510268170744044360/posts target="_blank"><span class="fa fa-google-plus-square fa-2x"></span></a>    
                         </div>                
                     </div>
 
