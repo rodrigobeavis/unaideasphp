@@ -84,6 +84,7 @@ class ProjetoController {
           $lista_projetos_array[$row->id_projeto]['valor_qualificacao'] = $nota_professor->valor_qualificacao;
           $lista_projetos_array[$row->id_projeto]['data_hora_qualificacao'] = $nota_professor->data_hora_qualificacao;
           $lista_projetos_array[$row->id_projeto]['obs_qualificacao'] = $nota_professor->obs_qualificacao;
+          $lista_projetos_array[$row->id_projeto]['status_qualificacao'] = ($nota_professor->valor_qualificacao)? "disabled" : FALSE;
           }
           if ($row->id_usuario != $id) {
            $lista_projetos_array[$row->id_projeto]['membros_equipe'][] = (array) $row;
