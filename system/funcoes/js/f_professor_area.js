@@ -9,11 +9,11 @@
  * Função para POST da qualificação 
  */
 $("input[name^='qualificar_value']").on('rating.change', function (event, value, caption, target) {
-
+    
     var projeto = this.id.split("-");
     var id_projeto = projeto[1];
     ajax_post_qualificar(id_projeto, value);
-
+    $('#'+this.id).rating("refresh", {disabled: true, showClear: false});
 //    console.log(value);
 //    console.log(caption);
 //    console.log(target);
