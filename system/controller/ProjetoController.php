@@ -2,7 +2,6 @@
 
 /**
  * Description of ProjetoController
- *
  * @author RODRIGO
  */
 if (file_exists('./system/dao/DaoProjeto.php')) {
@@ -20,6 +19,7 @@ if (file_exists('./system/controller/QualificacaoController.php')) {
 } else {
     require_once('../controller/QualificacaoController.php');
 }
+
 class ProjetoController {
    
     private $dao_projeto;
@@ -90,14 +90,17 @@ class ProjetoController {
            $lista_projetos_array[$row->id_projeto]['membros_equipe'][] = (array) $row;
               $id = $row->id_usuario;
           }    
-      }      
-      sort($lista_projetos_array);      
+      }  
+      if ($lista_projetos_array) {
+          sort($lista_projetos_array);
+      }else{
+         $lista_projetos_array = FALSE;
+      }
       return $lista_projetos_array;
     }
     
     private function localizarNotaDoProfessor($id_projeto,$id_professor) {
         return $this->qualificacao->localizarQualificacaoProfessor($id_projeto,$id_professor);
     }
-    
-    
+      
 }
