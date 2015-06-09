@@ -50,13 +50,13 @@ class ProjetoController {
     
     public function listarProjetosUsuario($user_id) {
       $lista_projetos =   $this->dao_projeto->listarProjetos($user_id);
-      return $this->organizarListagemDeProjetos($lista_projetos,"FALSE");
+      return $this->organizarListagemDeProjetos($lista_projetos,FALSE);
     }
     
     public function pesquisarProjetoPorTema($tema) {
        $tema = "%".$tema."%";
        $lista_projetos_tema = $this->dao_projeto->listarPesquisaDeProjetosPorTema($tema);
-       return $this->organizarListagemDeProjetos($lista_projetos_tema,"FALSE");
+       return $this->organizarListagemDeProjetos($lista_projetos_tema,FALSE);
     }
     
     public function listarTemasDeProjetos() {

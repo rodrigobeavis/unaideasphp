@@ -36,7 +36,7 @@
                                     <label for="btn_buscar">Localizar</label>
                                 </div>
                                 <div class="col-xs-6">
-                                    <input type="text" class="form-control" id="pesquisar" name="pesquisar" placeholder="Digite o tema que deseja localizar...">
+                                    <input type="text" class="form-control" id="pesquisar" name="pesquisar" pattern="[^'\x22]+" title="O texto não é válido!" placeholder="Digite o tema que deseja localizar...">
                                 </div>
                                 <div class="col-xs-2">
                                     <input type="submit" class="btn btn-default" id="btn_buscar" name="btn_buscar" value="Buscar" >
