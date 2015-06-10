@@ -15,6 +15,7 @@ require_once ('./system/controller/TurmaController.php');
 require_once ('./system/controller/ProjetoController.php');
 require_once ('./system/controller/EquipeController.php');
 require_once ('./system/controller/UsuarioController.php');
+require_once ('./system/controller/InvestidorController.php');
 include_once('./system/funcoes/f_login.php'); // variaveis reservadas ($user_name;$user_id;$area_user;$acesso_user;)
 
 
@@ -31,17 +32,23 @@ $smarty = new Smarty;
 $usuario_controller = new UsuarioController();
 $ctrl_projeto = new ProjetoController();
 $ctrl_equipe = new EquipeController();
+$ctrl_investidor = new InvestidorController();
 
 $lista_temas_projetos = $ctrl_projeto->listarTemasDeProjetos();
 
 //var_dump($lista_temas_projetos);
-
+$projetos_por_tema = NULL;
 if (filter_input(INPUT_POST, 'pesquisar')) {
-   
 $projetos_por_tema =  $ctrl_projeto->pesquisarProjetoPorTema($dados['pesquisar']);
-//var_dump($projetos_por_tema);
 }
 
+if (filter_input(INPUT_POST, 'body_email')) {
+    $dados['investidor'] = $info_cad_investidor;
+    var_dump($dados);
+$verificacao_email = $ctrl_investidor->contatoInvestidorComEquipe($dados);
+
+
+} 
 
 
 

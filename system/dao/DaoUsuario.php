@@ -113,5 +113,22 @@ class DaoUsuario extends PDOConnectionFactory {
         }
         parent::Close();
     }
-    
+     public function localizarEmailUsers($id_projeto) {
+        try {
+            $sql = "SELECT 
+                        t1.nome_usuario,
+                        t1.email
+                    FROM
+                        usuario t1 INNER JOIN equipe t2 on t1.id_usuario = t2.id_usuario
+                    WHERE
+                        t2.id_projeto = :id_projeto";
+            $stmt = $this->conex->prepare($sql);
+            $stmt->bindParam(':id_projeto', $id_projeto, PDO::PARAM_INT);
+            $stmt->execute();            
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+        parent::Close();
+    }
 }

@@ -54,44 +54,47 @@
                         <tr>
                             <!--<td class="table_left"> </td> -->
                             <td class="table_right" colspan="2">
-                                <h2>&nbsp;&nbsp;{$projetos_por_tema[projetos].tema_projeto}&nbsp;&nbsp; <button id="editar_projeto_call" type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#editar_projeto{$smarty.section.projetos.index}">Enviar Mensagem</button></h2>
-                                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Editar Equipe</button>-->
+                                <h2>&nbsp;&nbsp;{$projetos_por_tema[projetos].tema_projeto}&nbsp;&nbsp; <button id="editar_projeto_call" type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#enviar_email{$smarty.section.projetos.index}">Enviar Mensagem</button></h2>
                             </td>
                         </tr>
                         <!-- Modal -->
-                        <div class="modal fade" id="editar_projeto{$smarty.section.projetos.index}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="enviar_email{$smarty.section.projetos.index}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
-                                <div class="modal-content modal_editar">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="modal_editar_projeto{$smarty.section.projetos.index}">{$projetos_por_tema[projetos].tema_projeto}</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form method='POST' action="#" class="">
+                                <form method='POST' action="#" class="">
+                                    <div class="modal-content modal_editar">
+
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="modal_editar_projeto{$smarty.section.projetos.index}">{$projetos_por_tema[projetos].tema_projeto}</h4>
+                                        </div>
+                                        <div class="modal-body">
                                             <div class="row">
                                                 <div class="col-md-10 col-md-offset-1">
-                                                    <div class="row">
+                                                   <!-- <div class="row">
                                                         <div class="col-md-12"><input type="email" name='email_fale_conosco' id="email_fale_conosco" class="form-control" placeholder="Insira seu Email"  required></div>
-                                                    </div>
+                                                    </div> -->
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <!-- Textarea -->
                                                             <div class="control-group">
                                                                 <label class="control-label" for="textarea"></label>
                                                                 <div class="controls">                     
-                                                                    <textarea id="textarea_fale_conosco" class="form-control" rows="5" name="textarea_fale_conosco" placeholder="Texto..." required></textarea>
+                                                                    <textarea id="body_email{$smarty.section.projetos.index}" class="form-control" rows="5" name="body_email" placeholder="Texto..." required></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="hidden" id="tema_email_projeto{$smarty.section.projetos.index}" name="tema_projeto" value="{$projetos_por_tema[projetos].tema_projeto}">
+                                            <input type="hidden" id="id_email_projeto{$smarty.section.projetos.index}" name="id_projeto" value="{$projetos_por_tema[projetos].id_projeto}">
+                                            <input class="btn btn-success" type="submit" value="Enviar" data-toggle="tooltip" data-placement="left" title="Click Aqui para enviar">
+                                            <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+                                        </div>
                                     </div>
-                                    <div class="modal-footer">
-                                        <input class="btn btn-success" type="submit" value="Enviar" data-toggle="tooltip" data-placement="left" title="Click Aqui para enviar">
-                                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
-                                    </div>
-                                </div>
+                                </form> 
                             </div>
                         </div>
                         <tr>
@@ -131,17 +134,19 @@
                         </tr>                       
                     </table>
                 </div>
+            {sectionelse}
+                <h2>Pesquise por outro terma...</h2>
             {/section}
         </section>
         <div class="modal fade" id="fale_conosco" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="gridSystemModalLabel">Contato</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form method='POST' action='' class="">
+                    <form method='POST' action='' class="">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="gridSystemModalLabel">Contato</h4>
+                        </div>
+                        <div class="modal-body">
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1">
                                     <div class="row">
@@ -160,11 +165,11 @@
                                     </div>
                                 </div>
                             </div>
-                    </div>
-                    <div class="modal-footer">
-                        <input class="btn btn-success" type="submit" value="Enviar" data-toggle="tooltip" data-placement="left" title="Click Aqui para enviar">
-                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
-                    </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input class="btn btn-success" type="submit" value="Enviar" data-toggle="tooltip" data-placement="left" title="Click Aqui para enviar">
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+                        </div>
                     </form>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->

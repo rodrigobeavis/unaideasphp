@@ -25,7 +25,16 @@ class UsuarioController {
          $info_cad_usuario = $this->DAO->localizarUser($id);
         return $info_cad_usuario[0]; 
      } 
+     public function infoEmailUsuarios($id_projeto) {
+      
+         $info_cad_usuario = $this->DAO->localizarEmailUsers($id_projeto);
+         
+         foreach ($info_cad_usuario as $row) {
+             $lista_de_emails.= $row->email.",";
+         }
      
+        return rtrim($lista_de_emails, ","); 
+     }
      
 //     public function listarUsuariosDaTurma($id) {
 //       $lista_usuarios_da_mesma_turma = $this->DAO->localizarUserDaMesmaTurma($id); 

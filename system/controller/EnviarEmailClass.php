@@ -1,8 +1,6 @@
 <?php
 
 /**
- * Description of relatorio_licencas.php gravar informações de ativação no banco de dados para ativação.
- * @author Daniel Rocha, Rodrigo Pedroza
  * @package ./
  * @since 18/03/2015
  * @version 00
@@ -27,7 +25,8 @@ class EnviarEmailClass {
     private $PORT = "465";
 
     public function enviarEmail($de, $deName, $para, $paraName, $assunto, $corpo, $debug) {
-
+        var_dump($de, $deName, $para, $paraName, $assunto, $corpo, $debug);
+        
         $this->PHPMailer->isSMTP();
         $this->PHPMailer->SMTPDebug = $debug;
         $this->PHPMailer->Host = $this->HOST;

@@ -63,7 +63,7 @@ class DaoInvestidor extends PDOConnectionFactory {
      public function localizarInvestidor($id) {
         try {
             $sql = "SELECT 
-                        id_investidor,telefone_investidor,email_investidor,id_entidade_ensino
+                        id_investidor,nome_investidor,telefone_investidor,email_investidor,id_entidade_ensino
                     FROM
                         investidor
                     WHERE
