@@ -50,4 +50,5 @@ class InvestidorController {
          $this->enviar_email_class->enviarEmail($de, $deName, $para, $paraName, $assunto, $corpo, $debug); 
      }
      
+     
 }

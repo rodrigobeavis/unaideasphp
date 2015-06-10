@@ -25,7 +25,6 @@ class EnviarEmailClass {
     private $PORT = "465";
 
     public function enviarEmail($de, $deName, $para, $paraName, $assunto, $corpo, $debug) {
-        var_dump($de, $deName, $para, $paraName, $assunto, $corpo, $debug);
         
         $this->PHPMailer->isSMTP();
         $this->PHPMailer->SMTPDebug = $debug;
@@ -49,5 +48,7 @@ class EnviarEmailClass {
             return TRUE;
         }
     }
-
+    private function formatacaoEmailBody($param) {
+         
+     }
 }
