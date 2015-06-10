@@ -19,6 +19,11 @@ if (file_exists('./system/controller/EnviarEmailClass.php')) {
 } else {
     require_once('./EnviarEmailClass.php');
 }
+//if (file_exists('./system/funcoes/f_tipoEmail.php')) {
+//    require_once('./system/funcoes/f_tipoEmail.php');
+//} else {
+//    require_once('../funcoes/f_tipoEmail.php');
+//}
 class InvestidorController {
    
     private $DAO;
@@ -37,16 +42,16 @@ class InvestidorController {
      }
      public function contatoInvestidorComEquipe($dados) {
           $lista_emails = $this->usuario_controller->infoEmailUsuarios($dados['id_projeto']);
-          var_dump($lista_emails);
           $de = $dados['investidor']->email_investidor;
           $deName = $dados['investidor']->nome_investidor;
-          $para = $lista_emails;
+          //$para = $lista_emails;
           $para = "testeteste1700@gmail.com";
           $paraName = "Equipe do Projeto ".$dados['tema_projeto'];
           $assunto = "Contato Investidor ".$dados['investidor']->nome_investidor;
           $corpo = $dados['body_email'];
+          //$corpo  = emailTemplateEmailInvestidor($dados);
           $debug = 1;
-          
+      
          $this->enviar_email_class->enviarEmail($de, $deName, $para, $paraName, $assunto, $corpo, $debug); 
      }
      

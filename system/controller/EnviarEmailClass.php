@@ -23,6 +23,11 @@ class EnviarEmailClass {
     private $USERNAME = "noreply@unaideas.com.br";
     private $PWD = "921I2UA=)rlz";
     private $PORT = "465";
+    
+//    private $HOST = "ssl://smtp.googlemail.com";
+//    private $USERNAME = "testeteste1700@gmail.com";
+//    private $PWD = "teste1900";
+//    private $PORT = "465";
 
     public function enviarEmail($de, $deName, $para, $paraName, $assunto, $corpo, $debug) {
         
@@ -48,7 +53,4 @@ class EnviarEmailClass {
             return TRUE;
         }
     }
-    private function formatacaoEmailBody($param) {
-         
-     }
 }

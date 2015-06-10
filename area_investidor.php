@@ -20,11 +20,11 @@ include_once('./system/funcoes/f_login.php'); // variaveis reservadas ($user_nam
 
 
 $usuarios_autorizados = array(3);
-include_once ('./system/funcoes/f_acesso.php');// não permitir o acesso de usuarios de outro tipo
+include_once ('./system/funcoes/f_acesso.php'); // não permitir o acesso de usuarios de outro tipo
 
 
 if ($_REQUEST) {
-    $dados = $_REQUEST;    
+    $dados = $_REQUEST;
 }
 //var_dump($dados);
 
@@ -37,18 +37,17 @@ $ctrl_investidor = new InvestidorController();
 $lista_temas_projetos = $ctrl_projeto->listarTemasDeProjetos();
 
 //var_dump($lista_temas_projetos);
+$teste_pesquisa = FALSE;
 $projetos_por_tema = NULL;
 if (filter_input(INPUT_POST, 'pesquisar')) {
-$projetos_por_tema =  $ctrl_projeto->pesquisarProjetoPorTema($dados['pesquisar']);
+    $projetos_por_tema = $ctrl_projeto->pesquisarProjetoPorTema($dados['pesquisar']);
+    ($projetos_por_tema) ? $teste_pesquisa = FALSE : $teste_pesquisa = TRUE;
 }
 
 if (filter_input(INPUT_POST, 'body_email')) {
     $dados['investidor'] = $info_cad_investidor;
-    var_dump($dados);
-$verificacao_email = $ctrl_investidor->contatoInvestidorComEquipe($dados);
-
-
-} 
+    $verificacao_email = $ctrl_investidor->contatoInvestidorComEquipe($dados);
+}
 
 
 
@@ -65,6 +64,7 @@ $area_user;
 $acesso_user;
 
 
+$smarty->assign("teste_pesquisa", $teste_pesquisa);
 $smarty->assign("lista_temas_projetos", $lista_temas_projetos);
 $smarty->assign("projetos_por_tema", $projetos_por_tema);
 $smarty->assign("user_name", $user_name);

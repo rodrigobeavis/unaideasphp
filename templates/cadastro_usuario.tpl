@@ -22,7 +22,7 @@
         </div>
         <div class="row form-group">
             <div class="col-md-5">
-                <input id="email" name="email" placeholder="Email" class="form-control" maxlength="100" required="" type="text">
+                <input id="email" name="email" type="text" placeholder="Email" class="form-control" maxlength="120" required >
             </div>
             <div class="col-md-3">
                 <input id="tel" name="tel" placeholder="Telefone" class="form-control" required="" maxlength="12" type="text">

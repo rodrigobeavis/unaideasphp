@@ -70,9 +70,9 @@
                                         <div class="modal-body">
                                             <div class="row">
                                                 <div class="col-md-10 col-md-offset-1">
-                                                   <!-- <div class="row">
-                                                        <div class="col-md-12"><input type="email" name='email_fale_conosco' id="email_fale_conosco" class="form-control" placeholder="Insira seu Email"  required></div>
-                                                    </div> -->
+                                                    <!-- <div class="row">
+                                                         <div class="col-md-12"><input type="email" name='email_fale_conosco' id="email_fale_conosco" class="form-control" placeholder="Insira seu Email"  required></div>
+                                                     </div> -->
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <!-- Textarea -->
@@ -135,7 +135,15 @@
                     </table>
                 </div>
             {sectionelse}
-                <h2>Pesquise por outro terma...</h2>
+                {if $teste_pesquisa}
+                    <div class="row">
+                        <div id="" class="col-md-6 col-md-offset-3">
+                            <div id="" class="well"> 
+                                <h4>Pesquise por outro terma...</h4>
+                            </div>
+                        </div>
+                    </div>
+                {/if}
             {/section}
         </section>
         <div class="modal fade" id="fale_conosco" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
