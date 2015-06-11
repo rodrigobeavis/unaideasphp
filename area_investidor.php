@@ -43,10 +43,14 @@ if (filter_input(INPUT_POST, 'pesquisar')) {
     $projetos_por_tema = $ctrl_projeto->pesquisarProjetoPorTema($dados['pesquisar']);
     ($projetos_por_tema) ? $teste_pesquisa = FALSE : $teste_pesquisa = TRUE;
 }
-
+$verificacao_email = FALSE;
 if (filter_input(INPUT_POST, 'body_email')) {
     $dados['investidor'] = $info_cad_investidor;
     $verificacao_email = $ctrl_investidor->contatoInvestidorComEquipe($dados);
+    if ($verificacao_email) {
+        unset($_REQUEST,$dados,$_POST,$_GET);
+           header("Refresh:0");
+    }
 }
 
 
@@ -64,6 +68,7 @@ $area_user;
 $acesso_user;
 
 
+$smarty->assign("verificacao_email", $verificacao_email);
 $smarty->assign("teste_pesquisa", $teste_pesquisa);
 $smarty->assign("lista_temas_projetos", $lista_temas_projetos);
 $smarty->assign("projetos_por_tema", $projetos_por_tema);

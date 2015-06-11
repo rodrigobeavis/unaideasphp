@@ -4,4 +4,17 @@
  * and open the template in the editor.
  */
 
-
+//
+//$('[id^=submit_email]').click(function (){
+//    
+//    $('#teste_email').val();
+//    
+//    if ($('#teste_email').val()) {
+//        alertify.success("Email enviado com sucesso...");
+//    }else{
+//        alertify.error("Falha ao enviar!");
+//    }
+//    
+//    
+//     
+//});

@@ -138,68 +138,78 @@
                 {if $teste_pesquisa}
                     <div class="row">
                         <div id="" class="col-md-6 col-md-offset-3">
-                            <div id="" class="well"> 
+                            <div id="" class="alert alert-danger"> 
                                 <h4>Pesquise por outro terma...</h4>
                             </div>
                         </div>
                     </div>
                 {/if}
             {/section}
-        </section>
-        <div class="modal fade" id="fale_conosco" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form method='POST' action='' class="">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="gridSystemModalLabel">Contato</h4>
+            {if $verificacao_email}
+                    <div class="row">
+                        <div id="" class="col-md-6 col-md-offset-3">
+                            <div id="" class="alert alert-success"> 
+                                <h4>Email enviado com sucesso...</h4>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-10 col-md-offset-1">
-                                    <div class="row">
-                                        <div class="col-md-12"><input type="email" name='email_fale_conosco' id="email_fale_conosco" class="form-control" placeholder="Insira seu Email"  required></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <!-- Textarea -->
-                                            <div class="control-group">
-                                                <label class="control-label" for="textarea"></label>
-                                                <div class="controls">                     
-                                                    <textarea id="textarea_fale_conosco" class="form-control" rows="5" name="textarea_fale_conosco" placeholder="Texto..." required></textarea>
+                </div>
+            {/if}
+                <input type="hidden" id="teste_email" value="{$verificacao_email}"/>
+            </section>
+            <div class="modal fade" id="fale_conosco" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form method='POST' action='' class="">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="gridSystemModalLabel">Contato</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-10 col-md-offset-1">
+                                        <div class="row">
+                                            <div class="col-md-12"><input type="email" name='email_fale_conosco' id="email_fale_conosco" class="form-control" placeholder="Insira seu Email"  required></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <!-- Textarea -->
+                                                <div class="control-group">
+                                                    <label class="control-label" for="textarea"></label>
+                                                    <div class="controls">                     
+                                                        <textarea id="textarea_fale_conosco" class="form-control" rows="5" name="textarea_fale_conosco" placeholder="Texto..." required></textarea>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
+                            <div class="modal-footer">
                             <input class="btn btn-success" type="submit" value="Enviar" data-toggle="tooltip" data-placement="left" title="Click Aqui para enviar">
-                            <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
-                        </div>
-                    </form>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-        <footer>
-            <div id="rodape">
-                <div> UNAIDEAS <span class="rodape_email col-md-offset-8"><span class="glyphicon glyphicon-envelope"> </span> contato@unaideas.com.br</span></div>           
-            </div>
-        </footer>
-        {include file="footer_geral.tpl"}        
-        <!--<script src="./assets/js/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script> -->
-        <script src="./assets/js/bootstrap-multiselect/dist/js/bootstrap-multiselect.js" type="text/javascript"></script>
-        <script src="./system/funcoes/js/f_investidor_area.js"></script>
-        {literal}
-            <script type="text/javascript">
-                $(function () {
-                    var availableTags = {/literal}{$lista_temas_projetos|@json_encode}{literal};
-                    $("#pesquisar").autocomplete({
-                        source: availableTags
+                                <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+                            </div>
+                        </form>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <footer>
+                <div id="rodape">
+                    <div> UNAIDEAS <span class="rodape_email col-md-offset-8"><span class="glyphicon glyphicon-envelope"> </span> contato@unaideas.com.br</span></div>           
+                </div>
+            </footer>
+            {include file="footer_geral.tpl"}        
+            <!--<script src="./assets/js/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script> -->
+            <script src="./assets/js/bootstrap-multiselect/dist/js/bootstrap-multiselect.js" type="text/javascript"></script>
+            <script src="./system/funcoes/js/f_investidor_area.js"></script>
+            {literal}
+                <script type="text/javascript">
+                    $(function () {
+                        var availableTags = {/literal}{$lista_temas_projetos|@json_encode}{literal};
+                        $("#pesquisar").autocomplete({
+                            source: availableTags
+                        });
                     });
-                });
-            </script>
-        {/literal} 
-    </body>
-</html>
+                </script>
+            {/literal} 
+        </body>
+    </html>
