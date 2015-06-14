@@ -49,7 +49,7 @@ if (filter_input(INPUT_POST, 'body_email')) {
     $verificacao_email = $ctrl_investidor->contatoInvestidorComEquipe($dados);
     if ($verificacao_email) {
         unset($_REQUEST,$dados,$_POST,$_GET);
-           header("Refresh:0");
+           header("Refresh:3");
     }
 }
 

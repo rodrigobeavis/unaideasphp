@@ -254,8 +254,8 @@ function emailTemplateEmailInvestidor($dados) {
             <tr><td style='color:white' bgcolor='#361e43'><strong>Mensagem</strong></td><td>$msg</td></tr>
             <tr><td style='color:white' colspan='2' align='center' bgcolor='#361e43'><strong>Contatos</strong></td></tr>
             <tr><td style='color:white' bgcolor='#361e43'><strong>Nome</strong></td><td>$nome</td></tr>
-            <tr><td style='color:white' bgcolor='#361e43'><strong>Email</strong></td><td>$tetefone</td></tr>
-            <tr><td style='color:white' bgcolor='#361e43'><strong>Telefone</strong></td><td>$email</td></tr>
+            <tr><td style='color:white' bgcolor='#361e43'><strong>Email</strong></td><td>$email</td></tr>
+            <tr><td style='color:white' bgcolor='#361e43'><strong>Telefone</strong></td><td>$tetefone</td></tr>
         </tbody>
     </table>";
     
