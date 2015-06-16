@@ -20,8 +20,12 @@ class  PDOConnectionFactory extends PDO {
                             $cfg = parse_ini_file("./system/configs/config.ini");
                         } elseif(file_exists("system/configs/config.ini")) {
                             $cfg = parse_ini_file("system/configs/config.ini");
-				} else {
-				$cfg = parse_ini_file("/var/www/htdocs/unaideasphp/system/configs/config.ini");
+				} elseif(file_exists("./var/www/htdocs/unaideasphp/system/configs/config.ini"))  {
+				$cfg = parse_ini_file("./var/www/htdocs/unaideasphp/system/configs/config.ini");
+				}elseif(file_exists("./unaideasphp/system/configs/config.ini"))  {
+				$cfg = parse_ini_file("./unaideasphp/system/configs/config.ini");
+				}elseif(file_exists("../system/configs/config.ini"))  {
+				$cfg = parse_ini_file("../system/configs/config.ini");
 				}
                             $this->con = new PDO($this->dbType.":host=".$cfg['host'].";dbname=".$cfg['dbname'], $cfg['user'], $cfg['password'],
                             array( PDO::ATTR_PERSISTENT => $this->persistent ) );

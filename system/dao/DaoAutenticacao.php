@@ -13,8 +13,10 @@
  */
 if (file_exists('./system/pdo/PDOConnectionFactory.php')) {
     require_once('./system/pdo/PDOConnectionFactory.php');
-} else {
+} else if(file_exists('../pdo/PDOConnectionFactory.php')) {
     require_once('../pdo/PDOConnectionFactory.php');
+} else if(file_exists('../system/pdo/PDOConnectionFactory.php')) {
+    require_once('../system/pdo/PDOConnectionFactory.php');
 }
 
 class DaoAutenticacao extends PDOConnectionFactory {
