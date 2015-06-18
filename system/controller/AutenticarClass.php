@@ -36,7 +36,19 @@ class AutenticarClass {
         $verificar = $this->DAO->localizarUser($dadosuser);
         return $verificar[0];
     }
-
+    /**
+     * @assert (1) == array('user_name'=>"rodrigo",'area_user'=>1,'acesso_user'=>1)
+     * @assert (2) == array('user_name'=>"professor",'area_user'=>2,'acesso_user'=>1)
+     * @assert (3) == array('user_name'=>"investidor",'area_user'=>3,'acesso_user'=>3)
+     * @assert (4) == array('user_name'=>"aluno",'area_user'=>1,'acesso_user'=>3)
+     * @assert (5) == array('user_name'=>"nome",'area_user'=>1,'acesso_user'=>3)
+     * @assert (6) == array('user_name'=>"Maria",'area_user'=>2,'acesso_user'=>3)
+     * @assert (7) == array('user_name'=>"Joao",'area_user'=>1,'acesso_user'=>3)
+     * @assert (1) == array('user_name'=>"professor2",'area_user'=>1,'acesso_user'=>3)
+     * @assert (1) == array('user_name'=>"professor2",'area_user'=>2,'acesso_user'=>3)
+     * @assert (1) == array('user_name'=>"professor2",'area_user'=>3,'acesso_user'=>3)
+     * @assert (1) == array('user_name'=>"rodrigo",'area_user'=>1,'acesso_user'=>1)
+     */
     public function identificarUsuario($id) {
         $inf_user = $this->DAO->localizarUserDados($id);
         $inf_user = $inf_user[0];
